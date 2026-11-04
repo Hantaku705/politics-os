@@ -1,0 +1,8 @@
+*.md
+.DS_Store
+.env*
+pipeline/
+dist/
+data/
+photos/
+fonts/

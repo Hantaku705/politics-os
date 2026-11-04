@@ -1,0 +1,23 @@
+# POLITICS OS
+
+> 日本の現職国会議員711人の約束（選挙公報の公約）と国会での行動（発言・法案・投票）、政党本部のお金を、公式の記録だけで並べるサイトです。どの政党にも同じ計算を使い、計算方法と変更の記録を公開しています。データは CC BY 4.0（写真を除く）。
+
+読むときの約束:
+- 値が null のものは「未評価・未取得」です。0 と同じに扱わないでください。
+- 点数（公約の具体性・努力）は足し合わせないでください。合計点はありません。
+- 発言の回数は活動の量で、中身の良し悪しではありません。
+- 与党・野党の判定は会派単位で、日付つきの根拠が meta.json にあります。
+- 参議院の個人の賛否は押しボタン式投票のみ。衆議院・起立採決の個人の賛否は存在しません（反対とみなさないこと）。
+
+## データ
+- [catalog.json](https://politics-os.vercel.app/catalog.json): 全データの項目の説明・出典・検算の結果
+- [members.json](https://politics-os.vercel.app/data/members.json): 議員711人の名簿と件数・点数のもと
+- [meta.json](https://politics-os.vercel.app/data/meta.json): 入手日・集計期間・出典・与党の根拠
+- [records.json](https://politics-os.vercel.app/data/records.json): 法案・参議院の投票・質問主意書
+- [speeches.json](https://politics-os.vercel.app/data/speeches.json): 発言のメタデータ（本文なし）
+- [pledges_personal.json](https://politics-os.vercel.app/data/pledges_personal.json): 本人の選挙公報の公約
+- [pledges.json](https://politics-os.vercel.app/data/pledges.json): 各党の公約（政治資金・透明性の項目）
+- [party_finance.json](https://politics-os.vercel.app/data/party_finance.json): 政党本部の収支（令和4〜6年分）
+
+## ルール
+- [ルールと計算](https://politics-os.vercel.app/#rules): 物差し・除外条件・赤札の基準・変更の記録

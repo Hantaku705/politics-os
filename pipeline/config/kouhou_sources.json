@@ -1,0 +1,2575 @@
+{
+ "note": "選挙公報PDFの入手先。各都道府県選管の公開ページから取得（推測URLなし）。status: ok / no_pdf（掲載終了）/ page_not_found。",
+ "elections": [
+  {
+   "key": "shu2026",
+   "election": "第51回衆議院議員総選挙",
+   "date": "2026-02-08",
+   "checked": "2026-11-02",
+   "prefectures": [
+    {
+     "pref": "北海道",
+     "page_url": "https://www.pref.hokkaido.lg.jp/hs/246629.html",
+     "status": "ok",
+     "pdfs": [
+      {
+       "label": "北海道第1区",
+       "url": "https://www.pref.hokkaido.lg.jp/fs/1/2/8/4/9/3/5/8/_/%E8%A1%86%E8%AD%B01%E5%8C%BA0130-web%E7%94%A8.pdf"
+      },
+      {
+       "label": "北海道第2区",
+       "url": "https://www.pref.hokkaido.lg.jp/fs/1/2/8/4/9/3/5/9/_/%E8%A1%86%E8%AD%B02%E5%8C%BA0130-web%E7%94%A8.pdf"
+      },
+      {
+       "label": "北海道第3区",
+       "url": "https://www.pref.hokkaido.lg.jp/fs/1/2/8/4/9/3/6/0/_/%E8%A1%86%E8%AD%B03%E5%8C%BA0130-web%E7%94%A8.pdf"
+      },
+      {
+       "label": "北海道第4区",
+       "url": "https://www.pref.hokkaido.lg.jp/fs/1/2/8/4/9/3/6/1/_/%E8%A1%86%E8%AD%B04%E5%8C%BA0130-web%E7%94%A8.pdf"
+      },
+      {
+       "label": "北海道第5区",
+       "url": "https://www.pref.hokkaido.lg.jp/fs/1/2/8/4/9/3/6/2/_/%E8%A1%86%E8%AD%B05%E5%8C%BA0130-web%E7%94%A8.pdf"
+      },
+      {
+       "label": "北海道第6区",
+       "url": "https://www.pref.hokkaido.lg.jp/fs/1/2/8/4/9/3/6/3/_/%E8%A1%86%E8%AD%B06%E5%8C%BA0130-web%E7%94%A8.pdf"
+      },
+      {
+       "label": "北海道第7区",
+       "url": "https://www.pref.hokkaido.lg.jp/fs/1/2/8/4/9/3/6/4/_/%E8%A1%86%E8%AD%B07%E5%8C%BA0130-web%E7%94%A8.pdf"
+      },
+      {
+       "label": "北海道第8区",
+       "url": "https://www.pref.hokkaido.lg.jp/fs/1/2/8/4/9/3/6/5/_/%E8%A1%86%E8%AD%B08%E5%8C%BA0130-web%E7%94%A8.pdf"
+      },
+      {
+       "label": "北海道第9区",
+       "url": "https://www.pref.hokkaido.lg.jp/fs/1/2/8/4/9/3/6/6/_/%E8%A1%86%E8%AD%B09%E5%8C%BA0130-web%E7%94%A8.pdf"
+      },
+      {
+       "label": "北海道第10区",
+       "url": "https://www.pref.hokkaido.lg.jp/fs/1/2/8/4/9/3/6/7/_/%E8%A1%86%E8%AD%B010%E5%8C%BA0130-web%E7%94%A8.pdf"
+      },
+      {
+       "label": "北海道第11区",
+       "url": "https://www.pref.hokkaido.lg.jp/fs/1/2/8/4/9/3/6/8/_/%E8%A1%86%E8%AD%B011%E5%8C%BA0130-web%E7%94%A8.pdf"
+      },
+      {
+       "label": "北海道第12区",
+       "url": "https://www.pref.hokkaido.lg.jp/fs/1/2/8/4/9/3/6/9/_/%E8%A1%86%E8%AD%B012%E5%8C%BA0130-web%E7%94%A8.pdf"
+      },
+      {
+       "label": "比例代表 北海道ブロック",
+       "url": "https://www.pref.hokkaido.lg.jp/fs/1/2/8/4/9/3/7/0/_/%E6%AF%94%E4%BE%8B0130-web%E7%94%A8.pdf"
+      }
+     ],
+     "note": ""
+    },
+    {
+     "pref": "青森県",
+     "page_url": "https://www.pref.aomori.lg.jp/soshiki/senkan/shuugiin51_00.html",
+     "status": "ok",
+     "pdfs": [
+      {
+       "label": "青森県第1区",
+       "url": "https://www.pref.aomori.lg.jp/soshiki/senkan/files2/2026syu-koho-aomori1ku.pdf"
+      },
+      {
+       "label": "青森県第2区",
+       "url": "https://www.pref.aomori.lg.jp/soshiki/senkan/files2/2026syu-koho-aomori2ku.pdf"
+      },
+      {
+       "label": "青森県第3区",
+       "url": "https://www.pref.aomori.lg.jp/soshiki/senkan/files2/2026syu-koho-aomori3ku.pdf"
+      },
+      {
+       "label": "比例代表 東北ブロック",
+       "url": "https://www.pref.aomori.lg.jp/soshiki/senkan/files2/2026syu-koho-hirei.pdf"
+      }
+     ],
+     "note": ""
+    },
+    {
+     "pref": "岩手県",
+     "page_url": "https://www.pref.iwate.jp/iinkai/senkyo/kekka/index.html",
+     "status": "page_not_found",
+     "pdfs": [],
+     "note": "第51回の候補者情報/選挙公報ページ(/iinkai/senkyo/1093939/... 配下, 検索結果に出る)は全て404。選挙結果一覧にも第51回の項目なし。検索に出る /001/078/567/ のPDFは第50回(2024)のもの。要手動確認。"
+    },
+    {
+     "pref": "宮城県",
+     "page_url": "https://www.pref.miyagi.jp/soshiki/senkyo/51syugi.html",
+     "status": "ok",
+     "pdfs": [
+      {
+       "label": "宮城県第1区",
+       "url": "https://www.pref.miyagi.jp/documents/63157/r80208senkyo_1.pdf"
+      },
+      {
+       "label": "宮城県第2区",
+       "url": "https://www.pref.miyagi.jp/documents/63157/r80208senkyo_2.pdf"
+      },
+      {
+       "label": "宮城県第3区",
+       "url": "https://www.pref.miyagi.jp/documents/63157/r80208senkyo_3.pdf"
+      },
+      {
+       "label": "宮城県第4区",
+       "url": "https://www.pref.miyagi.jp/documents/63157/r80208senkyo_4.pdf"
+      },
+      {
+       "label": "宮城県第5区",
+       "url": "https://www.pref.miyagi.jp/documents/63157/r80208senkyo_5.pdf"
+      },
+      {
+       "label": "比例代表 東北ブロック",
+       "url": "https://www.pref.miyagi.jp/documents/63157/hireisenkyokouhou.pdf"
+      }
+     ],
+     "note": ""
+    },
+    {
+     "pref": "秋田県",
+     "page_url": "https://www.pref.akita.lg.jp/pages/archive/93420",
+     "status": "ok",
+     "pdfs": [
+      {
+       "label": "秋田県第1区",
+       "url": "https://www.pref.akita.lg.jp/uploads/public/archive_0000093420_00/R8小選挙区/小選挙区１区.pdf"
+      },
+      {
+       "label": "秋田県第2区",
+       "url": "https://www.pref.akita.lg.jp/uploads/public/archive_0000093420_00/R8小選挙区/小選挙区２区.pdf"
+      },
+      {
+       "label": "秋田県第3区",
+       "url": "https://www.pref.akita.lg.jp/uploads/public/archive_0000093420_00/R8小選挙区/小選挙区３区.pdf"
+      },
+      {
+       "label": "比例代表 東北ブロック",
+       "url": "https://www.pref.akita.lg.jp/uploads/public/archive_0000093420_00/R8比例/比例代表.pdf"
+      }
+     ],
+     "note": "URLは日本語ファイル名のまま(要パーセントエンコード)。候補者別・政党別の分割PDFも同ページに有り(統合版のみ採録)。"
+    },
+    {
+     "pref": "山形県",
+     "page_url": "https://www.pref.yamagata.jp/910001/kensei/senkyo/kakushu_kekka/shuugiinsangiiin/r8syusenkyokekka.html",
+     "status": "ok",
+     "pdfs": [
+      {
+       "label": "山形県第1区",
+       "url": "https://www.pref.yamagata.jp/documents/51810/12_koho_1ku.pdf"
+      },
+      {
+       "label": "山形県第2区",
+       "url": "https://www.pref.yamagata.jp/documents/51810/13_koho_2ku.pdf"
+      },
+      {
+       "label": "山形県第3区",
+       "url": "https://www.pref.yamagata.jp/documents/51810/14_koho_3ku.pdf"
+      },
+      {
+       "label": "比例代表 東北ブロック",
+       "url": "https://www.pref.yamagata.jp/documents/51810/15_koho_hirei.pdf"
+      }
+     ],
+     "note": ""
+    },
+    {
+     "pref": "福島県",
+     "page_url": "https://www.pref.fukushima.lg.jp/sec/62010a/51syu-kouhosyajyouhou.html",
+     "status": "ok",
+     "pdfs": [
+      {
+       "label": "福島県第1区",
+       "url": "https://www.pref.fukushima.lg.jp/uploaded/attachment/724626.pdf"
+      },
+      {
+       "label": "福島県第2区",
+       "url": "https://www.pref.fukushima.lg.jp/uploaded/attachment/724627.pdf"
+      },
+      {
+       "label": "福島県第3区",
+       "url": "https://www.pref.fukushima.lg.jp/uploaded/attachment/724628.pdf"
+      },
+      {
+       "label": "福島県第4区",
+       "url": "https://www.pref.fukushima.lg.jp/uploaded/attachment/724629.pdf"
+      },
+      {
+       "label": "比例代表 東北ブロック",
+       "url": "https://www.pref.fukushima.lg.jp/uploaded/attachment/724754.pdf"
+      }
+     ],
+     "note": "リンク文言は「選挙公報」のみ。区の対応はページ上の掲載順(第1〜4区の見出し順)による。"
+    },
+    {
+     "pref": "茨城県",
+     "page_url": "https://www.pref.ibaraki.jp/somu/shichoson/senkyo/senkan/r8shuugi/kouhosyatoujouhou.html",
+     "status": "ok",
+     "pdfs": [
+      {
+       "label": "茨城県第1区",
+       "url": "https://www.pref.ibaraki.jp/somu/shichoson/senkyo/senkan/r8shuugi/documents/1_ibaraki_51syuuin_sennkykouhou2026.pdf"
+      },
+      {
+       "label": "茨城県第2区",
+       "url": "https://www.pref.ibaraki.jp/somu/shichoson/senkyo/senkan/r8shuugi/documents/2_ibaraki_51syuuin_sennkykouhou2026.pdf"
+      },
+      {
+       "label": "茨城県第3区",
+       "url": "https://www.pref.ibaraki.jp/somu/shichoson/senkyo/senkan/r8shuugi/documents/3_ibaraki_51syuuin_sennkykouhou2026.pdf"
+      },
+      {
+       "label": "茨城県第4区",
+       "url": "https://www.pref.ibaraki.jp/somu/shichoson/senkyo/senkan/r8shuugi/documents/4_ibaraki_51syuuin_sennkykouhou2026.pdf"
+      },
+      {
+       "label": "茨城県第5区",
+       "url": "https://www.pref.ibaraki.jp/somu/shichoson/senkyo/senkan/r8shuugi/documents/5_ibaraki_51syuuin_sennkykouhou2026.pdf"
+      },
+      {
+       "label": "茨城県第6区",
+       "url": "https://www.pref.ibaraki.jp/somu/shichoson/senkyo/senkan/r8shuugi/documents/6_ibaraki_51syuuin_sennkykouhou2026.pdf"
+      },
+      {
+       "label": "茨城県第7区",
+       "url": "https://www.pref.ibaraki.jp/somu/shichoson/senkyo/senkan/r8shuugi/documents/7_ibaraki_51syuuin_sennkykouhou2026.pdf"
+      },
+      {
+       "label": "比例代表 北関東ブロック",
+       "url": "https://www.pref.ibaraki.jp/somu/shichoson/senkyo/senkan/r8shuugi/documents/51_hirei_senkykouhou.pdf"
+      }
+     ],
+     "note": ""
+    },
+    {
+     "pref": "栃木県",
+     "page_url": "https://www.tochigi-senkyo.jp/kouho/index.html",
+     "status": "ok",
+     "pdfs": [
+      {
+       "label": "栃木県第1区",
+       "url": "https://www.tochigi-senkyo.jp/kouho/kouhou1.pdf"
+      },
+      {
+       "label": "栃木県第2区",
+       "url": "https://www.tochigi-senkyo.jp/kouho/kouhou2.pdf"
+      },
+      {
+       "label": "栃木県第3区",
+       "url": "https://www.tochigi-senkyo.jp/kouho/kouhou3.pdf"
+      },
+      {
+       "label": "栃木県第4区",
+       "url": "https://www.tochigi-senkyo.jp/kouho/kouhou4.pdf"
+      },
+      {
+       "label": "栃木県第5区",
+       "url": "https://www.tochigi-senkyo.jp/kouho/kouhou5.pdf"
+      },
+      {
+       "label": "比例代表 北関東ブロック",
+       "url": "https://www.tochigi-senkyo.jp/kouho/kouhou_hirei.pdf"
+      }
+     ],
+     "note": "県選管特設サイト(tochigi-senkyo.jp)。pref.tochigi.lg.jp側は候補者一覧のみ。PDF最終更新2026-01-30を確認。"
+    },
+    {
+     "pref": "群馬県",
+     "page_url": "https://www.pref.gunma.jp/page/738696.html",
+     "status": "ok",
+     "pdfs": [
+      {
+       "label": "群馬県第1区",
+       "url": "https://www.pref.gunma.jp/uploaded/attachment/687755.pdf"
+      },
+      {
+       "label": "群馬県第2区",
+       "url": "https://www.pref.gunma.jp/uploaded/attachment/687756.pdf"
+      },
+      {
+       "label": "群馬県第3区",
+       "url": "https://www.pref.gunma.jp/uploaded/attachment/687757.pdf"
+      },
+      {
+       "label": "群馬県第4区",
+       "url": "https://www.pref.gunma.jp/uploaded/attachment/687758.pdf"
+      },
+      {
+       "label": "群馬県第5区",
+       "url": "https://www.pref.gunma.jp/uploaded/attachment/687759.pdf"
+      },
+      {
+       "label": "比例代表 北関東ブロック",
+       "url": "https://www.pref.gunma.jp/uploaded/attachment/687900.pdf"
+      }
+     ],
+     "note": "リンク文言は「選挙公報」のみ。区の対応はページ上の掲載順による。"
+    },
+    {
+     "pref": "埼玉県",
+     "page_url": "https://www.pref.saitama.lg.jp/e1701/r8-1-kouhosya.html",
+     "status": "no_pdf",
+     "pdfs": [],
+     "note": "候補者・名簿届出政党等情報ページは現存するが、候補者一覧PDFのみで選挙公報PDFは掲載終了(第49回分は /documents/200065/ に残存)。要手動確認。"
+    },
+    {
+     "pref": "千葉県",
+     "page_url": "https://www.pref.chiba.lg.jp/senkan/kakokekka/r8-0208-kako.html",
+     "status": "ok",
+     "pdfs": [
+      {
+       "label": "千葉県第1区",
+       "url": "https://www.pref.chiba.lg.jp/senkan/kakokekka/documents/1001-allr8.pdf"
+      },
+      {
+       "label": "千葉県第2区",
+       "url": "https://www.pref.chiba.lg.jp/senkan/kakokekka/documents/1002-allr8.pdf"
+      },
+      {
+       "label": "千葉県第3区",
+       "url": "https://www.pref.chiba.lg.jp/senkan/kakokekka/documents/1003-allr8.pdf"
+      },
+      {
+       "label": "千葉県第4区",
+       "url": "https://www.pref.chiba.lg.jp/senkan/kakokekka/documents/1004-allr8.pdf"
+      },
+      {
+       "label": "千葉県第5区",
+       "url": "https://www.pref.chiba.lg.jp/senkan/kakokekka/documents/1005-allr8.pdf"
+      },
+      {
+       "label": "千葉県第6区",
+       "url": "https://www.pref.chiba.lg.jp/senkan/kakokekka/documents/1006-allr8.pdf"
+      },
+      {
+       "label": "千葉県第7区",
+       "url": "https://www.pref.chiba.lg.jp/senkan/kakokekka/documents/1007-allr8.pdf"
+      },
+      {
+       "label": "千葉県第8区",
+       "url": "https://www.pref.chiba.lg.jp/senkan/kakokekka/documents/1008-allr8.pdf"
+      },
+      {
+       "label": "千葉県第9区",
+       "url": "https://www.pref.chiba.lg.jp/senkan/kakokekka/documents/1009-allr8.pdf"
+      },
+      {
+       "label": "千葉県第10区",
+       "url": "https://www.pref.chiba.lg.jp/senkan/kakokekka/documents/1010-allr8.pdf"
+      },
+      {
+       "label": "千葉県第11区",
+       "url": "https://www.pref.chiba.lg.jp/senkan/kakokekka/documents/1011-allr8.pdf"
+      },
+      {
+       "label": "千葉県第12区",
+       "url": "https://www.pref.chiba.lg.jp/senkan/kakokekka/documents/1012-allr8.pdf"
+      },
+      {
+       "label": "千葉県第13区",
+       "url": "https://www.pref.chiba.lg.jp/senkan/kakokekka/documents/1013-allr8.pdf"
+      },
+      {
+       "label": "千葉県第14区",
+       "url": "https://www.pref.chiba.lg.jp/senkan/kakokekka/documents/1014-allr8.pdf"
+      },
+      {
+       "label": "比例代表 南関東ブロック",
+       "url": "https://www.pref.chiba.lg.jp/senkan/kakokekka/documents/2000-allr8.pdf"
+      }
+     ],
+     "note": "臨時特設サイト 202601-shuinsen.pref.chiba.lg.jp はDNS解決不可(閉鎖)。過去の選挙結果ページに掲載。"
+    },
+    {
+     "pref": "東京都",
+     "page_url": "https://www.senkyo.metro.tokyo.lg.jp/election/senkyo-kouhou/shuugiin-kouhou/",
+     "status": "ok",
+     "pdfs": [
+      {
+       "label": "東京都第1区",
+       "url": "https://www.senkyo.metro.tokyo.lg.jp/documents/d/senkyo/r8syuin_shou_01-"
+      },
+      {
+       "label": "東京都第2区",
+       "url": "https://www.senkyo.metro.tokyo.lg.jp/documents/d/senkyo/r8syuin_shou_02-"
+      },
+      {
+       "label": "東京都第3区",
+       "url": "https://www.senkyo.metro.tokyo.lg.jp/documents/d/senkyo/r8syuin_shou_03-"
+      },
+      {
+       "label": "東京都第4区",
+       "url": "https://www.senkyo.metro.tokyo.lg.jp/documents/d/senkyo/r8syuin_shou_04-"
+      },
+      {
+       "label": "東京都第5区",
+       "url": "https://www.senkyo.metro.tokyo.lg.jp/documents/d/senkyo/r8syuin_shou_05-"
+      },
+      {
+       "label": "東京都第6区",
+       "url": "https://www.senkyo.metro.tokyo.lg.jp/documents/d/senkyo/r8syuin_shou_06-"
+      },
+      {
+       "label": "東京都第7区",
+       "url": "https://www.senkyo.metro.tokyo.lg.jp/documents/d/senkyo/r8syuin_shou_07-"
+      },
+      {
+       "label": "東京都第8区",
+       "url": "https://www.senkyo.metro.tokyo.lg.jp/documents/d/senkyo/r8syuin_shou_08-"
+      },
+      {
+       "label": "東京都第9区",
+       "url": "https://www.senkyo.metro.tokyo.lg.jp/documents/d/senkyo/r8syuin_shou_09-"
+      },
+      {
+       "label": "東京都第10区",
+       "url": "https://www.senkyo.metro.tokyo.lg.jp/documents/d/senkyo/r8syuin_shou_10-"
+      },
+      {
+       "label": "東京都第11区",
+       "url": "https://www.senkyo.metro.tokyo.lg.jp/documents/d/senkyo/r8syuin_shou_11-"
+      },
+      {
+       "label": "東京都第12区",
+       "url": "https://www.senkyo.metro.tokyo.lg.jp/documents/d/senkyo/r8syuin_shou_12-"
+      },
+      {
+       "label": "東京都第13区",
+       "url": "https://www.senkyo.metro.tokyo.lg.jp/documents/d/senkyo/r8syuin_shou_13-"
+      },
+      {
+       "label": "東京都第14区",
+       "url": "https://www.senkyo.metro.tokyo.lg.jp/documents/d/senkyo/r8syuin_shou_14-"
+      },
+      {
+       "label": "東京都第15区",
+       "url": "https://www.senkyo.metro.tokyo.lg.jp/documents/d/senkyo/r8syuin_shou_15-"
+      },
+      {
+       "label": "東京都第16区",
+       "url": "https://www.senkyo.metro.tokyo.lg.jp/documents/d/senkyo/r8syuin_shou_16-"
+      },
+      {
+       "label": "東京都第17区",
+       "url": "https://www.senkyo.metro.tokyo.lg.jp/documents/d/senkyo/r8syuin_shou_17-"
+      },
+      {
+       "label": "東京都第18区",
+       "url": "https://www.senkyo.metro.tokyo.lg.jp/documents/d/senkyo/r8syuin_shou_18-"
+      },
+      {
+       "label": "東京都第19区",
+       "url": "https://www.senkyo.metro.tokyo.lg.jp/documents/d/senkyo/r8syuin_shou_19-"
+      },
+      {
+       "label": "東京都第20区",
+       "url": "https://www.senkyo.metro.tokyo.lg.jp/documents/d/senkyo/r8syuin_shou_20-"
+      },
+      {
+       "label": "東京都第21区",
+       "url": "https://www.senkyo.metro.tokyo.lg.jp/documents/d/senkyo/r8syuin_shou_21-"
+      },
+      {
+       "label": "東京都第22区",
+       "url": "https://www.senkyo.metro.tokyo.lg.jp/documents/d/senkyo/r8syuin_shou_22-"
+      },
+      {
+       "label": "東京都第23区",
+       "url": "https://www.senkyo.metro.tokyo.lg.jp/documents/d/senkyo/r8syuin_shou_23-"
+      },
+      {
+       "label": "東京都第24区",
+       "url": "https://www.senkyo.metro.tokyo.lg.jp/documents/d/senkyo/r8syuin_shou_24-"
+      },
+      {
+       "label": "東京都第25区",
+       "url": "https://www.senkyo.metro.tokyo.lg.jp/documents/d/senkyo/r8syuin_shou_25-"
+      },
+      {
+       "label": "東京都第26区",
+       "url": "https://www.senkyo.metro.tokyo.lg.jp/documents/d/senkyo/r8syuin_shou_26-"
+      },
+      {
+       "label": "東京都第27区",
+       "url": "https://www.senkyo.metro.tokyo.lg.jp/documents/d/senkyo/r8syuin_shou_27-"
+      },
+      {
+       "label": "東京都第28区",
+       "url": "https://www.senkyo.metro.tokyo.lg.jp/documents/d/senkyo/r8syuin_shou_28-"
+      },
+      {
+       "label": "東京都第29区",
+       "url": "https://www.senkyo.metro.tokyo.lg.jp/documents/d/senkyo/r8syuin_shou_29-"
+      },
+      {
+       "label": "東京都第30区",
+       "url": "https://www.senkyo.metro.tokyo.lg.jp/documents/d/senkyo/r8syuin_shou_30-"
+      },
+      {
+       "label": "比例代表 東京ブロック",
+       "url": "https://www.senkyo.metro.tokyo.lg.jp/documents/d/senkyo/tsuk7150-yomiuri-pm-co-jp_-"
+      }
+     ],
+     "note": "URLに.pdf拡張子なし(Liferay文書URL)だがリンク文言はPDF形式と明記。衆院選特設ページは2026-02-20閉鎖、「選挙公報（前回分）」ページに掲載。"
+    },
+    {
+     "pref": "神奈川県",
+     "page_url": "https://www.pref.kanagawa.jp/docs/em7/cnt/f5/syuugikekka.html",
+     "status": "ok",
+     "pdfs": [
+      {
+       "label": "神奈川県第1区〜第5区",
+       "url": "https://www.pref.kanagawa.jp/documents/110780/r8koho1-5.pdf"
+      },
+      {
+       "label": "神奈川県第6区〜第10区",
+       "url": "https://www.pref.kanagawa.jp/documents/110780/r8koho6-10.pdf"
+      },
+      {
+       "label": "神奈川県第11区〜第15区",
+       "url": "https://www.pref.kanagawa.jp/documents/110780/r8koho11-15.pdf"
+      },
+      {
+       "label": "神奈川県第16区〜第20区",
+       "url": "https://www.pref.kanagawa.jp/documents/110780/r8koho16-20.pdf"
+      },
+      {
+       "label": "比例代表 南関東ブロック",
+       "url": "https://www.pref.kanagawa.jp/documents/110780/r8hireikoho.pdf"
+      }
+     ],
+     "note": "小選挙区は5区ずつ結合した4ファイル。同ページに過去回(r6等)も並ぶので r8 のみ採録。"
+    },
+    {
+     "pref": "新潟県",
+     "page_url": "https://www.pref.niigata.lg.jp/site/senkyo/r8-shugi-kokushin.html",
+     "status": "no_pdf",
+     "pdfs": [],
+     "note": "県選管の2026衆院選ページ（結果ページ）に選挙公報PDFの掲載なし。音声読み上げ用公報ページ r8shugi-kouhou-yomiage.html は404（選挙後に削除と推定）。要手動確認（新潟県選管へ問い合わせ等）。"
+    },
+    {
+     "pref": "富山県",
+     "page_url": "https://www.pref.toyama.jp/500/kensei/kenseiunei/senkyo/iinkai/gs_kekka.html",
+     "status": "ok",
+     "pdfs": [
+      {
+       "label": "富山県 小選挙区（第1〜3区 一括）",
+       "url": "https://www.pref.toyama.jp/documents/13804/2026_syuugi_syou.pdf"
+      },
+      {
+       "label": "比例代表 北陸信越ブロック",
+       "url": "https://www.pref.toyama.jp/documents/13804/2026_syuugi_hirei.pdf"
+      }
+     ],
+     "note": "選挙結果ページ令和8年2月8日行の『選挙公報・審査公報』欄。小選挙区は3区分が1PDFに統合。別途、候補者別の音声読み上げ用PDFあり: https://www.pref.toyama.jp/500/r8syuu/8syuu-koho-onsei.html"
+    },
+    {
+     "pref": "石川県",
+     "page_url": "https://www.pref.ishikawa.lg.jp/senkan/51shugi/kouhoshajyouhou.html",
+     "status": "ok",
+     "pdfs": [
+      {
+       "label": "石川県第1区",
+       "url": "https://www.pref.ishikawa.lg.jp/senkan/51shugi/documents/ishikawa51shugisenkyokukouhou1.pdf"
+      },
+      {
+       "label": "石川県第2区",
+       "url": "https://www.pref.ishikawa.lg.jp/senkan/51shugi/documents/ishikawa51shugisenkyokukouhou2.pdf"
+      },
+      {
+       "label": "石川県第3区",
+       "url": "https://www.pref.ishikawa.lg.jp/senkan/51shugi/documents/ishikawa51shugisenkyokukouhou3.pdf"
+      },
+      {
+       "label": "比例代表 北陸信越ブロック",
+       "url": "https://www.pref.ishikawa.lg.jp/senkan/51shugi/documents/ishikawa51shugisenkyokouhouhirei.pdf"
+      }
+     ],
+     "note": "リンク文言は全て『選挙公報』。区はファイル名の番号と掲載順で判別。"
+    },
+    {
+     "pref": "福井県",
+     "page_url": "https://www.pref.fukui.lg.jp/doc/senkan/51shuuinsen/51kouhosya-jyouhou.html",
+     "status": "ok",
+     "pdfs": [
+      {
+       "label": "福井県第1区",
+       "url": "https://www.pref.fukui.lg.jp/doc/senkan/51shuuinsen/51kouhosya-jyouhou_d/fil/001.pdf"
+      },
+      {
+       "label": "福井県第2区",
+       "url": "https://www.pref.fukui.lg.jp/doc/senkan/51shuuinsen/51kouhosya-jyouhou_d/fil/002.pdf"
+      },
+      {
+       "label": "比例代表 北陸信越ブロック",
+       "url": "https://www.pref.fukui.lg.jp/doc/senkan/51shuuinsen/51kouhosya-jyouhou_d/fil/003.pdf"
+      }
+     ],
+     "note": "各区見出し直下の『選挙公報』リンク。"
+    },
+    {
+     "pref": "山梨県",
+     "page_url": "https://www.pref.yamanashi.jp/senkyo/r7_51shu_kouhosyajouhou.html",
+     "status": "ok",
+     "pdfs": [
+      {
+       "label": "山梨県第1区",
+       "url": "https://www.pref.yamanashi.jp/documents/124285/51shu_shosenkyoku1_kouhou.pdf"
+      },
+      {
+       "label": "山梨県第2区",
+       "url": "https://www.pref.yamanashi.jp/documents/124285/51shu_shosenkyoku2_kouhou.pdf"
+      },
+      {
+       "label": "比例代表 南関東ブロック",
+       "url": "https://www.pref.yamanashi.jp/documents/124285/51shu_hirei_kouhou.pdf"
+      }
+     ],
+     "note": "区はファイル名で判別。"
+    },
+    {
+     "pref": "長野県",
+     "page_url": "https://www.pref.nagano.lg.jp/senkan/shu2026/kouhosha.html",
+     "status": "ok",
+     "pdfs": [
+      {
+       "label": "長野県第1区",
+       "url": "https://www.pref.nagano.lg.jp/senkan/shu2026/documents/shu2026_20naganokenkouhou-1.pdf"
+      },
+      {
+       "label": "長野県第2区",
+       "url": "https://www.pref.nagano.lg.jp/senkan/shu2026/documents/shu2026_20naganokenkouhou-2.pdf"
+      },
+      {
+       "label": "長野県第3区",
+       "url": "https://www.pref.nagano.lg.jp/senkan/shu2026/documents/shu2026_20naganokenkouhou-3.pdf"
+      },
+      {
+       "label": "長野県第4区",
+       "url": "https://www.pref.nagano.lg.jp/senkan/shu2026/documents/shu2026_20naganokenkouhou-4.pdf"
+      },
+      {
+       "label": "長野県第5区",
+       "url": "https://www.pref.nagano.lg.jp/senkan/shu2026/documents/shu2026_20naganokenkouhou-5_1.pdf"
+      },
+      {
+       "label": "比例代表 北陸信越ブロック",
+       "url": "https://www.pref.nagano.lg.jp/senkan/shu2026/documents/shu2026_hirei-hokurikushinetsukouhou.pdf"
+      }
+     ],
+     "note": "リンク文言は全て『選挙公報』。区はファイル名で判別（第5区は -5_1.pdf）。"
+    },
+    {
+     "pref": "岐阜県",
+     "page_url": "https://www.pref.gifu.lg.jp/site/r08shugiin/477622.html",
+     "status": "ok",
+     "pdfs": [
+      {
+       "label": "岐阜県第1区",
+       "url": "https://www.pref.gifu.lg.jp/uploaded/attachment/483838.pdf"
+      },
+      {
+       "label": "岐阜県第2区",
+       "url": "https://www.pref.gifu.lg.jp/uploaded/attachment/483849.pdf"
+      },
+      {
+       "label": "岐阜県第3区",
+       "url": "https://www.pref.gifu.lg.jp/uploaded/attachment/483847.pdf"
+      },
+      {
+       "label": "岐阜県第4区",
+       "url": "https://www.pref.gifu.lg.jp/uploaded/attachment/483845.pdf"
+      },
+      {
+       "label": "岐阜県第5区",
+       "url": "https://www.pref.gifu.lg.jp/uploaded/attachment/483851.pdf"
+      },
+      {
+       "label": "比例代表 東海ブロック",
+       "url": "https://www.pref.gifu.lg.jp/uploaded/attachment/483854.pdf"
+      }
+     ],
+     "note": "各区見出し直下の『選挙公報』リンク。"
+    },
+    {
+     "pref": "静岡県",
+     "page_url": "https://www.pref.shizuoka.jp/kensei/senkyo/shugiin2026/kouhosha.html",
+     "status": "ok",
+     "pdfs": [
+      {
+       "label": "静岡県第1区",
+       "url": "https://www.pref.shizuoka.jp/_res/projects/default_project/_page_/001/079/112/r8s_senkyoku1_genkou.pdf"
+      },
+      {
+       "label": "静岡県第2区",
+       "url": "https://www.pref.shizuoka.jp/_res/projects/default_project/_page_/001/079/112/r8s_senkyoku2_genkou.pdf"
+      },
+      {
+       "label": "静岡県第3区",
+       "url": "https://www.pref.shizuoka.jp/_res/projects/default_project/_page_/001/079/112/r8s_senkyoku3_genkou.pdf"
+      },
+      {
+       "label": "静岡県第4区",
+       "url": "https://www.pref.shizuoka.jp/_res/projects/default_project/_page_/001/079/112/r8s_senkyoku4_genkou.pdf"
+      },
+      {
+       "label": "静岡県第5区",
+       "url": "https://www.pref.shizuoka.jp/_res/projects/default_project/_page_/001/079/112/r8s_senkyoku5_genkou.pdf"
+      },
+      {
+       "label": "静岡県第6区",
+       "url": "https://www.pref.shizuoka.jp/_res/projects/default_project/_page_/001/079/112/r8s_senkyoku6_genkou.pdf"
+      },
+      {
+       "label": "静岡県第7区",
+       "url": "https://www.pref.shizuoka.jp/_res/projects/default_project/_page_/001/079/112/r8s_senkyoku7_genkou.pdf"
+      },
+      {
+       "label": "静岡県第8区",
+       "url": "https://www.pref.shizuoka.jp/_res/projects/default_project/_page_/001/079/112/r8s_senkyoku8_genkou.pdf"
+      },
+      {
+       "label": "比例代表 東海ブロック",
+       "url": "https://www.pref.shizuoka.jp/_res/projects/default_project/_page_/001/079/112/r8s_hirei_genkou.pdf"
+      }
+     ],
+     "note": "リンク文言『選挙公報(静岡県 第N区)』『選挙公報(比例代表)』。"
+    },
+    {
+     "pref": "愛知県",
+     "page_url": "https://www.pref.aichi.jp/soshiki/senkyo/0000087359.html",
+     "status": "ok",
+     "pdfs": [
+      {
+       "label": "愛知県第1区",
+       "url": "https://www.pref.aichi.jp/uploaded/attachment/599817.pdf"
+      },
+      {
+       "label": "愛知県第2区",
+       "url": "https://www.pref.aichi.jp/uploaded/attachment/599818.pdf"
+      },
+      {
+       "label": "愛知県第3区",
+       "url": "https://www.pref.aichi.jp/uploaded/attachment/599821.pdf"
+      },
+      {
+       "label": "愛知県第4区",
+       "url": "https://www.pref.aichi.jp/uploaded/attachment/599822.pdf"
+      },
+      {
+       "label": "愛知県第5区",
+       "url": "https://www.pref.aichi.jp/uploaded/attachment/599824.pdf"
+      },
+      {
+       "label": "愛知県第6区",
+       "url": "https://www.pref.aichi.jp/uploaded/attachment/599825.pdf"
+      },
+      {
+       "label": "愛知県第7区",
+       "url": "https://www.pref.aichi.jp/uploaded/attachment/599827.pdf"
+      },
+      {
+       "label": "愛知県第8区",
+       "url": "https://www.pref.aichi.jp/uploaded/attachment/599830.pdf"
+      },
+      {
+       "label": "愛知県第9区",
+       "url": "https://www.pref.aichi.jp/uploaded/attachment/599832.pdf"
+      },
+      {
+       "label": "愛知県第10区",
+       "url": "https://www.pref.aichi.jp/uploaded/attachment/599833.pdf"
+      },
+      {
+       "label": "愛知県第11区",
+       "url": "https://www.pref.aichi.jp/uploaded/attachment/599834.pdf"
+      },
+      {
+       "label": "愛知県第12区",
+       "url": "https://www.pref.aichi.jp/uploaded/attachment/599835.pdf"
+      },
+      {
+       "label": "愛知県第13区",
+       "url": "https://www.pref.aichi.jp/uploaded/attachment/599836.pdf"
+      },
+      {
+       "label": "愛知県第14区",
+       "url": "https://www.pref.aichi.jp/uploaded/attachment/599837.pdf"
+      },
+      {
+       "label": "愛知県第15区",
+       "url": "https://www.pref.aichi.jp/uploaded/attachment/599838.pdf"
+      },
+      {
+       "label": "愛知県第16区",
+       "url": "https://www.pref.aichi.jp/uploaded/attachment/599840.pdf"
+      },
+      {
+       "label": "比例代表 東海ブロック",
+       "url": "https://www.pref.aichi.jp/uploaded/attachment/599841.pdf"
+      }
+     ],
+     "note": "初回取得で一覧取得。再取得時はIncapsulaのボット対策でリダイレクトループ（WebFetchも失敗）。リンク文言は『第N区』『比例代表（東海選挙区）』。 スクリプトからは403（Imperva）。KOUHOU_COOKIE で取得。"
+    },
+    {
+     "pref": "三重県",
+     "page_url": "https://www.pref.mie.lg.jp/SENKAN/HP/000237750_000010001.htm",
+     "status": "ok",
+     "pdfs": [
+      {
+       "label": "三重県第1区",
+       "url": "https://www.pref.mie.lg.jp/common/content/001237889.pdf"
+      },
+      {
+       "label": "三重県第2区",
+       "url": "https://www.pref.mie.lg.jp/common/content/001237890.pdf"
+      },
+      {
+       "label": "三重県第3区",
+       "url": "https://www.pref.mie.lg.jp/common/content/001237891.pdf"
+      },
+      {
+       "label": "三重県第4区",
+       "url": "https://www.pref.mie.lg.jp/common/content/001237892.pdf"
+      },
+      {
+       "label": "比例代表 東海ブロック",
+       "url": "https://www.pref.mie.lg.jp/common/content/001237893.pdf"
+      }
+     ],
+     "note": "各区見出し直下の『選挙公報』リンク。"
+    },
+    {
+     "pref": "滋賀県",
+     "page_url": "https://www.pref.shiga.lg.jp/senkyo/kokusei/syuugiin/348263.html",
+     "status": "ok",
+     "pdfs": [
+      {
+       "label": "滋賀県第1区",
+       "url": "https://www.pref.shiga.lg.jp/documents/23093/5588407.pdf"
+      },
+      {
+       "label": "滋賀県第2区",
+       "url": "https://www.pref.shiga.lg.jp/documents/23093/5588408.pdf"
+      },
+      {
+       "label": "滋賀県第3区",
+       "url": "https://www.pref.shiga.lg.jp/documents/23093/5588409.pdf"
+      },
+      {
+       "label": "比例代表 近畿ブロック",
+       "url": "https://www.pref.shiga.lg.jp/documents/23093/5588410.pdf"
+      }
+     ],
+     "note": ""
+    },
+    {
+     "pref": "京都府",
+     "page_url": "https://www.pref.kyoto.jp/senkyo/r8shugiin_onseiyomiage.html",
+     "status": "ok",
+     "pdfs": [
+      {
+       "label": "京都府第1区 1horiba",
+       "url": "https://www.pref.kyoto.jp/senkyo/documents/1-1horiba_1.pdf"
+      },
+      {
+       "label": "京都府第1区 2katsura",
+       "url": "https://www.pref.kyoto.jp/senkyo/documents/1-2katsura.pdf"
+      },
+      {
+       "label": "京都府第1区 3katsume",
+       "url": "https://www.pref.kyoto.jp/senkyo/documents/1-3katsume.pdf"
+      },
+      {
+       "label": "京都府第1区 4hamada",
+       "url": "https://www.pref.kyoto.jp/senkyo/documents/1-4hamada.pdf"
+      },
+      {
+       "label": "京都府第1区 5sasaki",
+       "url": "https://www.pref.kyoto.jp/senkyo/documents/1-5sasaki.pdf"
+      },
+      {
+       "label": "京都府第1区 6taniguchi",
+       "url": "https://www.pref.kyoto.jp/senkyo/documents/1-6taniguchi.pdf"
+      },
+      {
+       "label": "京都府第1区 7kamano",
+       "url": "https://www.pref.kyoto.jp/senkyo/documents/1-7kamano.pdf"
+      },
+      {
+       "label": "京都府第1区 8hiratake",
+       "url": "https://www.pref.kyoto.jp/senkyo/documents/1-8hiratake.pdf"
+      },
+      {
+       "label": "京都府第2区 1kouno",
+       "url": "https://www.pref.kyoto.jp/senkyo/documents/2-1kouno.pdf"
+      },
+      {
+       "label": "京都府第2区 2sakai",
+       "url": "https://www.pref.kyoto.jp/senkyo/documents/2-2sakai.pdf"
+      },
+      {
+       "label": "京都府第2区 3fujita",
+       "url": "https://www.pref.kyoto.jp/senkyo/documents/2-3fujita.pdf"
+      },
+      {
+       "label": "京都府第2区 4tsuzimura",
+       "url": "https://www.pref.kyoto.jp/senkyo/documents/2-4tsuzimura.pdf"
+      },
+      {
+       "label": "京都府第2区 5maehara",
+       "url": "https://www.pref.kyoto.jp/senkyo/documents/2-5maehara.pdf"
+      },
+      {
+       "label": "京都府第3区 1shigemoto",
+       "url": "https://www.pref.kyoto.jp/senkyo/documents/3-1shigemoto.pdf"
+      },
+      {
+       "label": "京都府第3区 2higuchi",
+       "url": "https://www.pref.kyoto.jp/senkyo/documents/3-2higuchi.pdf"
+      },
+      {
+       "label": "京都府第3区 3kimura",
+       "url": "https://www.pref.kyoto.jp/senkyo/documents/3-3kimura_1.pdf"
+      },
+      {
+       "label": "京都府第3区 4izumi",
+       "url": "https://www.pref.kyoto.jp/senkyo/documents/3-4izumi.pdf"
+      },
+      {
+       "label": "京都府第4区 1kitagami",
+       "url": "https://www.pref.kyoto.jp/senkyo/documents/4-1kitagami.pdf"
+      },
+      {
+       "label": "京都府第4区 2yoshida",
+       "url": "https://www.pref.kyoto.jp/senkyo/documents/4-2yoshida.pdf"
+      },
+      {
+       "label": "京都府第5区 1honda",
+       "url": "https://www.pref.kyoto.jp/senkyo/documents/5-1honda.pdf"
+      },
+      {
+       "label": "京都府第6区 1daina",
+       "url": "https://www.pref.kyoto.jp/senkyo/documents/6-1daina.pdf"
+      },
+      {
+       "label": "京都府第6区 2yamanoi",
+       "url": "https://www.pref.kyoto.jp/senkyo/documents/6-2yamanoi.pdf"
+      },
+      {
+       "label": "京都府第6区 3kamijo",
+       "url": "https://www.pref.kyoto.jp/senkyo/documents/6-3kamijo.pdf"
+      },
+      {
+       "label": "京都府第6区 4sonosaki",
+       "url": "https://www.pref.kyoto.jp/senkyo/documents/6-4sonosaki.pdf"
+      },
+      {
+       "label": "比例代表 近畿ブロック reiwa",
+       "url": "https://www.pref.kyoto.jp/senkyo/documents/1reiwa.pdf"
+      },
+      {
+       "label": "比例代表 近畿ブロック sansei",
+       "url": "https://www.pref.kyoto.jp/senkyo/documents/2sansei.pdf"
+      },
+      {
+       "label": "比例代表 近畿ブロック kokumin",
+       "url": "https://www.pref.kyoto.jp/senkyo/documents/3kokumin.pdf"
+      },
+      {
+       "label": "比例代表 近畿ブロック chudo",
+       "url": "https://www.pref.kyoto.jp/senkyo/documents/4chudo.pdf"
+      },
+      {
+       "label": "比例代表 近畿ブロック ishin",
+       "url": "https://www.pref.kyoto.jp/senkyo/documents/5ishin.pdf"
+      },
+      {
+       "label": "比例代表 近畿ブロック mirai",
+       "url": "https://www.pref.kyoto.jp/senkyo/documents/6mirai.pdf"
+      },
+      {
+       "label": "比例代表 近畿ブロック syamin",
+       "url": "https://www.pref.kyoto.jp/senkyo/documents/7syamin.pdf"
+      },
+      {
+       "label": "比例代表 近畿ブロック kyosan",
+       "url": "https://www.pref.kyoto.jp/senkyo/documents/8kyosan.pdf"
+      },
+      {
+       "label": "比例代表 近畿ブロック hosyu",
+       "url": "https://www.pref.kyoto.jp/senkyo/documents/9hosyu.pdf"
+      },
+      {
+       "label": "比例代表 近畿ブロック zimin",
+       "url": "https://www.pref.kyoto.jp/senkyo/documents/10zimin.pdf"
+      }
+     ],
+     "note": "Combined bulletin PDFs not found; main page https://www.pref.kyoto.jp/senkyo/r8shugiin.html has only candidate lists. These are per-candidate/per-party 音声読み上げ対応データ (candidate-submitted bulletin text). District and name inferred from filenames (romaji). Manual check recommended."
+    },
+    {
+     "pref": "大阪府",
+     "page_url": "https://www.pref.osaka.lg.jp/o190010/senkan/r8syuugiinsenkyo/kouhosya.html",
+     "status": "ok",
+     "pdfs": [
+      {
+       "label": "大阪府第1区",
+       "url": "https://www.pref.osaka.lg.jp/documents/123936/kouhou1_1.pdf"
+      },
+      {
+       "label": "大阪府第2区",
+       "url": "https://www.pref.osaka.lg.jp/documents/123936/kouhou2.pdf"
+      },
+      {
+       "label": "大阪府第3区",
+       "url": "https://www.pref.osaka.lg.jp/documents/123936/kouhou3.pdf"
+      },
+      {
+       "label": "大阪府第4区",
+       "url": "https://www.pref.osaka.lg.jp/documents/123936/kouhou4_1.pdf"
+      },
+      {
+       "label": "大阪府第5区",
+       "url": "https://www.pref.osaka.lg.jp/documents/123936/kouhou5_1.pdf"
+      },
+      {
+       "label": "大阪府第6区",
+       "url": "https://www.pref.osaka.lg.jp/documents/123936/kouhou6.pdf"
+      },
+      {
+       "label": "大阪府第7区",
+       "url": "https://www.pref.osaka.lg.jp/documents/123936/kouhou7.pdf"
+      },
+      {
+       "label": "大阪府第8区",
+       "url": "https://www.pref.osaka.lg.jp/documents/123936/kouhou8.pdf"
+      },
+      {
+       "label": "大阪府第9区",
+       "url": "https://www.pref.osaka.lg.jp/documents/123936/kouhou9.pdf"
+      },
+      {
+       "label": "大阪府第10区",
+       "url": "https://www.pref.osaka.lg.jp/documents/123936/kouhou10.pdf"
+      },
+      {
+       "label": "大阪府第11区",
+       "url": "https://www.pref.osaka.lg.jp/documents/123936/kouhou11.pdf"
+      },
+      {
+       "label": "大阪府第12区",
+       "url": "https://www.pref.osaka.lg.jp/documents/123936/kouhou12.pdf"
+      },
+      {
+       "label": "大阪府第13区",
+       "url": "https://www.pref.osaka.lg.jp/documents/123936/kouhou13.pdf"
+      },
+      {
+       "label": "大阪府第14区",
+       "url": "https://www.pref.osaka.lg.jp/documents/123936/kouhou14.pdf"
+      },
+      {
+       "label": "大阪府第15区",
+       "url": "https://www.pref.osaka.lg.jp/documents/123936/kouhou15.pdf"
+      },
+      {
+       "label": "大阪府第16区",
+       "url": "https://www.pref.osaka.lg.jp/documents/123936/kouhou16.pdf"
+      },
+      {
+       "label": "大阪府第17区",
+       "url": "https://www.pref.osaka.lg.jp/documents/123936/kouhou17.pdf"
+      },
+      {
+       "label": "大阪府第18区",
+       "url": "https://www.pref.osaka.lg.jp/documents/123936/kouhou18.pdf"
+      },
+      {
+       "label": "大阪府第19区",
+       "url": "https://www.pref.osaka.lg.jp/documents/123936/kouhou19.pdf"
+      },
+      {
+       "label": "比例代表 近畿ブロック",
+       "url": "https://www.pref.osaka.lg.jp/documents/123936/kouhou-hirei.pdf"
+      }
+     ],
+     "note": "Link text is just '選挙公報'; district inferred from filename kouhouN (page order matches 1-19). kouhou-hirei.pdf shows same size as kouhou1_1 (4,574KB) on page - verify it is not a duplicate."
+    },
+    {
+     "pref": "兵庫県",
+     "page_url": "https://web.pref.hyogo.lg.jp/si01/51syuuinnsenn.html",
+     "status": "ok",
+     "pdfs": [
+      {
+       "label": "兵庫県第1区",
+       "url": "https://web.pref.hyogo.lg.jp/si01/documents/sennkyokouhou1.pdf"
+      },
+      {
+       "label": "兵庫県第2区",
+       "url": "https://web.pref.hyogo.lg.jp/si01/documents/sennkyokouhou2.pdf"
+      },
+      {
+       "label": "兵庫県第3区",
+       "url": "https://web.pref.hyogo.lg.jp/si01/documents/sennkyokouhou3.pdf"
+      },
+      {
+       "label": "兵庫県第4区",
+       "url": "https://web.pref.hyogo.lg.jp/si01/documents/sennkyokouhou4.pdf"
+      },
+      {
+       "label": "兵庫県第5区",
+       "url": "https://web.pref.hyogo.lg.jp/si01/documents/sennkyokouhou5.pdf"
+      },
+      {
+       "label": "兵庫県第6区",
+       "url": "https://web.pref.hyogo.lg.jp/si01/documents/sennkyokouhou6.pdf"
+      },
+      {
+       "label": "兵庫県第7区",
+       "url": "https://web.pref.hyogo.lg.jp/si01/documents/sennkyokouhou7.pdf"
+      },
+      {
+       "label": "兵庫県第8区",
+       "url": "https://web.pref.hyogo.lg.jp/si01/documents/sennkyokouhou8.pdf"
+      },
+      {
+       "label": "兵庫県第9区",
+       "url": "https://web.pref.hyogo.lg.jp/si01/documents/sennkyokouhou9.pdf"
+      },
+      {
+       "label": "兵庫県第10区",
+       "url": "https://web.pref.hyogo.lg.jp/si01/documents/sennkyokouhou10.pdf"
+      },
+      {
+       "label": "兵庫県第11区",
+       "url": "https://web.pref.hyogo.lg.jp/si01/documents/sennkyokouhou11.pdf"
+      },
+      {
+       "label": "兵庫県第12区",
+       "url": "https://web.pref.hyogo.lg.jp/si01/documents/sennkyokouhou12.pdf"
+      },
+      {
+       "label": "比例代表 近畿ブロック",
+       "url": "https://web.pref.hyogo.lg.jp/si01/documents/hireisennkyokouhou.pdf"
+      }
+     ],
+     "note": "Link text '選挙公報'; district inferred from filename/page order. Special site senkyo.pref.hyogo.lg.jp did not resolve (DNS). Per-candidate 音声 PDFs also at https://web.pref.hyogo.lg.jp/si01/onseigenkou.html"
+    },
+    {
+     "pref": "奈良県",
+     "page_url": "https://www.pref.nara.lg.jp/n173/71327.html",
+     "status": "no_pdf",
+     "pdfs": [],
+     "note": "Only 投開票速報/results page found; no bulletin PDFs on pref.nara.lg.jp (likely removed after election). www.pref.nara.jp returns 403. Manual follow-up."
+    },
+    {
+     "pref": "和歌山県",
+     "page_url": "https://www.pref.wakayama.lg.jp/prefg/010600/wsenkan/R8_shu.html",
+     "status": "no_pdf",
+     "pdfs": [],
+     "note": "Only results page (投票/開票結果 PDFs) found; no bulletin page located. Manual follow-up."
+    },
+    {
+     "pref": "鳥取県",
+     "page_url": "https://www.pref.tottori.lg.jp/326934.htm",
+     "status": "ok",
+     "pdfs": [
+      {
+       "label": "鳥取県第1区",
+       "url": "https://www.pref.tottori.lg.jp/secure/1415030/R8senkyokouhou1.pdf"
+      },
+      {
+       "label": "鳥取県第2区",
+       "url": "https://www.pref.tottori.lg.jp/secure/1415030/R8senkyokouhou2.pdf"
+      },
+      {
+       "label": "比例代表 中国ブロック",
+       "url": "https://www.pref.tottori.lg.jp/secure/1415030/R8hirei_kouhou.pdf"
+      }
+     ],
+     "note": ""
+    },
+    {
+     "pref": "島根県",
+     "page_url": "https://www.pref.shimane.lg.jp/admin/commission/senkyo/shimane_senkyo/shugiin_jouhou/syuugi_51.html",
+     "status": "ok",
+     "pdfs": [
+      {
+       "label": "島根県第1区",
+       "url": "https://www.pref.shimane.lg.jp/admin/commission/senkyo/shimane_senkyo/shugiin_jouhou/syuugi_51.data/R8_kouhou_1ku.pdf"
+      },
+      {
+       "label": "島根県第2区",
+       "url": "https://www.pref.shimane.lg.jp/admin/commission/senkyo/shimane_senkyo/shugiin_jouhou/syuugi_51.data/R8_kouhou_2ku.pdf"
+      },
+      {
+       "label": "比例代表 中国ブロック",
+       "url": "https://www.pref.shimane.lg.jp/admin/commission/senkyo/shimane_senkyo/shugiin_jouhou/syuugi_51.data/R8_kouhou_hirei.pdf"
+      }
+     ],
+     "note": ""
+    },
+    {
+     "pref": "岡山県",
+     "page_url": "https://www.pref.okayama.jp/page/1016956.html",
+     "status": "no_pdf",
+     "pdfs": [],
+     "note": "Candidate-info page only lists 候補者の氏名 PDFs (4 districts) and 名簿届出政党 list; bulletin PDFs not posted/removed. Manual follow-up."
+    },
+    {
+     "pref": "広島県",
+     "page_url": "https://www.pref.hiroshima.lg.jp/soshiki/117/51shuugi-senkyokouhou.html",
+     "status": "ok",
+     "pdfs": [
+      {
+       "label": "広島県第1区",
+       "url": "https://www.pref.hiroshima.lg.jp/uploaded/attachment/653555.pdf"
+      },
+      {
+       "label": "広島県第2区",
+       "url": "https://www.pref.hiroshima.lg.jp/uploaded/attachment/653556.pdf"
+      },
+      {
+       "label": "広島県第3区",
+       "url": "https://www.pref.hiroshima.lg.jp/uploaded/attachment/653557.pdf"
+      },
+      {
+       "label": "広島県第4区",
+       "url": "https://www.pref.hiroshima.lg.jp/uploaded/attachment/653558.pdf"
+      },
+      {
+       "label": "広島県第5区",
+       "url": "https://www.pref.hiroshima.lg.jp/uploaded/attachment/653559.pdf"
+      },
+      {
+       "label": "広島県第6区",
+       "url": "https://www.pref.hiroshima.lg.jp/uploaded/attachment/653560.pdf"
+      },
+      {
+       "label": "比例代表 中国ブロック",
+       "url": "https://www.pref.hiroshima.lg.jp/uploaded/attachment/653561.pdf"
+      }
+     ],
+     "note": ""
+    },
+    {
+     "pref": "山口県",
+     "page_url": "https://www.pref.yamaguchi.lg.jp/site/senkyo/list388-1134.html",
+     "status": "no_pdf",
+     "pdfs": [],
+     "note": "'候補者等に関する情報・選挙公報' list page is now empty (content removed after election). Manual follow-up."
+    },
+    {
+     "pref": "徳島県",
+     "page_url": "https://www.pref.tokushima.lg.jp/kenseijoho/senkyo/7244749/",
+     "status": "ok",
+     "pdfs": [
+      {
+       "label": "徳島県第1区 候補者提出データ1（音声読み上げ用）",
+       "url": "https://www.pref.tokushima.lg.jp/file/attachment/1033498.pdf"
+      },
+      {
+       "label": "徳島県第1区 候補者提出データ2（音声読み上げ用）",
+       "url": "https://www.pref.tokushima.lg.jp/file/attachment/1033499.pdf"
+      },
+      {
+       "label": "徳島県第1区 候補者提出データ3（音声読み上げ用）",
+       "url": "https://www.pref.tokushima.lg.jp/file/attachment/1033500.pdf"
+      },
+      {
+       "label": "徳島県第1区 候補者提出データ4（音声読み上げ用）",
+       "url": "https://www.pref.tokushima.lg.jp/file/attachment/1033501.pdf"
+      },
+      {
+       "label": "徳島県第2区 候補者提出データ1（音声読み上げ用）",
+       "url": "https://www.pref.tokushima.lg.jp/file/attachment/1033502.pdf"
+      },
+      {
+       "label": "徳島県第2区 候補者提出データ2（音声読み上げ用）",
+       "url": "https://www.pref.tokushima.lg.jp/file/attachment/1033503.pdf"
+      },
+      {
+       "label": "比例代表 四国ブロック 名簿届出政党等提出データ1（音声読み上げ用）",
+       "url": "https://www.pref.tokushima.lg.jp/file/attachment/1033504.pdf"
+      },
+      {
+       "label": "比例代表 四国ブロック 名簿届出政党等提出データ2（音声読み上げ用）",
+       "url": "https://www.pref.tokushima.lg.jp/file/attachment/1033505.pdf"
+      },
+      {
+       "label": "比例代表 四国ブロック 名簿届出政党等提出データ3（音声読み上げ用）",
+       "url": "https://www.pref.tokushima.lg.jp/file/attachment/1033506.pdf"
+      },
+      {
+       "label": "比例代表 四国ブロック 名簿届出政党等提出データ4（音声読み上げ用）",
+       "url": "https://www.pref.tokushima.lg.jp/file/attachment/1033507.pdf"
+      },
+      {
+       "label": "比例代表 四国ブロック 名簿届出政党等提出データ5（音声読み上げ用）",
+       "url": "https://www.pref.tokushima.lg.jp/file/attachment/1033508.pdf"
+      },
+      {
+       "label": "比例代表 四国ブロック 名簿届出政党等提出データ6（音声読み上げ用）",
+       "url": "https://www.pref.tokushima.lg.jp/file/attachment/1033510.pdf"
+      },
+      {
+       "label": "比例代表 四国ブロック 名簿届出政党等提出データ7（音声読み上げ用）",
+       "url": "https://www.pref.tokushima.lg.jp/file/attachment/1033511.pdf"
+      },
+      {
+       "label": "比例代表 四国ブロック 名簿届出政党等提出データ8（音声読み上げ用）",
+       "url": "https://www.pref.tokushima.lg.jp/file/attachment/1033513.pdf"
+      },
+      {
+       "label": "比例代表 四国ブロック 名簿届出政党等提出データ9（音声読み上げ用）",
+       "url": "https://www.pref.tokushima.lg.jp/file/attachment/1033514.pdf"
+      }
+     ],
+     "note": "Full bulletin is on special site https://syugiin51.pref.tokushima.lg.jp/ which returns 403 (blocked) to curl and WebFetch. Only per-candidate/per-party 音声読み上げ用 PDFs collected from the pref page; link text gives no candidate/party names (district from page headings). Manual follow-up for the full 選挙公報 PDFs."
+    },
+    {
+     "pref": "香川県",
+     "page_url": "https://www.pref.kagawa.lg.jp/senkyoi/51syuugi/kouhosya_zyohou.html",
+     "status": "ok",
+     "pdfs": [
+      {
+       "label": "香川県 小選挙区（区は記載なし） 小川じゅんや（音声読み上げ用）",
+       "url": "https://www.pref.kagawa.lg.jp/documents/59178/008syugi_syosenkyoku_01onsei.pdf#view=FitV"
+      },
+      {
+       "label": "比例代表 四国ブロック 中道改革連合（音声読み上げ用）",
+       "url": "https://www.pref.kagawa.lg.jp/documents/59201/08syugi_hirei_onsei01tyudo.pdf#view=FitV"
+      },
+      {
+       "label": "比例代表 四国ブロック 日本維新の会（音声読み上げ用）",
+       "url": "https://www.pref.kagawa.lg.jp/documents/59201/08syugi_hirei_onsei02isin.pdf#view=FitV"
+      },
+      {
+       "label": "比例代表 四国ブロック 日本共産党（音声読み上げ用）",
+       "url": "https://www.pref.kagawa.lg.jp/documents/59201/08syugi_hirei_onsei03kyosan.pdf#view=FitV"
+      },
+      {
+       "label": "比例代表 四国ブロック 国民民主党（音声読み上げ用）",
+       "url": "https://www.pref.kagawa.lg.jp/documents/59201/08syugi_hirei_onsei04kokumin.pdf#view=FitV"
+      },
+      {
+       "label": "比例代表 四国ブロック れいわ新選組（音声読み上げ用）",
+       "url": "https://www.pref.kagawa.lg.jp/documents/59201/08syugi_hirei_onsei05reiwa.pdf#view=FitV"
+      },
+      {
+       "label": "比例代表 四国ブロック 日本保守党（音声読み上げ用）",
+       "url": "https://www.pref.kagawa.lg.jp/documents/59201/08syugi_hirei_onsei06hosyuto.pdf#view=FitV"
+      },
+      {
+       "label": "比例代表 四国ブロック 自由民主党（音声読み上げ用）",
+       "url": "https://www.pref.kagawa.lg.jp/documents/59201/08syugi_hirei_onsei07jimin.pdf#view=FitV"
+      },
+      {
+       "label": "比例代表 四国ブロック 参政党（音声読み上げ用）",
+       "url": "https://www.pref.kagawa.lg.jp/documents/59201/08syugi_hirei_onsei08sansei.pdf#view=FitV"
+      },
+      {
+       "label": "比例代表 四国ブロック 社会民主党（音声読み上げ用）",
+       "url": "https://www.pref.kagawa.lg.jp/documents/59201/08syugi_hirei_onsei09syamin.pdf#view=FitV"
+      }
+     ],
+     "note": "Main candidate page no longer links full 選挙公報 PDFs (only 候補者一覧). Collected 音声読み上げ用 pages: small districts only 1 of 10 candidates submitted (district not stated on page; https://www.pref.kagawa.lg.jp/senkyoi/51syuugi/kouhosyaonsei.html), 比例 9 of 9 parties (https://www.pref.kagawa.lg.jp/senkyoi/51syuugi/hireionsei.html). Small-district bulletins (第1-3区) missing; manual follow-up."
+    },
+    {
+     "pref": "愛媛県",
+     "page_url": "https://www.pref.ehime.jp/page/133024.html",
+     "status": "page_not_found",
+     "pdfs": [],
+     "note": "Candidate/bulletin page (found via search) now returns 404; 投開票 page 133075 has no bulletin PDFs. Likely taken down after election."
+    },
+    {
+     "pref": "高知県",
+     "page_url": "https://www.pref.kochi.lg.jp/doc/2024092700059/",
+     "status": "ok",
+     "pdfs": [
+      {
+       "label": "高知県第1区",
+       "url": "https://www.pref.kochi.lg.jp/doc/2024092700059/file_contents/file_20261294193128_1.pdf"
+      },
+      {
+       "label": "高知県第2区",
+       "url": "https://www.pref.kochi.lg.jp/doc/2024092700059/file_contents/file_20261294193238_1.pdf"
+      },
+      {
+       "label": "比例代表 四国ブロック",
+       "url": "https://www.pref.kochi.lg.jp/doc/2024092700059/file_contents/file_20261294193331_1.pdf"
+      }
+     ],
+     "note": ""
+    },
+    {
+     "pref": "福岡県",
+     "page_url": "https://www.pref.fukuoka.lg.jp/contents/51senkyo.html",
+     "status": "page_not_found",
+     "pdfs": [],
+     "note": "Bulletin page https://www.pref.fukuoka.lg.jp/contents/r8shugiin-kouhou-hirei.html (比例) returns 404; small-district bulletins were on a 臨時啓発 special site not linked anymore; election page 51senkyo.html has no bulletin PDFs. Manual follow-up."
+    },
+    {
+     "pref": "佐賀県",
+     "page_url": "https://www.pref.saga.lg.jp/kiji003110048/index.html",
+     "status": "page_not_found",
+     "pdfs": [],
+     "note": "Candidate/bulletin page found via search now returns 404; election list page list06617.html no longer lists it."
+    },
+    {
+     "pref": "長崎県",
+     "page_url": "https://www.pref.nagasaki.jp/bunrui/kenseijoho/senkyojoho/shugiin/686899.html",
+     "status": "page_not_found",
+     "pdfs": [],
+     "note": "Candidate/bulletin page found via search now returns 404."
+    },
+    {
+     "pref": "熊本県",
+     "page_url": "https://www.pref.kumamoto.jp/soshiki/147/256112.html",
+     "status": "page_not_found",
+     "pdfs": [],
+     "note": "Election page found via search now returns 404; results page 181325.html has only 投開票結果 PDFs."
+    },
+    {
+     "pref": "大分県",
+     "page_url": "https://www.pref.oita.jp/site/senkyo/kouhosha-51shugiin.html",
+     "status": "ok",
+     "pdfs": [
+      {
+       "label": "大分県第1区",
+       "url": "https://www.pref.oita.jp/uploaded/attachment/2259558.pdf"
+      },
+      {
+       "label": "大分県第2区",
+       "url": "https://www.pref.oita.jp/uploaded/attachment/2259559.pdf"
+      },
+      {
+       "label": "大分県第3区",
+       "url": "https://www.pref.oita.jp/uploaded/attachment/2259560.pdf"
+      },
+      {
+       "label": "比例代表 九州ブロック",
+       "url": "https://www.pref.oita.jp/uploaded/attachment/2259579.pdf"
+      }
+     ],
+     "note": "音声読み上げ用 page also exists: https://www.pref.oita.jp/site/senkyo/onseikoho-51shugiin.html (not collected)."
+    },
+    {
+     "pref": "宮崎県",
+     "page_url": "https://www.pref.miyazaki.lg.jp/senkyo/kense/senkyo/20260125094204.html",
+     "status": "ok",
+     "pdfs": [
+      {
+       "label": "宮崎県第1区",
+       "url": "https://www.pref.miyazaki.lg.jp/documents/106054/106054_20260129152802-1.pdf"
+      },
+      {
+       "label": "宮崎県第2区",
+       "url": "https://www.pref.miyazaki.lg.jp/documents/106054/106054_20260129152822-1.pdf"
+      },
+      {
+       "label": "宮崎県第3区",
+       "url": "https://www.pref.miyazaki.lg.jp/documents/106054/106054_20260129152841-1.pdf"
+      },
+      {
+       "label": "比例代表 九州ブロック",
+       "url": "https://www.pref.miyazaki.lg.jp/documents/106054/106054_20260129152913-1.pdf"
+      }
+     ],
+     "note": "比例: 10 of 11 parties submitted. Per-candidate 音声読み上げ用 PDFs at https://www.pref.miyazaki.lg.jp/senkyo/kense/senkyo/20260125094244.html (not collected)."
+    },
+    {
+     "pref": "鹿児島県",
+     "page_url": "https://www.pref.kagoshima.jp/kensei/senkyo/r8shuugi/51syuugi-27kokushin.html",
+     "status": "page_not_found",
+     "pdfs": [],
+     "note": "Election page and 音声読み上げ page (r8shuugi/shuugiinsousennkyoonseikouhou.html) both 404; special site shuuinsen2026.pref.kagoshima.jp no longer resolves (DNS)."
+    },
+    {
+     "pref": "沖縄県",
+     "page_url": "https://www.pref.okinawa.lg.jp/kensei/senkyo/1005009/1023800/1037834.html",
+     "status": "ok",
+     "pdfs": [
+      {
+       "label": "沖縄県第1区",
+       "url": "https://www.pref.okinawa.lg.jp/_res/projects/default_project/_page_/001/037/834/51thshosenkyokukoho1kuv2.pdf"
+      },
+      {
+       "label": "沖縄県第2区",
+       "url": "https://www.pref.okinawa.lg.jp/_res/projects/default_project/_page_/001/037/834/51thshosenkyokukoho2kuv2.pdf"
+      },
+      {
+       "label": "沖縄県第3区",
+       "url": "https://www.pref.okinawa.lg.jp/_res/projects/default_project/_page_/001/037/834/51thshosenkyokukoho3kuv2.pdf"
+      },
+      {
+       "label": "沖縄県第4区",
+       "url": "https://www.pref.okinawa.lg.jp/_res/projects/default_project/_page_/001/037/834/51thshosenkyokukoho4kuv2.pdf"
+      },
+      {
+       "label": "比例代表 九州ブロック",
+       "url": "https://www.pref.okinawa.lg.jp/_res/projects/default_project/_page_/001/037/834/51thhireikohov2.pdf"
+      }
+     ],
+     "note": "Small-district bulletins replaced with v2 on 2/6 per page."
+    }
+   ]
+  },
+  {
+   "key": "san2025",
+   "election": "第27回参議院議員通常選挙",
+   "date": "2025-07-20",
+   "checked": "2026-11-02",
+   "prefectures": [
+    {
+     "pref": "北海道",
+     "page_url": "https://www.pref.hokkaido.lg.jp/hs/227726.html",
+     "status": "ok",
+     "pdfs": [
+      {
+       "label": "選挙区 北海道",
+       "url": "https://www.pref.hokkaido.lg.jp/fs/1/1/8/2/2/7/4/2/_/%E9%81%B8%E6%8C%99%E5%8C%BA0705-web%E7%94%A8.pdf"
+      }
+     ],
+     "note": ""
+    },
+    {
+     "pref": "青森県",
+     "page_url": "https://www.pref.aomori.lg.jp/soshiki/senkan/sangiin_r07_00.html",
+     "status": "ok",
+     "pdfs": [
+      {
+       "label": "選挙区 青森県",
+       "url": "https://www.pref.aomori.lg.jp/soshiki/senkan/files2/R7sanngin_senkyokouhou_aomorisenkyoku.pdf"
+      }
+     ],
+     "note": ""
+    },
+    {
+     "pref": "岩手県",
+     "page_url": "https://www.pref.iwate.jp/iinkai/senkyo/kekka/1096133.html",
+     "status": "page_not_found",
+     "pdfs": [],
+     "note": "R7候補者・選挙公報ページ(1086324/index.html)は404。結果ページに公報なし"
+    },
+    {
+     "pref": "宮城県",
+     "page_url": "https://www.pref.miyagi.jp/soshiki/senkyo/r7sangiinsenkyo.html",
+     "status": "ok",
+     "pdfs": [
+      {
+       "label": "選挙区 宮城県",
+       "url": "https://www.pref.miyagi.jp/documents/59626/senkyoku.pdf"
+      }
+     ],
+     "note": "候補者ページ(sangi-kouhosya-seitou.html)にも別ファイルあり。R7専用ページのリンクを採用"
+    },
+    {
+     "pref": "秋田県",
+     "page_url": "https://www.pref.akita.lg.jp/pages/archive/89248",
+     "status": "ok",
+     "pdfs": [
+      {
+       "label": "選挙区 秋田県",
+       "url": "https://www.pref.akita.lg.jp/uploads/public/archive_0000089248_00/選挙区250dpi.pdf"
+      }
+     ],
+     "note": "PDFファイル名に日本語を含む（未エンコードのまま記録）"
+    },
+    {
+     "pref": "山形県",
+     "page_url": "https://www.pref.yamagata.jp/910001/kensei/senkyo/kakushu_kekka/shuugiinsangiiin/r07sansenkyokekka.html",
+     "status": "ok",
+     "pdfs": [
+      {
+       "label": "選挙区 山形県",
+       "url": "https://www.pref.yamagata.jp/documents/47707/11_senkyokoho_senkyoku.pdf"
+      }
+     ],
+     "note": ""
+    },
+    {
+     "pref": "福島県",
+     "page_url": "https://www.pref.fukushima.lg.jp/sec/62010a/27-kouhosyatoujouhou.html",
+     "status": "ok",
+     "pdfs": [
+      {
+       "label": "選挙区 福島県",
+       "url": "https://www.pref.fukushima.lg.jp/uploaded/attachment/699081.pdf"
+      }
+     ],
+     "note": ""
+    },
+    {
+     "pref": "茨城県",
+     "page_url": "https://www.pref.ibaraki.jp/somu/shichoson/senkyo/senkan/2025sangi/koho_seito_jyoho.html",
+     "status": "ok",
+     "pdfs": [
+      {
+       "label": "選挙区 茨城県",
+       "url": "https://www.pref.ibaraki.jp/somu/shichoson/senkyo/senkan/2025sangi/documents/2025ibarakikensangiin_senkyokouhou.pdf"
+      }
+     ],
+     "note": ""
+    },
+    {
+     "pref": "栃木県",
+     "page_url": "https://www.pref.tochigi.lg.jp/senkyo/07sangi/kouho/index.html",
+     "status": "ok",
+     "pdfs": [
+      {
+       "label": "選挙区 栃木県",
+       "url": "https://www.pref.tochigi.lg.jp/senkyo/07sangi/kouho/senkyoku_kouhou.pdf"
+      }
+     ],
+     "note": ""
+    },
+    {
+     "pref": "群馬県",
+     "page_url": "https://www.pref.gunma.jp/page/709250.html",
+     "status": "ok",
+     "pdfs": [
+      {
+       "label": "選挙区 群馬県",
+       "url": "https://www.pref.gunma.jp/uploaded/attachment/668831.pdf"
+      }
+     ],
+     "note": ""
+    },
+    {
+     "pref": "埼玉県",
+     "page_url": "https://www.pref.saitama.lg.jp/e1701/27_saninsentokaihyo.html",
+     "status": "ok",
+     "pdfs": [
+      {
+       "label": "選挙区 埼玉県",
+       "url": "https://www.pref.saitama.lg.jp/documents/270967/koho_27san_senkyoku.pdf"
+      }
+     ],
+     "note": ""
+    },
+    {
+     "pref": "千葉県",
+     "page_url": "https://www.pref.chiba.lg.jp/senkan/kakokekka/r7san-0720.html",
+     "status": "ok",
+     "pdfs": [
+      {
+       "label": "選挙区 千葉県",
+       "url": "https://www.pref.chiba.lg.jp/senkan/kakokekka/documents/01-all-senkyoku.pdf"
+      }
+     ],
+     "note": ""
+    },
+    {
+     "pref": "東京都",
+     "page_url": "https://www.senkyo.metro.tokyo.lg.jp/election/senkyo-kouhou/sanngiin-kouhou",
+     "status": "ok",
+     "pdfs": [
+      {
+       "label": "選挙区 東京都",
+       "url": "https://www.senkyo.metro.tokyo.lg.jp/documents/d/senkyo/r7sangiin_tokyo_senkyokouhou"
+      },
+      {
+       "label": "比例代表（全国）",
+       "url": "https://www.senkyo.metro.tokyo.lg.jp/documents/d/senkyo/r7sangiin_hirei_senkyokouhou"
+      }
+     ],
+     "note": "URLに.pdf拡張子なし。HEADでContent-Type: application/pdf確認済（選挙区約40MB/比例約23MB）"
+    },
+    {
+     "pref": "神奈川県",
+     "page_url": "https://www.pref.kanagawa.jp/docs/em7/cnt/f5/p744568.html",
+     "status": "page_not_found",
+     "pdfs": [
+      {
+       "label": "選挙区 神奈川県（三浦市選管転載）",
+       "url": "https://www.city.miura.kanagawa.jp/material/files/group/47/r7_san_senkyoku.pdf"
+      }
+     ],
+     "note": "県選管の参議院ページは404。県選管の公報PDFは見つからず。三浦市選管の転載PDF（選挙区のみ）を記録"
+    },
+    {
+     "pref": "新潟県",
+     "page_url": "https://www.pref.niigata.lg.jp/site/senkyo/r7sangisen.html",
+     "status": "page_not_found",
+     "pdfs": [],
+     "note": "公報は特設サイト niigata-sangisen2025.pref.niigata.lg.jp に掲載されていたが接続不可（閉鎖）。県選管の結果ページに公報なし"
+    },
+    {
+     "pref": "富山県",
+     "page_url": "https://www.pref.toyama.jp/500/kensei/kenseiunei/senkyo/iinkai/gs_kekka.html",
+     "status": "ok",
+     "pdfs": [
+      {
+       "label": "選挙区 富山県",
+       "url": "https://www.pref.toyama.jp/documents/13804/2025sangi-senkyoku.pdf"
+      }
+     ],
+     "note": ""
+    },
+    {
+     "pref": "石川県",
+     "page_url": "https://www.pref.ishikawa.lg.jp/senkan/r7sangi/kouhoshajouhou.html",
+     "status": "ok",
+     "pdfs": [
+      {
+       "label": "選挙区 石川県",
+       "url": "https://www.pref.ishikawa.lg.jp/senkan/r7sangi/documents/ishikawa27sangikouhou.pdf"
+      }
+     ],
+     "note": ""
+    },
+    {
+     "pref": "福井県",
+     "page_url": "https://www.pref.fukui.lg.jp/doc/senkan/27sangisen/kouhosyaseitoujyouhou.html",
+     "status": "ok",
+     "pdfs": [
+      {
+       "label": "選挙区 福井県",
+       "url": "https://www.pref.fukui.lg.jp/doc/senkan/27sangisen/kouhosyaseitoujyouhou_d/fil/senkyokukouhou.pdf"
+      }
+     ],
+     "note": ""
+    },
+    {
+     "pref": "山梨県",
+     "page_url": "https://www.pref.yamanashi.jp/senkyo/26sangiin/26sangiin.html",
+     "status": "ok",
+     "pdfs": [
+      {
+       "label": "選挙区 山梨県",
+       "url": "https://www.pref.yamanashi.jp/documents/121745/r7sansenkyoku.pdf"
+      }
+     ],
+     "note": ""
+    },
+    {
+     "pref": "長野県",
+     "page_url": "https://www.pref.nagano.lg.jp/senkan/san2025/top.html",
+     "status": "page_not_found",
+     "pdfs": [],
+     "note": "san2025/kouhosha.html は404。『過去の選挙公報』ページは令和4年分まで"
+    },
+    {
+     "pref": "岐阜県",
+     "page_url": "https://www.pref.gifu.lg.jp/site/r07sangiin/437129.html",
+     "status": "ok",
+     "pdfs": [
+      {
+       "label": "選挙区 岐阜県",
+       "url": "https://www.pref.gifu.lg.jp/uploaded/attachment/454819.pdf"
+      }
+     ],
+     "note": "ページ上はどちらも『選挙公報』表記。候補者一覧の直後が選挙区、名簿登載者一覧の直後が比例代表（ページ構造から判定）"
+    },
+    {
+     "pref": "静岡県",
+     "page_url": "https://www.pref.shizuoka.jp/kensei/senkyo/kakosenkyo/sangiin2025/kouhosha.html",
+     "status": "ok",
+     "pdfs": [
+      {
+       "label": "選挙区 静岡県",
+       "url": "https://www.pref.shizuoka.jp/_res/projects/default_project/_page_/001/070/036/senkyokouhou_shizuoka.pdf"
+      }
+     ],
+     "note": ""
+    },
+    {
+     "pref": "愛知県",
+     "page_url": "https://www.pref.aichi.jp/soshiki/senkyo/0000087359.html",
+     "status": "ok",
+     "pdfs": [
+      {
+       "label": "選挙区 愛知県",
+       "url": "https://www.pref.aichi.jp/uploaded/attachment/579005.pdf"
+      }
+     ],
+     "note": "Imperva（Incapsula）のボット対策でスクリプトからは403。ブラウザで取得したセッションクッキーを KOUHOU_COOKIE に渡して取得（2026-11-04）。衆2026と同じページに掲載。"
+    },
+    {
+     "pref": "三重県",
+     "page_url": "https://www.pref.mie.lg.jp/SENKAN/HP/0002594100001.htm",
+     "status": "ok",
+     "pdfs": [
+      {
+       "label": "選挙区 三重県",
+       "url": "https://www.pref.mie.lg.jp/common/content/001206452.pdf"
+      }
+     ],
+     "note": "ページ上はどちらも『選挙公報』表記。見出し【選挙区】/【比例代表】配下の位置で判定"
+    },
+    {
+     "pref": "滋賀県",
+     "page_url": "https://www.pref.shiga.lg.jp/senkyo/14304.html",
+     "status": "ok",
+     "pdfs": [
+      {
+       "label": "選挙区 滋賀県",
+       "url": "https://www.pref.shiga.lg.jp/documents/14304/5551766.pdf"
+      }
+     ],
+     "note": ""
+    },
+    {
+     "pref": "京都府",
+     "page_url": "https://www.pref.kyoto.jp/senkyo/27sanngiinkouhosya2.html",
+     "status": "no_pdf",
+     "pdfs": [],
+     "note": "候補者・名簿届出政党等情報ページは名簿一覧PDFのみで公報は掲載終了"
+    },
+    {
+     "pref": "大阪府",
+     "page_url": "https://www.pref.osaka.lg.jp/o190010/senkan/r7sangiinn/senkyokoho.html",
+     "status": "ok",
+     "pdfs": [
+      {
+       "label": "選挙区 大阪府",
+       "url": "https://www.pref.osaka.lg.jp/documents/113116/senkyokusenkyokoho.pdf"
+      }
+     ],
+     "note": ""
+    },
+    {
+     "pref": "兵庫県",
+     "page_url": "https://web.pref.hyogo.lg.jp/si01/senkyo/r7san.html",
+     "status": "ok",
+     "pdfs": [
+      {
+       "label": "選挙区 兵庫県",
+       "url": "https://web.pref.hyogo.lg.jp/si01/senkyo/documents/senkyoku_kouhou.pdf"
+      }
+     ],
+     "note": ""
+    },
+    {
+     "pref": "奈良県",
+     "page_url": "https://www.pref.nara.lg.jp/n173/61315.html",
+     "status": "page_not_found",
+     "pdfs": [],
+     "note": "県選管サイトで公報ページを確認できず（投開票速報のみ）"
+    },
+    {
+     "pref": "和歌山県",
+     "page_url": "https://www.pref.wakayama.lg.jp/prefg/010600/wsenkan/R7_san.html",
+     "status": "page_not_found",
+     "pdfs": [],
+     "note": "候補者・名簿届出政党等情報ページ(R7_san/kouhosyatou.html)は404。選挙ページは結果のみ"
+    },
+    {
+     "pref": "鳥取県",
+     "page_url": "https://www.pref.tottori.lg.jp/323332.htm",
+     "status": "no_pdf",
+     "pdfs": [],
+     "note": "鳥取県サイトに公報なし。鳥取・島根合区の選挙区公報と比例公報は島根県エントリ参照"
+    },
+    {
+     "pref": "島根県",
+     "page_url": "https://www.pref.shimane.lg.jp/admin/commission/senkyo/shimane_senkyo/sangiin_jouhou/sangi07-01.html",
+     "status": "ok",
+     "pdfs": [
+      {
+       "label": "選挙区 鳥取県・島根県（合区）",
+       "url": "https://www.pref.shimane.lg.jp/admin/commission/senkyo/shimane_senkyo/sangiin_jouhou/sangi07-01.data/r07kouhou_senkyoku.pdf"
+      }
+     ],
+     "note": "鳥取県・島根県合区の選挙区公報は島根県選管サイトに掲載（合同選挙区選管の事務は島根県側）"
+    },
+    {
+     "pref": "岡山県",
+     "page_url": "https://www.pref.okayama.jp/page/979515.html",
+     "status": "no_pdf",
+     "pdfs": [],
+     "note": "候補者・名簿届出政党等情報ページは名簿一覧PDFのみで公報は掲載終了"
+    },
+    {
+     "pref": "広島県",
+     "page_url": "https://www.pref.hiroshima.lg.jp/soshiki/117/27sangi-senkyokouhou.html",
+     "status": "ok",
+     "pdfs": [
+      {
+       "label": "選挙区 広島県",
+       "url": "https://www.pref.hiroshima.lg.jp/uploaded/attachment/631911.pdf"
+      }
+     ],
+     "note": ""
+    },
+    {
+     "pref": "山口県",
+     "page_url": "https://www.pref.yamaguchi.lg.jp/site/senkyo/list388-1134.html",
+     "status": "no_pdf",
+     "pdfs": [],
+     "note": "『候補者等に関する情報・選挙公報』一覧にR7公報なし。候補者一覧ページ(311022.html)は404。特設サイト yamaguchi-sangiingiin2025.net は未確認"
+    },
+    {
+     "pref": "徳島県",
+     "page_url": "https://www.pref.tokushima.lg.jp/kenseijoho/senkyo/7305901/",
+     "status": "ok",
+     "pdfs": [
+      {
+       "label": "選挙区 徳島県・高知県（合区）",
+       "url": "https://www.pref.tokushima.lg.jp/file/attachment/1008088.pdf"
+      }
+     ],
+     "note": "徳島・高知合区。徳島県・高知県の双方に掲載あり"
+    },
+    {
+     "pref": "香川県",
+     "page_url": "https://www.pref.kagawa.lg.jp/senkyoi/27sangi/gaiyou.html",
+     "status": "page_not_found",
+     "pdfs": [],
+     "note": "27sangi配下に公報ページを確認できず"
+    },
+    {
+     "pref": "愛媛県",
+     "page_url": "https://www.pref.ehime.jp/page/12143.html",
+     "status": "ok",
+     "pdfs": [
+      {
+       "label": "選挙区 愛媛県",
+       "url": "https://www.pref.ehime.jp/uploaded/attachment/183198.pdf"
+      }
+     ],
+     "note": ""
+    },
+    {
+     "pref": "高知県",
+     "page_url": "https://www.pref.kochi.lg.jp/doc/2025070200318/",
+     "status": "ok",
+     "pdfs": [
+      {
+       "label": "選挙区 徳島県・高知県（合区）",
+       "url": "https://www.pref.kochi.lg.jp/doc/2025070200318/file_contents/file_2025756141542_1.pdf"
+      }
+     ],
+     "note": "徳島・高知合区。徳島県・高知県の双方に掲載あり"
+    },
+    {
+     "pref": "福岡県",
+     "page_url": "https://www.pref.fukuoka.lg.jp/contents/27sangisenkyo.html",
+     "status": "no_pdf",
+     "pdfs": [],
+     "note": "R7参院選ページに公報リンクなし"
+    },
+    {
+     "pref": "佐賀県",
+     "page_url": "https://www.pref.saga.lg.jp/list06505.html",
+     "status": "no_pdf",
+     "pdfs": [],
+     "note": "R7参院選関係情報一覧に公報ページなし"
+    },
+    {
+     "pref": "長崎県",
+     "page_url": "https://www.pref.nagasaki.jp/bunrui/kenseijoho/senkyojoho/sangisenkyo/730261.html",
+     "status": "page_not_found",
+     "pdfs": [],
+     "note": "候補者・名簿届出政党等情報（公報）ページは404"
+    },
+    {
+     "pref": "熊本県",
+     "page_url": "https://www.pref.kumamoto.jp/soshiki/147/181224.html",
+     "status": "page_not_found",
+     "pdfs": [],
+     "note": "県選管サイトで公報ページを確認できず（結果のみ）"
+    },
+    {
+     "pref": "大分県",
+     "page_url": "https://www.pref.oita.jp/site/senkyo/27san-kouho-seitou.html",
+     "status": "ok",
+     "pdfs": [
+      {
+       "label": "選挙区 大分県",
+       "url": "https://www.pref.oita.jp/uploaded/attachment/2246678.pdf"
+      }
+     ],
+     "note": ""
+    },
+    {
+     "pref": "宮崎県",
+     "page_url": "https://www.pref.miyazaki.lg.jp/senkyo/kense/senkyo/20250628173407.html",
+     "status": "page_not_found",
+     "pdfs": [],
+     "note": "公報（音声読み上げ対応）ページは404"
+    },
+    {
+     "pref": "鹿児島県",
+     "page_url": "https://www.pref.kagoshima.jp/kensei/senkyo/senkyokekka/20250720/kekka.html",
+     "status": "page_not_found",
+     "pdfs": [],
+     "note": "県選管サイトで公報ページを確認できず（投開票速報のみ）"
+    },
+    {
+     "pref": "沖縄県",
+     "page_url": "https://www.pref.okinawa.lg.jp/kensei/senkyo/1005009/1023801/1035088/index.html",
+     "status": "ok",
+     "pdfs": [
+      {
+       "label": "選挙区 沖縄県",
+       "url": "https://www.pref.okinawa.lg.jp/_res/projects/default_project/_page_/001/035/088/r7senkyo-kouhou-senkyoku.pdf"
+      }
+     ],
+     "note": ""
+    }
+   ]
+  },
+  {
+   "key": "san2022",
+   "election": "第26回参議院議員通常選挙",
+   "date": "2022-07-10",
+   "checked": "2026-11-02",
+   "prefectures": [
+    {
+     "pref": "北海道",
+     "page_url": "https://www.pref.hokkaido.lg.jp/hs/121487.html",
+     "status": "ok",
+     "pdfs": [
+      {
+       "label": "選挙区 北海道",
+       "url": "https://www.pref.hokkaido.lg.jp/fs/6/4/1/8/2/9/3/_/%E9%81%B8%E6%8C%99%E5%8C%BA.pdf"
+      }
+     ],
+     "note": "Live page 121487.html (verified 206 application/pdf). Original 2022 page 116933.html now 404; WARP copies (2022-07-02): https://warp.ndl.go.jp/20220711/20220702034828/https://www.pref.hokkaido.lg.jp/fs/6/2/5/0/5/7/4/_/%E9%81%B8%E6%8C%99%E5%8C%BA0625-web%E7%94%A8.pdf | https://warp.ndl.go.jp/20220711/20220702034828/https://www.pref.hokkaido.lg.jp/fs/6/2/5/0/5/7/5/_/%E6%AF%94%E4%BE%8B0625-web%E7%94%A8.pdf"
+    },
+    {
+     "pref": "青森県",
+     "page_url": "https://www.pref.aomori.lg.jp/soshiki/senkan/sangiin_touhyoukeltuka.html",
+     "status": "ok",
+     "pdfs": [
+      {
+       "label": "選挙区 青森県",
+       "url": "https://www.pref.aomori.lg.jp/soshiki/senkan/files2/1_senkyoku_kouhou.pdf"
+      }
+     ],
+     "note": "Bulletins posted on the 第26回 results page."
+    },
+    {
+     "pref": "岩手県",
+     "page_url": "https://www.pref.iwate.jp/iinkai/senkyo/kekka/1057881.html",
+     "status": "ok",
+     "pdfs": [
+      {
+       "label": "選挙区 岩手県",
+       "url": "https://www.pref.iwate.jp/_res/projects/default_project/_page_/001/057/881/26sankoho/r4senkyoku_03.pdf"
+      }
+     ],
+     "note": "Results page 令和4年7月10日 第26回."
+    },
+    {
+     "pref": "宮城県",
+     "page_url": "https://warp.ndl.go.jp/20220711/20220701000230/https://www.pref.miyagi.jp/soshiki/senkyo/sangi-kouhosya-seitou.html",
+     "status": "archived_warp",
+     "pdfs": [
+      {
+       "label": "選挙区 宮城県",
+       "url": "https://warp.ndl.go.jp/20220711/20220701000230/https://www.pref.miyagi.jp/documents/22764/746751.pdf"
+      }
+     ],
+     "note": "Live page https://www.pref.miyagi.jp/soshiki/senkyo/sangi-kouhosya-seitou.html still lists 選挙区 公報 https://www.pref.miyagi.jp/documents/22764/746751.pdf (same file ID as 2022 snapshot) and 比例 https://www.pref.miyagi.jp/documents/22764/sangihireisenkyokouhou.pdf (Last-Modified 2023-08), but the live page has no election number, so 2022 identity not confirmed; WARP 2022-07-01 copy used."
+    },
+    {
+     "pref": "秋田県",
+     "page_url": "https://warp.ndl.go.jp/20220819/20220815030019/https://www.pref.akita.lg.jp/pages/archive/65548",
+     "status": "archived_warp",
+     "pdfs": [
+      {
+       "label": "選挙区 秋田県",
+       "url": "https://warp.ndl.go.jp/20220819/20220815030019/https://www.pref.akita.lg.jp/uploads/public/archive_0000065548_00/%E9%81%B8%E6%8C%99%E5%8C%BA_250dpi.pdf"
+      }
+     ],
+     "note": "Live page /pages/archive/65548 returns 404 (results page 65656 is live but has no 公報). WARP also holds per-candidate/per-party 音声読み上げ PDFs on the same snapshot."
+    },
+    {
+     "pref": "山形県",
+     "page_url": "https://www.pref.yamagata.jp/910001/kensei/senkyo/kakushu_kekka/shuugiinsangiiin/r04sansenkyokekka.html",
+     "status": "ok",
+     "pdfs": [
+      {
+       "label": "選挙区 山形県",
+       "url": "https://www.pref.yamagata.jp/documents/28874/11senkyokukouhou.pdf"
+      }
+     ],
+     "note": "Posted on 第26回 results page."
+    },
+    {
+     "pref": "福島県",
+     "page_url": "https://www.pref.fukushima.lg.jp/sec/62010a/kouhou-sanin.html",
+     "status": "ok",
+     "pdfs": [
+      {
+       "label": "選挙区 福島県",
+       "url": "https://www.pref.fukushima.lg.jp/uploaded/attachment/641920.pdf"
+      }
+     ],
+     "note": "Archive page of 参院選 bulletins; these sit under the 第26回 heading. Page also keeps 第25回/第24回."
+    },
+    {
+     "pref": "茨城県",
+     "page_url": "https://www.pref.ibaraki.jp/somu/shichoson/senkyo/senkan/2022sangi/koho_seito_jyoho.html",
+     "status": "ok",
+     "pdfs": [
+      {
+       "label": "選挙区 茨城県",
+       "url": "https://www.pref.ibaraki.jp/somu/shichoson/senkyo/senkan/2022sangi/documents/senykoku_senkyokoho.pdf"
+      }
+     ],
+     "note": "2022sangi directory."
+    },
+    {
+     "pref": "栃木県",
+     "page_url": "https://www.pref.tochigi.lg.jp/senkyo/r04sangi/kouho/index.html",
+     "status": "ok",
+     "pdfs": [
+      {
+       "label": "選挙区 栃木県",
+       "url": "https://www.pref.tochigi.lg.jp/senkyo/r04sangi/kouho/senkyoku_kouhou.pdf"
+      }
+     ],
+     "note": "第26回 special site (r04sangi); PDF hrefs are relative on the page, resolved against page URL."
+    },
+    {
+     "pref": "群馬県",
+     "page_url": "https://www.pref.gunma.jp/page/101480.html",
+     "status": "ok",
+     "pdfs": [
+      {
+       "label": "選挙区 群馬県",
+       "url": "https://www.pref.gunma.jp/uploaded/attachment/101757.pdf"
+      }
+     ],
+     "note": "第26回トップ(page/21822.html)配下の候補者情報ページ。両PDF 206 application/pdf 確認"
+    },
+    {
+     "pref": "埼玉県",
+     "page_url": "https://www.pref.saitama.lg.jp/e1701/senkyonokiroku.html",
+     "status": "ok",
+     "pdfs": [
+      {
+       "label": "選挙区 埼玉県",
+       "url": "https://www.pref.saitama.lg.jp/documents/229695/kanmatsukoukoku1.pdf"
+      }
+     ],
+     "note": "選挙の記録ページの巻末公報(選挙区4,417KB/比例5,963KB)"
+    },
+    {
+     "pref": "千葉県",
+     "page_url": "https://www.pref.chiba.lg.jp/senkan/kakokekka/r4-0710.html",
+     "status": "ok",
+     "pdfs": [
+      {
+       "label": "選挙区 千葉県",
+       "url": "https://www.pref.chiba.lg.jp/senkan/r4saninsen/saninsen2022-senkyoku.pdf"
+      }
+     ],
+     "note": "過去の選挙結果ページに掲載"
+    },
+    {
+     "pref": "東京都",
+     "page_url": "https://www.senkyo.metro.tokyo.lg.jp/election/senkyo-kouhou/sanngiin-kouhou/",
+     "status": "ok",
+     "pdfs": [
+      {
+       "label": "選挙区 東京都",
+       "url": "https://www.senkyo.metro.tokyo.lg.jp/documents/d/senkyo/r4san_kouhou_senkyoku3"
+      },
+      {
+       "label": "比例代表（全国）",
+       "url": "https://www.senkyo.metro.tokyo.lg.jp/documents/d/senkyo/r4san_kouhou_hirei4"
+      }
+     ],
+     "note": "URLに.pdf拡張子なしだがapplication/pdfを返す(16MB/9MB)"
+    },
+    {
+     "pref": "神奈川県",
+     "page_url": "https://catalog.opendata.pref.kanagawa.jp/dataset/d639db019af578cca5a5c84cdaf737c9",
+     "status": "ok",
+     "pdfs": [
+      {
+       "label": "選挙区 神奈川県",
+       "url": "https://catalog.opendata.pref.kanagawa.jp/dataset/e42a47aa-f365-4b55-8f2a-e4024c47cd78/resource/225f4310-8e43-4fe1-b688-06eb91866f48/download/senkyoku_kouhou.pdf"
+      }
+     ],
+     "note": "県公式オープンデータカタログ(県選管データセット)。県HPの参院選ページ(p744568.html)からはPDFリンク抽出できず"
+    },
+    {
+     "pref": "新潟県",
+     "page_url": "https://warp.ndl.go.jp/20220710/20220701000143/https://www.pref.niigata.lg.jp/site/senkyo/saninsen-kouhosyaseitoujouhou.html",
+     "status": "archived_warp",
+     "pdfs": [
+      {
+       "label": "選挙区 新潟県",
+       "url": "https://warp.ndl.go.jp/20220710/20220701000143/https://www.pref.niigata.lg.jp/uploaded/attachment/325529.pdf"
+      }
+     ],
+     "note": "元ページ・元PDFは404(削除済)。WARP版PDFは206 application/pdf確認。現行サイトには選挙の記録PDF(https://www.pref.niigata.lg.jp/uploaded/attachment/386038.pdf, 31MB)があり公報収録の可能性あるが未確認"
+    },
+    {
+     "pref": "富山県",
+     "page_url": "https://www.pref.toyama.jp/500/kensei/kenseiunei/senkyo/iinkai/gs_kekka.html",
+     "status": "ok",
+     "pdfs": [
+      {
+       "label": "選挙区 富山県",
+       "url": "https://www.pref.toyama.jp/documents/13804/26sann_kouhousenkyoku.pdf"
+      }
+     ],
+     "note": "選挙結果ページ内の第26回参院選欄"
+    },
+    {
+     "pref": "石川県",
+     "page_url": "https://www.pref.ishikawa.lg.jp/senkan/r4sangi/kouhoshajouhou.html",
+     "status": "ok",
+     "pdfs": [
+      {
+       "label": "選挙区 石川県",
+       "url": "https://www.pref.ishikawa.lg.jp/senkan/r4sangi/documents/kouhou_senkyoku.pdf"
+      }
+     ],
+     "note": "第26回参院選特設ページ配下"
+    },
+    {
+     "pref": "福井県",
+     "page_url": "https://www.pref.fukui.lg.jp/doc/senkan/26sangisen/26sangisen.html",
+     "status": "ok",
+     "pdfs": [
+      {
+       "label": "選挙区 福井県",
+       "url": "https://www.pref.fukui.lg.jp/doc/senkan/26sangisen/26sangisen_d/fil/koho-senkyoku.pdf"
+      }
+     ],
+     "note": "第26回参院選ページの選挙公報欄"
+    },
+    {
+     "pref": "山梨県",
+     "page_url": "https://www.pref.yamanashi.jp/senkyo/r4_26_sangin.html",
+     "status": "ok",
+     "pdfs": [
+      {
+       "label": "選挙区 山梨県",
+       "url": "https://www.pref.yamanashi.jp/documents/104715/r4sansenkyoku.pdf"
+      }
+     ],
+     "note": "Live; both verified 206 application/pdf. Labels inferred from filenames (both linked as 選挙公報)."
+    },
+    {
+     "pref": "長野県",
+     "page_url": "https://www.pref.nagano.lg.jp/senkan/kensei/soshiki/soshiki/kencho/senkyo/senkyo/senkyokoho.html",
+     "status": "ok",
+     "pdfs": [
+      {
+       "label": "選挙区 長野県",
+       "url": "https://www.pref.nagano.lg.jp/senkan/kensei/soshiki/soshiki/kencho/senkyo/senkyo/documents/22san_kouhousenkyoku.pdf"
+      }
+     ],
+     "note": "Live on 過去の選挙公報 page under 令和4年7月10日執行 参議院議員通常選挙; verified."
+    },
+    {
+     "pref": "岐阜県",
+     "page_url": "https://www.pref.gifu.lg.jp/page/231211.html",
+     "status": "ok",
+     "pdfs": [
+      {
+       "label": "選挙区 岐阜県",
+       "url": "https://www.pref.gifu.lg.jp/uploaded/life/232714_1033191_misc.PDF"
+      }
+     ],
+     "note": "Live; verified. Audio-reading per-candidate PDFs also at https://www.pref.gifu.lg.jp/page/232380.html."
+    },
+    {
+     "pref": "静岡県",
+     "page_url": "https://www.pref.shizuoka.jp/kensei/senkyo/kakosenkyo/1040579/1032120.html",
+     "status": "ok",
+     "pdfs": [
+      {
+       "label": "選挙区 静岡県",
+       "url": "https://www.pref.shizuoka.jp/_res/projects/default_project/_page_/001/032/120/senkyoku.pdf"
+      }
+     ],
+     "note": "Live; page links are relative (../../../../_res/...), shown here resolved; verified."
+    },
+    {
+     "pref": "愛知県",
+     "page_url": "https://www.pref.aichi.jp/soshiki/senkyo/0000087359.html",
+     "status": "blocked",
+     "pdfs": [],
+     "note": "pref.aichi.jp is behind Incapsula bot protection (curl 403 / WebFetch redirect loop); search snippet says this 投開票の状況・選挙公報 page lists 選挙区(2.83MB) and 比例代表(3.63MB) PDFs, but URLs could not be read. Special site https://2022sangiin-senkyo-aichi.jp/candidate/ no longer resolves. WARP snapshots of both exist but are 館内限定 (in-library only). Needs a real browser to collect."
+    },
+    {
+     "pref": "三重県",
+     "page_url": "https://www.pref.mie.lg.jp/SENKAN/HP/000259410_00001.htm",
+     "status": "ok",
+     "pdfs": [
+      {
+       "label": "選挙区 三重県",
+       "url": "https://www.pref.mie.lg.jp/common/content/001023865.pdf"
+      }
+     ],
+     "note": "Live; page dated 令和04年07月22日, linked from 第26回参議院議員通常選挙の記録 (p0019100037_00001.htm). Labels by page order (選挙区 then 比例代表); verified."
+    },
+    {
+     "pref": "滋賀県",
+     "page_url": "https://www.pref.shiga.lg.jp/senkyo/14306.html",
+     "status": "ok",
+     "pdfs": [
+      {
+       "label": "選挙区 滋賀県",
+       "url": "https://www.pref.shiga.lg.jp/documents/14306/5333039_1.pdf"
+      }
+     ],
+     "note": "Live; verified."
+    },
+    {
+     "pref": "京都府",
+     "page_url": "https://www.pref.kyoto.jp/senkyo/26sanngiinkouhosya.html",
+     "status": "no_pdf",
+     "pdfs": [],
+     "note": "Live 候補者・名簿届出政党等情報 page now lists only candidate/party list PDFs; 選挙公報 removed. WARP snapshot (2022-07-01) exists but is 館内限定 (in-library only), so no internet-accessible copy."
+    },
+    {
+     "pref": "大阪府",
+     "page_url": "https://warp.ndl.go.jp/20220711/20220701000734/https://www.pref.osaka.lg.jp/senkan/r4sangiinsenkyo/26san_kouhosya.html",
+     "status": "archived_warp",
+     "pdfs": [
+      {
+       "label": "選挙区 大阪府",
+       "url": "https://warp.ndl.go.jp/20220711/20220701000734/https://www.pref.osaka.lg.jp/attach/43330/00428973/r4san_senkyoku.pdf"
+      }
+     ],
+     "note": "Live 2022 page (pref.osaka.lg.jp/fuseiunei/.../r040710/) has results only; bulletins found in WARP snapshot of original r4sangiinsenkyo/26san_kouhosya.html; both WARP PDFs verified 206 application/pdf."
+    },
+    {
+     "pref": "兵庫県",
+     "page_url": "https://web.pref.hyogo.lg.jp/si01/r4sankiroku.html",
+     "status": "ok",
+     "pdfs": [
+      {
+       "label": "選挙区 兵庫県",
+       "url": "https://web.pref.hyogo.lg.jp/si01/documents/kouhou_senkyoku.pdf"
+      }
+     ],
+     "note": "令和4年執行参議院議員通常選挙の記録ページに掲載（live、PDF 206確認）"
+    },
+    {
+     "pref": "奈良県",
+     "page_url": "https://warp.ndl.go.jp/20220708/20220701000253/https://www.pref.nara.jp/61139.htm",
+     "status": "archived_warp",
+     "pdfs": [
+      {
+       "label": "選挙区 奈良県",
+       "url": "https://warp.ndl.go.jp/20220708/20220701000253/https://www.pref.nara.jp/secure/277893/senkyoku.pdf"
+      }
+     ],
+     "note": "live候補者情報ページは削除。現行の2022選挙ページ https://www.pref.nara.jp/item/295777.htm は結果のみ（証明書期限切れ/403）。WARP 2022-07-01 snapshotでPDF取得可"
+    },
+    {
+     "pref": "和歌山県",
+     "page_url": "https://warp.ndl.go.jp/20220708/20220701000134/https://www.pref.wakayama.lg.jp/prefg/010600/wsenkan/R4-san/kouhosyatou.html",
+     "status": "archived_warp",
+     "pdfs": [
+      {
+       "label": "選挙区 和歌山県",
+       "url": "https://warp.ndl.go.jp/20220708/20220701000134/https://www.pref.wakayama.lg.jp/prefg/010600/wsenkan/R4-san/kouhosyatou_d/fil/senkyoku.pdf"
+      }
+     ],
+     "note": "live元PDFは404。live結果ページ https://www.pref.wakayama.lg.jp/prefg/010600/wsenkan/deta/kekka/san/R4.html の『選挙の記録 4.選挙公営』PDFに公報が含まれる可能性あり（未確認）"
+    },
+    {
+     "pref": "鳥取県",
+     "page_url": "https://www.pref.tottori.lg.jp/311963.htm",
+     "status": "ok",
+     "pdfs": [
+      {
+       "label": "選挙区 鳥取県・島根県（合区）— 選挙の記録 第一編（11 選挙公報を収録）",
+       "url": "https://www.pref.tottori.lg.jp/secure/1328991/R4sangi_1hen.pdf"
+      }
+     ],
+     "note": "合区。鳥取県は『選挙の記録』内に選挙区公報を収録（第一編PDFの一部、単独PDFなし）。単独の合区選挙区公報PDFは島根県選管ページに掲載（島根県エントリ参照）。2022年の合同選挙区選管の担当県は未確認（合区開票速報は島根県サイトでホスト）"
+    },
+    {
+     "pref": "島根県",
+     "page_url": "https://www.pref.shimane.lg.jp/admin/commission/senkyo/shimane_senkyo/sangiin_jouhou/sangi04-1.html",
+     "status": "ok",
+     "pdfs": [
+      {
+       "label": "選挙区 鳥取県・島根県（合区）",
+       "url": "https://www.pref.shimane.lg.jp/admin/commission/senkyo/shimane_senkyo/sangiin_jouhou/sangi04-1.data/r04sennkyokukouhou.pdf"
+      }
+     ],
+     "note": "合区。令和4年候補者・名簿届出政党等情報ページ（live、PDF 200確認）。合区の開票速報も島根県サイトでホストされており、2022年の合区事務の主担当は島根県と推定（未確認）"
+    },
+    {
+     "pref": "岡山県",
+     "page_url": "https://warp.ndl.go.jp/20220708/20220701000031/https://www.pref.okayama.jp/page/778839.html",
+     "status": "archived_warp",
+     "pdfs": [
+      {
+       "label": "選挙区 岡山県",
+       "url": "https://warp.ndl.go.jp/20220708/20220701000031/https://www.pref.okayama.jp/uploaded/life/786649_7328649_misc.pdf"
+      }
+     ],
+     "note": "live選挙ページ https://www.pref.okayama.jp/page/778837.html に公報なし、元PDFは404。WARP 2022-07-01 snapshotで取得可"
+    },
+    {
+     "pref": "広島県",
+     "page_url": "https://www.pref.hiroshima.lg.jp/soshiki/117/26sangi-senkyokouhou.html",
+     "status": "ok",
+     "pdfs": [
+      {
+       "label": "選挙区 広島県",
+       "url": "https://www.pref.hiroshima.lg.jp/uploaded/attachment/492456.pdf"
+      }
+     ],
+     "note": "令和4年執行第26回参院選 選挙公報ページ（live）"
+    },
+    {
+     "pref": "山口県",
+     "page_url": "https://warp.ndl.go.jp/20220706/20220701000427/https://www.yamaguchi-sangiin2022.net/todokede/",
+     "status": "archived_warp",
+     "pdfs": [
+      {
+       "label": "選挙区 山口県",
+       "url": "https://warp.ndl.go.jp/20220706/20220701000427/https://www.yamaguchi-sangiin2022.net/images/todokede/koho-yamaguchi.pdf"
+      }
+     ],
+     "note": "県選管の特設サイト yamaguchi-sangiin2022.net（県サイト soshiki/176/161550.html からリンク）は消滅（DNS解決不可）。WARPに保存あり"
+    },
+    {
+     "pref": "徳島県",
+     "page_url": "https://www.pref.tokushima.lg.jp/kenseijoho/senkyo/7213656/",
+     "status": "ok",
+     "pdfs": [
+      {
+       "label": "選挙区 徳島県・高知県（合区）",
+       "url": "https://www.pref.tokushima.lg.jp/file/attachment/822974.pdf"
+      }
+     ],
+     "note": "合区。徳島県選管の投・開票結果等ページ（live、PDF 200確認）に掲載。高知県も同合区公報を掲載していたとの検索結果あり（高知分は別fork担当）。2022年の合区主担当県は未確認"
+    },
+    {
+     "pref": "香川県",
+     "page_url": "https://www.pref.kagawa.lg.jp/senkyoi/senkyoseido/senkyo_kekka/sangi_2022.html",
+     "status": "ok",
+     "pdfs": [],
+     "note": "『せんきょの記録―令和4年7月10日執行参議院議員通常選挙』の選挙公報章（1ファイル、選挙区・比例の別は未確認）"
+    },
+    {
+     "pref": "愛媛県",
+     "page_url": "https://www.pref.ehime.jp/page/12143.html",
+     "status": "ok",
+     "pdfs": [
+      {
+       "label": "選挙区 愛媛県",
+       "url": "https://www.pref.ehime.jp/uploaded/attachment/80822.pdf"
+      }
+     ],
+     "note": "県選管「参議院議員通常選挙 選挙公報（前2回分）」ページ。令和7年分と併載。次の選挙で削除される可能性あり。"
+    },
+    {
+     "pref": "高知県",
+     "page_url": "https://warp.ndl.go.jp/20220709/20220701000111/https://www.pref.kochi.lg.jp/soshiki/270101/2022052100017.html",
+     "status": "archived_warp",
+     "pdfs": [
+      {
+       "label": "選挙区 徳島県・高知県（合区） 徳島県選管発行・徳島県サイト掲載（現存）",
+       "url": "https://www.pref.tokushima.lg.jp/file/attachment/822974.pdf"
+      },
+      {
+       "label": "選挙区 徳島県・高知県（合区） 高知県サイト掲載分（WARP）",
+       "url": "https://warp.ndl.go.jp/20220709/20220701000111/https://www.pref.kochi.lg.jp/soshiki/270101/files/2022052100017/file_20226245163017_1.pdf"
+      }
+     ],
+     "note": "合区。2022年の合区選挙公報は徳島県選挙管理委員会の発行（PDF表紙で確認）。高知県の公開ページは削除済みで、旧URLは /doc/2022052100017/ に転送されて404になる。選挙区公報は徳島県サイトに現存。比例代表はWARPのみ。"
+    },
+    {
+     "pref": "福岡県",
+     "page_url": "https://www.pref.fukuoka.lg.jp/contents/26sangisenkyo.html",
+     "status": "no_pdf",
+     "pdfs": [],
+     "note": "現存する2022年参院選ページは投開票結果（xlsx）のみで、選挙公報はない。このページのWARP保存版（20220803）は館内限定公開のため、ネットからは閲覧できない。ネット上で確認できる公式の保存先はない。"
+    },
+    {
+     "pref": "佐賀県",
+     "page_url": "https://warp.ndl.go.jp/20220705/20220701000251/https://www.pref.saga.lg.jp/kiji00386165/index.html",
+     "status": "archived_warp",
+     "pdfs": [
+      {
+       "label": "選挙区 佐賀県",
+       "url": "https://warp.ndl.go.jp/20220705/20220701000251/https://www.pref.saga.lg.jp/kiji00386165/3_86165_up_smh620bo.pdf"
+      }
+     ],
+     "note": "公開ページ（kiji00386165）は404。PDFのURLはアーカイブ上の相対リンクから解決した。どちらが選挙区・比例かはファイルサイズ（6.9MB/26MB）とページ上の掲載順で判定した。"
+    },
+    {
+     "pref": "長崎県",
+     "page_url": "https://warp.ndl.go.jp/20220705/20220701000126/https://www.pref.nagasaki.jp/bunrui/kenseijoho/senkyojoho/sangi/559537.html",
+     "status": "archived_warp",
+     "pdfs": [
+      {
+       "label": "選挙区 長崎県",
+       "url": "https://warp.ndl.go.jp/20220705/20220701000126/https://www.pref.nagasaki.jp/shared/uploads/2022/06/1656054363.pdf"
+      }
+     ],
+     "note": "公開ページとPDFはいずれも404。現在の730261.htmlは2025年（第27回）の選挙公報なので使わないこと。"
+    },
+    {
+     "pref": "熊本県",
+     "page_url": "https://warp.ndl.go.jp/20220706/20220701000124/https://www.pref.kumamoto.jp/soshiki/147/139135.html",
+     "status": "archived_warp",
+     "pdfs": [
+      {
+       "label": "選挙区 熊本県",
+       "url": "https://warp.ndl.go.jp/20220706/20220701000124/https://www.pref.kumamoto.jp/uploaded/attachment/185889.pdf"
+      }
+     ],
+     "note": "公開ページ（139135.html）と公開PDFはいずれも404。"
+    },
+    {
+     "pref": "大分県",
+     "page_url": "https://www.pref.oita.jp/site/senkyo/26san-kouho-seitou.html",
+     "status": "ok",
+     "pdfs": [
+      {
+       "label": "選挙区 大分県",
+       "url": "https://www.pref.oita.jp/uploaded/attachment/2153114.pdf"
+      }
+     ],
+     "note": "公開ページに現存。選挙区PDFは2022年に掲載された版（2147090、現在は404）から差し替えられている。元の版はWARPに残っている: https://warp.ndl.go.jp/20220709/20220701024828/https://www.pref.oita.jp/uploaded/attachment/2147090.pdf"
+    },
+    {
+     "pref": "宮崎県",
+     "page_url": "https://www.pref.miyazaki.lg.jp/senkyo/kense/senkyo/20220610140747.html",
+     "status": "no_pdf",
+     "pdfs": [],
+     "note": "現存する2022年参院選ページは投開票状況のみで、選挙公報はない。このページのWARP保存版（20220702）は館内限定公開。県選管トップページのWARP保存版も見つからなかった。ネット上で確認できる公式の保存先はない。"
+    },
+    {
+     "pref": "鹿児島県",
+     "page_url": "https://warp.ndl.go.jp/20220709/20220701000049/https://www.pref.kagoshima.jp/kensei/senkyo/r4sangi.html",
+     "status": "archived_warp",
+     "pdfs": [
+      {
+       "label": "選挙区 鹿児島県",
+       "url": "https://warp.ndl.go.jp/20220709/20220701000049/https://www.pref.kagoshima.jp/kensei/senkyo/documents/99072_20220624130355-1.pdf"
+      }
+     ],
+     "note": "公開ページ（r4sangi.html、26sangi特設サイト）と公開PDFはいずれも404。どちらが選挙区・比例かは、ページ上の掲載位置（候補者一覧の次＝選挙区、名簿一覧の次＝比例）とサイズ（1.9MB/10MB）で判定した。"
+    },
+    {
+     "pref": "沖縄県",
+     "page_url": "https://www.pref.okinawa.lg.jp/kensei/senkyo/1005009/1023801/1025045/index.html",
+     "status": "ok",
+     "pdfs": [
+      {
+       "label": "選挙区 沖縄県",
+       "url": "https://www.pref.okinawa.lg.jp/_res/projects/default_project/_page_/001/025/045/r4sangisenkyoku.pdf"
+      }
+     ],
+     "note": "公開中の特設ページに現存。PDFのURLはページ上の相対リンクから解決した。"
+    }
+   ]
+  }
+ ]
+}

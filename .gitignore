@@ -1,0 +1,14 @@
+.vercel
+.env*
+# Data lives only in GCS (gs://politics-os-data-2026/v1/). Use pipeline/pull.sh / upload.sh / deploy.sh.
+data/
+photos/
+pipeline/raw/
+pipeline/*.json
+pipeline/*.jsonl
+pipeline/*.log
+fonts/
+
+# build step is code (keep it in git); its output dist/ stays ignored
+!build/
+!build/fetch-data.mjs

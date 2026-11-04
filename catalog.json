@@ -1,0 +1,89 @@
+{
+  "name": "POLITICS OS open data",
+  "description": "日本の現職国会議員711人の公開記録（名簿・国会での発言回数・提出法案・参議院の投票・選挙公報の公約・政治団体）と、政党本部の収支。すべて公式の記録から作成し、各レコードに出典URLを付けています。",
+  "homepage": "https://politics-os.vercel.app/",
+  "rules": "https://politics-os.vercel.app/#rules",
+  "license": {
+    "data": "CC BY 4.0（出典として「POLITICS OS」と、もとの公式の記録を表示すること）",
+    "photos": "data/ には含まれません。photos/ の写真は Wikimedia Commons の各ファイルの条件に従います（members の詳細に作者とライセンスを表示）。",
+    "url": "https://creativecommons.org/licenses/by/4.0/deed.ja"
+  },
+  "principles": [
+    "どの政党・議員にも同じ計算を使う",
+    "確かめられないことは0ではなく null（未評価）",
+    "点数は足し合わせない（合計点なし）",
+    "寄附者の個人名は扱わない",
+    "利用者の政治的意見は保存・送信しない"
+  ],
+  "updated": "2026-11-04",
+  "datasets": [
+    {
+      "path": "data/members.json",
+      "shape": "array (711)",
+      "description": "現職国会議員の名簿と、議員ごとの件数",
+      "fields": {
+        "id": "議員ID（衆=s###、参=c#######）",
+        "name / kana": "氏名・よみ",
+        "house": "衆議院 | 参議院",
+        "kaiha / kaihaName": "会派（略称 / 正式名）",
+        "side": "与党 | 野党 | 不明（会派単位。meta.records.coalition に根拠）",
+        "district / electionType / block / prefectures": "選挙区・選出方法・比例ブロック・都道府県",
+        "terms / termEnd / band": "当選回数（衆）/ 任期満了（参）/ 当選回数の帯",
+        "speeches": "集計期間（meta.activityPeriod）の会議録での発言件数（発言者名の完全一致）",
+        "sp.meet": "発言のあった会議の回数（政府側・議長・委員長としての発言を除く）＝努力の点数のもと",
+        "sp.rest / sp.gov / sp.presiding / sp.chair": "発言回数の内訳（それ以外 / 政府側 / 議長・副議長 / 委員長として進めた会議）",
+        "govMonths": "政府側としての発言があった月数（6以上は比較から除外）",
+        "bills": "法律案の件数 lead=筆頭 co=共同 sup=賛成者 passed=成立（筆頭∪共同） chair=委員長として提出 other=決議など",
+        "q": "質問主意書の件数（第219〜222回）",
+        "votes": "参議院本会議の押しボタン式投票 n=対象 yes no none（参議院のみ）",
+        "transp": "総務省の関係政治団体一覧への掲載 listed / 団体数 orgs / 収支報告書リンク数 reports",
+        "pp": "本人の選挙公報の公約 n=公約数 a=実績の記述数 ck=4チェック(t何を a どうする dl いつまでに ms どこまで)の件数 spec=公約の具体性の点数(0-100、公約3未満は null)。n が null のときは why に理由",
+        "activityStatus": "ok | homonym（同姓同名で件数を確定できない）"
+      },
+      "sources": ["https://www.shugiin.go.jp/internet/itdb_annai.nsf/html/statics/syu/1giin.htm", "https://www.sangiin.go.jp/japanese/joho1/kousei/giin/current/giin.htm", "https://kokkai.ndl.go.jp/api.html"]
+    },
+    {
+      "path": "data/meta.json",
+      "description": "入手日（fetchedAt）、名簿の基準日、集計期間、出典URL、与党の判定根拠（records.coalition）、公費の目安（records.publicCost）、注意書き（notes）"
+    },
+    {
+      "path": "data/records.json",
+      "description": "法案・投票・議員ごとの紐付け",
+      "fields": {
+        "bills[]": "kind(衆法/参法/決議等) session number title status(成立/可決/否決/一院で可決/未成立) last(公式ページの最後の状態) url kaiha",
+        "votes[]": "参議院本会議の押しボタン式投票（議案・日付・賛否の合計・URL）",
+        "members{id}": "議員ごとの法案（筆頭/共同/賛成者）・投票・政治団体",
+        "questions[]": "質問主意書"
+      },
+      "sources": ["https://www.shugiin.go.jp/internet/itdb_gian.nsf/html/gian/menu.htm", "https://www.sangiin.go.jp/japanese/joho1/kousei/gian/gian.htm", "https://www.sangiin.go.jp/japanese/touhyoulist/touhyoulist.html", "https://www.soumu.go.jp/senkyo/seiji_s/seijishikin/"]
+    },
+    {
+      "path": "data/speeches.json",
+      "shape": "object keyed by member id",
+      "description": "発言のメタデータ（本文なし）：件数、月別の会議回数(monthlyMeet)・政府側(monthlyGov)、会期別(bySession)、主な会議、質問と答弁のやり取り(ex)、最近の発言リンク",
+      "sources": ["https://kokkai.ndl.go.jp/api.html"]
+    },
+    {
+      "path": "data/pledges_personal.json",
+      "shape": "object keyed by member id",
+      "description": "いまの議席を得た選挙の、本人の選挙公報から抜き出した公約（AIで抽出。原文50字以内）。items[].q=原文 k=公約|実績 と4チェック。url+page で公報PDFの該当ページ",
+      "quality": "抜き取り検算 11人・128件中125件一致。4チェックは無作為50件中47件一致",
+      "sources": ["各都道府県選挙管理委員会の選挙公報（url を参照）"]
+    },
+    {
+      "path": "data/pledges.json",
+      "description": "15会派の直近国政選挙の公約のうち、政治資金・透明性の項目（原文と出典ページ）。党の約束であり個人の約束ではない"
+    },
+    {
+      "path": "data/party_finance.json",
+      "description": "政党本部の収入・支出の内訳（令和4〜6年分）。単位は円",
+      "fields": {
+        "years[].parties[]": "name total carry income(本年の収入) spend fees(党費) donations(don_person/don_corp/don_political/don_anon) business(事業) loans transfers(本部・支部から) other(その他の収入) subsidy(政党交付金、other の内数) running(経常経費: staff utilities supplies office) political(政治活動費: organization election business_cost research grants other_cost) to_branch(支部への交付金、grants の内数)",
+        "checks": "全レコードが満たす合計の式",
+        "failed": "合計が合わず除外したもの"
+      },
+      "quality": "報告書内の合計式と、総務省『政治資金収支報告の概要』の千円単位の値の両方で全件一致",
+      "sources": ["https://www.soumu.go.jp/senkyo/seiji_s/naruhodo03.html"]
+    }
+  ]
+}
