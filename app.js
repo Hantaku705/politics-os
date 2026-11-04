@@ -286,8 +286,8 @@ function getXR(){if(!XR)XR=fetch('data/x_reactions.json').then(r=>{if(!r.ok)thro
 const XR_LABEL={positive:'ポジティブ',neutral:'ニュートラル',negative:'ネガティブ'};
 function xrLine(m){const x=m.xr;if(!x)return '';if(!x.reviewed)return `<p class="xr-line"><span>Xでの反応（参考）</span>この期間に、Grokの検索で確認できた投稿はありませんでした<small>${esc(x.from)}〜${esc(x.until)}・点数には入れていません</small></p>`;return `<p class="xr-line"><span>Xでの反応（参考）</span>ポジティブ ${x.positive}件・ニュートラル ${x.neutral}件・ネガティブ ${x.negative}件<small>Grokの検索で確認できた${x.reviewed}件のみ・${esc(x.from)}〜${esc(x.until)}・点数には入れていません</small></p>`;}
 function xrSection(m,x){
-  if(!x)return `<p class="muted-line">Xでの反応は、まだ調べていません（未取得）。いまは大臣などの議員、国会で話した回数が多い90人、0回の議員だけを調べています。</p>`;
-  if(!x.reviewed)return `<p>${esc(x.from)}〜${esc(x.until)}に、Grok（xAI）の X 検索で、この議員について他の人が書いた投稿は確認できませんでした。話題になっていないことを示すとは限りません（検索は1回・目立つ投稿のみ）。</p>`;
+  if(!x)return `<p class="muted-line">この議員は、まだ調べていません。いまは一部の議員だけを調べています。</p>`;
+  if(!x.reviewed)return `<p>${esc(x.from)}〜${esc(x.until)}に、Xでこの議員についての投稿は見つかりませんでした。</p><p class="muted-line">AI（Grok）で1回だけ検索した結果です。話題になっていないとは限りません。</p>`;
   const total=x.counts.positive+x.counts.neutral+x.counts.negative||1;
   const bar=`<div class="xr-bar" role="img" aria-label="ポジティブ${x.counts.positive}件、ニュートラル${x.counts.neutral}件、ネガティブ${x.counts.negative}件">${['positive','neutral','negative'].map(k=>x.counts[k]?`<i class="xr-${k}" style="width:${x.counts[k]/total*100}%"></i>`:'').join('')}</div>`;
   const block=k=>{const ts=x.themes[k]||[];return `<div class="xr-block xr-b-${k}"><h4 class="mini-h">${XR_LABEL[k]}　${x.counts[k]}件</h4>${ts.length?`<ul class="rec-list">${ts.map(t=>`<li><span>${esc(t.theme)}<small style="display:inline">　${t.count}件</small></span>${t.links.length?`<small>実際の投稿：${t.links.map((u,i)=>`<a href="${esc(u)}" target="_blank" rel="noopener noreferrer nofollow">投稿${i+1} ↗</a>`).join('　')}</small>`:'<small>投稿へのリンクなし（検索結果で確認できたものだけを載せています）</small>'}</li>`).join('')}</ul>`:'<p class="muted-line">確認できた投稿はありません。</p>'}</div>`;};
@@ -305,19 +305,23 @@ function ppLine(m){const x=m.pp;if(!x)return `<strong>個人の公約 未収録<
   return `<strong>選挙公報の公約 ${x.n}件<small>具体的 ${x.v}件・期限や数値あり ${x.d}件${x.a?`・ほかに実績の記述 ${x.a}件`:''}（${esc(x.el)}の本人の欄）</small></strong>`;}
 const PP_CRIT={1:'政治資金：公開',2:'政治資金：領収書',3:'政治資金：監査',4:'政治資金：罰則・返還'};
 function ppSection(m,d){
-  if(!d)return `<p class="muted-line">${esc(m.pp?.why||'個人の公約は未収録です。')}</p>`;
-  const checks=x=>'t' in x?`<span class="checks" aria-label="4つのチェック：${SPEC_CK.filter(([k])=>x[k]).map(([,l])=>l).join('・')||'なし'}">${SPEC_CK.map(([k,l])=>`<span class="ck${x[k]?' on':''}">${x[k]?'✓':'–'} ${l}</span>`).join('')}</span>`:'';
-  const li=x=>`<li><div class="pledge-tags">${checks(x)}${x.c?tag(PP_CRIT[x.c],'dark'):''}${x.area?tag(x.area,'gray'):''}</div><q>${esc(x.q)}</q></li>`;
-  const ck=m.pp&&m.pp.ck,avg=ck&&m.pp.n?Math.round((ck.t+ck.a+ck.dl+ck.ms)/m.pp.n*10)/10:null;
+  if(!d)return `<p>${m.pp?.n==null?esc(specNaText(m))+'。':'本人の約束は、まだ調べられていません。'}</p>`;
+  const has=x=>SPEC_CK.filter(([k])=>x[k]).map(([,l])=>l);
+  const DOT={t:'何',a:'動',dl:'期',ms:'数'};
+  const dots=x=>'t' in x?`<span class="pp-dots" role="img" aria-label="書いてあること：${has(x).join('・')||'なし'}">${SPEC_CK.map(([k,l])=>`<i class="${x[k]?'on':''}" title="${l}">${DOT[k]}</i>`).join('')}</span>`:'';
+  const li=x=>`<li><q>${esc(x.q)}</q><p class="pp-meta">${dots(x)}${x.area?`<span class="pp-area">${esc(x.area)}</span>`:''}${x.c?`<span class="pp-area">${esc(PP_CRIT[x.c])}</span>`:''}</p></li>`;
   const pl=d.items.filter(x=>x.k!=='実績'),ac=d.items.filter(x=>x.k==='実績');
-  return `<p>${esc(d.electionName)}（${esc(d.date)}）の選挙公報の本人の欄から、原文のまま抜き出しました。公報の表記：${esc(d.name||'')}${d.party?`（${esc(d.party)}）`:''}</p>
-  ${avg!=null?`<div class="spec-sum"><b>4つのチェックの平均 ${avg}点</b>（4点満点）${m.pp.spec!=null?` → 公約の具体性 <b>${m.pp.spec}点</b>`:'（公約が3こ未満のため点数なし）'}<small>何を ${ck.t}こ・どうする ${ck.a}こ・いつまでに ${ck.dl}こ・どこまで ${ck.ms}こ（公約${m.pp.n}こ中）</small></div>`:''}
-  <h4 class="mini-h">これからやると書いた約束（${term('公約')}）　${pl.length}件</h4>${pl.length?`<ol class="pledge-list pp-list">${pl.map(li).join('')}</ol>`:'<p class="muted-line">公約に当たる記述はありません（実績の記述のみ）。</p>'}
-  ${ac.length?`<h4 class="mini-h">実績として書いたこと　${ac.length}件</h4><ol class="pledge-list pp-list pp-acts">${ac.map(li).join('')}</ol><p class="muted-line">本人の公報での主張で、このサイトが事実を確かめたものではありません。</p>`:''}
-  <p class="muted-line">出典：<a href="${esc(d.url)}${d.page?`#page=${d.page}`:''}" target="_blank" rel="noopener noreferrer">${esc(d.pref)}選挙管理委員会「${esc(d.label)}」の選挙公報 PDF${d.page?`（${d.page}ページ）`:''} ↗</a></p>
-  <details class="more"><summary>読むときの注意（AIで読み取っています）</summary><div class="group-note"><b>読むときの注意：</b>公報の画像から、AI（${esc(d.model)}）が原文を50字以内で抜き出しました。抜き取りで確かめた11人・128件では、原文と食い違ったのは3件（1文字の読み違い2件、途中を省いたもの1件）でした。「公約」と「実績」の分け方には迷う例があります（例：「〜を拡大決定」が公約側に入る）。引用する前に出典の PDF で確かめてください。「公約」と「実績」の区別も AI の判定です。4つのチェック（何を・どうする・いつまでに・どこまで）も、AI が文の文字だけで判定しました。無作為に選んだ50件を人が確かめたところ、47件（94%）で一致しました（食い違いは「どうする」を厳しめに判定したもの）。実現したかどうか（進捗率）はまだ判定していません。</div></details>`;
+  return `<p class="pp-howto"><span class="pp-dots legend"><i class="on">何</i><i class="on">動</i><i class="on">期</i><i class="on">数</i></span>何を・どう動く・期限・数字。色が多いほど、確かめやすい約束です。</p>
+  ${pl.length?`<ol class="pp-items">${pl.map(li).join('')}</ol>`:'<p>これからやる約束は、書いてありませんでした（実績の記述だけです）。</p>'}
+  ${ac.length?`<details class="more"><summary>実績として書いたこと（${ac.length}件）</summary><ol class="pp-items">${ac.map(li).join('')}</ol><p class="muted-line">本人の主張です。このサイトでは事実を確かめていません。</p></details>`:''}
+  <details class="more"><summary>読むときの注意（AIで読み取っています）</summary><ul>
+   <li>公報の画像から、AI（${esc(d.model)}）が文を抜き出しました。</li>
+   <li>11人・128件を人が確かめたところ、125件が原文どおりでした。</li>
+   <li>4つのチェックもAIの判定です。50件中47件が人の判定と同じでした。</li>
+   <li>「約束」と「実績」の分け方には、迷う例があります。</li>
+   <li>引用するときは、出典のPDFで確かめてください。</li></ul>
+   <p class="muted-line">公報での名前：${esc(d.name||'')}${d.party?`（${esc(d.party)}）`:''}。<a href="${esc(d.url)}${d.page?`#page=${d.page}`:''}" target="_blank" rel="noopener noreferrer">${esc(d.pref)}選挙管理委員会の選挙公報 PDF${d.page?`（${d.page}ページ）`:''} ↗</a></p></details>`;
 }
-
 // ---- 議席の勢力図 (seat map). Built from the roster only. Same neutral tones for every party; only the majority line is red ----
 const SEATS={'衆議院':465,'参議院':248};
 const SIDE_ORDER={'与党':0,'不明':1,'野党':2};
@@ -518,14 +522,14 @@ function cardNote(m){
   if(partialTerm(m))n.push('2026年2月の選挙で初めて当選しました。');
   return n.length?`<p class="card-note">${n.join('<br>')}</p>`:'';
 }
-function tiles(m){
+function tiles(m,noRef){
   const sp=m.sp||{},b=m.bills,t=m.transp,x=m.pp,sc=m.score||{};
   const ax=(cls,no,label,val,unit,sub,bar)=>`<div class="axis-tile${cls?' '+cls:''}"><span class="ax-label"><i>${no}</i>${label}</span><b class="ax-num">${val}<small>${unit}</small></b><span class="ax-bar${bar==null?' na':''}">${bar==null?'':`<i style="width:${Math.max(bar,1)}%"></i>`}</span><span class="ax-sub">${sub}</span></div>`;
   const spec=sc.spec!=null?ax('','①','公約の具体性',sc.spec,'点',`${sc.specN}人中${sc.specRank}位・公約${x.n}こ`,sc.spec):ax('na','①','公約の具体性','—','',x&&x.n!=null&&x.n<3?`公約が${x.n}こ（3こ未満は点数なし）`:x&&x.n==null?ppShort(m):'まだ調べられていません',null);
   const prog=ax('na','②','進捗率','準備中','',PROGRESS_NA,null);
   const eff=m.activityStatus==='homonym'?ax('na','③','努力','—','','同じ名前の議員がいて数えられません',null):sc.action==null?ax('na','③','努力','—','','まだ調べられていません',null):ax('','③','努力',sc.action,'点',sc.action===0?'この1年、国会で話した記録がありません':`話した会議 ${sp.meet}回・${sc.actionN}人中${sc.actionRank}位`,sc.action);
   const ref=`<ul class="ref-strip" aria-label="参考の記録（点数に入れません）"><li><span>法律になった数</span><b>${b?b.passed+'本':'—'}</b></li><li><span>文書での質問（${term('質問主意書')}）</span><b>${m.q??0}回</b></li><li><span>お金の報告をする団体</span><b>${t&&t.listed?t.orgs+'団体':'—'}</b></li></ul>`;
-  return `<div class="axis-tiles">${spec}${prog}${eff}</div>${ref}`;
+  return `<div class="axis-tiles">${spec}${prog}${eff}</div>${noRef?'':ref}`;
 }
 
 let SPEECHES=null;
@@ -541,7 +545,7 @@ function scoreDetail(m){
   const row=(label,val,unit,score,info,cmp,k,href)=>`<tr><th scope="row">${label}${src(href)}</th><td><b>${val==null?'—':val+unit}</b></td><td>${score==null?'—':`${score}点`}</td><td>${rk(info,val)}</td><td>${k?peerCell(k,val):'—'}</td><td>${cmp}</td></tr>`;
   const kk=kokkaiUrl(m);
   const homo=m.activityStatus==='homonym';
-  return `${tiles(m)}${cardNote(m)}
+  return `${tiles(m,true)}<p class="rank-hint">順位は、数字が小さいほど上です。</p>
   <details class="more"><summary>点数と順位のくわしい内訳</summary>${activityNote(m)}<p class="card-dataline">${dataLine()}</p>${scorePanel(m)}
   <section class="dialog-section"><h3>点数の内訳</h3>
   <div class="table-wrap score-table"><table><thead><tr><th>もとの数字</th><th>この議員</th><th>点数</th><th>全議員での順位</th><th>同じ立場での順位${pr?`<small>${esc(pr.key)}・${pr.n}人</small>`:''}</th><th>比べる目安</th></tr></thead><tbody>
@@ -564,24 +568,23 @@ function scoreDetail(m){
   </ul></section></details>`;
 }
 function speechSection(m,sp){
-  const link=m.activityStatus==='homonym'?'':`<a class="source-link" href="${esc(kokkaiUrl(m))}" target="_blank" rel="noopener noreferrer">国会の記録（会議録）で、この1年の発言を確かめる ↗</a>`;
-  if(m.activityStatus==='homonym')return `<p>同姓同名の議員がいて会議録で区別できないため、発言の内訳は表示しません。</p>`;
-  if(!sp)return `<p>発言の内訳はまだ取得していません。</p>${link}`;
-  if(!sp.n)return `<p>${esc(periodLabel())}の国会会議録に、発言の記録はありません。会議録の公開には数週間の遅れがあります。</p>${link}`;
+  const link=m.activityStatus==='homonym'?'':`<a class="source-link" href="${esc(kokkaiUrl(m))}" target="_blank" rel="noopener noreferrer">国会の記録（会議録）で確かめる ↗</a>`;
+  if(m.activityStatus==='homonym')return '';
+  if(!sp)return `<p class="muted-line">発言の記録は、まだ取り込んでいません。</p>${link}`;
+  if(!sp.n)return `<p class="muted-line">${esc(periodLabel())}の会議録に、発言はありません。</p>${link}`;
   const pct=x=>Math.round(x/sp.n*100);
+  const item=([d,h,mt,pos,sn,url],snip)=>`<li><a href="${esc(url)}" target="_blank" rel="noopener noreferrer"><time>${esc(d)}</time><span>${esc(h)} ${esc(mt)}${pos?`（${esc(pos)}）`:''}</span></a>${snip?`<small>${esc(sn)}…</small>`:''}</li>`;
   const charts=sp.months?`${monthChart('発言のあった会議の回数（政府側・議長・委員長を除く）',sp.months,sp.monthlyMeet,'回')}${sp.monthlyGov.some(v=>v)?monthChart('政府側（大臣など）としての発言回数',sp.months,sp.monthlyGov,'回'):''}`:'';
-  return `<p>${esc(periodLabel())}に、国会で<b>${sp.n}回</b>話しました（${term('本会議')}や${term('委員会')}など ${sp.meetingCount}種類の会議）。</p>
-  ${m.mainMeeting?`<p>いちばん多いのは<b>${esc(m.mainMeeting.name)}</b>です（${m.mainMeeting.count}回）。</p>`:''}
-  <h4 class="mini-h">最近の発言（質問や${term('答弁')}・新しい順）</h4><ul class="rec-list">${sp.recent.slice(0,5).map(([d,h,mt,pos,sn,url])=>`<li><a href="${esc(url)}" target="_blank" rel="noopener noreferrer">${esc(d)}　${esc(h)} ${esc(mt)}${pos?`（${esc(pos)}）`:''} ↗</a><small>${esc(sn)}…</small></li>`).join('')}</ul>
-  <details class="more"><summary>話した記録のくわしい内訳（月ごと・相手・会議）</summary>
+  return `<h4 class="mini-h">最近、話した会議</h4><ul class="recent-list">${sp.recent.filter((r,i,a)=>a.findIndex(q=>q[0]===r[0]&&q[1]===r[1]&&q[2]===r[2])===i).slice(0,3).map(r=>item(r,false)).join('')}</ul>
+  <details class="more"><summary>話した記録のくわしい内訳</summary>
+  ${m.mainMeeting?`<p>いちばん多く話した会議は、<b>${esc(m.mainMeeting.name)}</b>です（${m.mainMeeting.count}回）。</p>`:''}
   <h4 class="mini-h">月ごとの推移</h4>${charts}${sessionChart(m,sp)}
   <h4 class="mini-h">質問と答弁のやり取り</h4>${exchangeBlock(m,sp.ex)}
-  <h4 class="mini-h">どの立場での発言か</h4><ul class="role-list">${sp.roles.map(([k,v])=>`<li><span>${esc(k)}</span><span class="bar"><i style="width:${Math.max(1,pct(v))}%"></i></span><b>${v}件</b></li>`).join('')}</ul>
-  <p class="muted-line">会議録に記録された肩書（大臣・議長など）で分けています。委員長などとしての進行は、その会議の最初の発言者かどうかで判定して分けています。法案の提出者としての答弁は肩書が付かないため「それ以外」に含まれます。大臣などの答弁も「発言」に数えています。</p>
-  <h4 class="mini-h">発言の多い会議</h4><ul class="rec-list">${sp.meetings.map(([k,v])=>`<li><span>${esc(k)}</span><small>${v}件</small></li>`).join('')}</ul>
-  <h4 class="mini-h">最近の発言（新しい順・最大10件）</h4><ul class="rec-list">${sp.recent.map(([d,h,mt,pos,sn,url])=>`<li><a href="${esc(url)}" target="_blank" rel="noopener noreferrer">${esc(d)}　${esc(h)} ${esc(mt)}${pos?`（${esc(pos)}）`:''} ↗</a><small>${esc(sn)}…</small></li>`).join('')}</ul></details>${link}`;
+  <h4 class="mini-h">どの立場で話したか</h4><ul class="role-list">${sp.roles.map(([k,v])=>`<li><span>${esc(k)}</span><span class="bar"><i style="width:${Math.max(1,pct(v))}%"></i></span><b>${v}件</b></li>`).join('')}</ul>
+  <p class="muted-line">会議録の肩書（大臣・議長など）で分けています。法案を出した人としての答弁は、肩書が付かないため「それ以外」に入ります。</p>
+  <h4 class="mini-h">話すことが多い会議</h4><ul class="rec-list">${sp.meetings.map(([k,v])=>`<li><span>${esc(k)}</span><small>${v}件</small></li>`).join('')}</ul>
+  <h4 class="mini-h">最近の発言と、話し始めのことば（最大10件）</h4><ul class="recent-list">${sp.recent.map(r=>item(r,true)).join('')}</ul></details>${link}`;
 }
-
 let RECORDS=null;
 function getRecords(){if(!RECORDS)RECORDS=fetch('data/records.json').then(r=>{if(!r.ok)throw new Error(r.status);return r.json();}).catch(e=>{RECORDS=null;throw e;});return RECORDS;}
 const avatar=(m,big)=>m.photo?`<img class="avatar${big?' big':''}" src="photos/${esc(m.id)}.${esc(m.photo)}" alt="${esc(m.name)}の写真" loading="lazy" decoding="async" width="${big?96:48}" height="${big?96:48}">`:`<span class="monogram${big?' big':''}" aria-hidden="true">${esc(m.name.slice(0,1))}</span>`;
@@ -711,38 +714,53 @@ function renderRegionDetail(){
 function billItems(rec,idx){return [...idx].sort((x,y)=>(+rec.bills[y].session-+rec.bills[x].session)||(+rec.bills[y].number-+rec.bills[x].number)).map(i=>{const b=rec.bills[i];return `<li><a href="${esc(b.url)}" target="_blank" rel="noopener noreferrer">第${esc(b.session)}回 ${esc(b.kind)}第${esc(b.number)}号　${esc(b.title)} ↗</a><span class="bill-state">${tag(b.status,STATUS_CLS[b.status]||'gray')}${b.status==='未成立'?`<small>公式ページ上の最後の状態：${esc(b.last)}</small>`:''}</span></li>`;}).join('');}
 function billGroup(rec,title,idx,open){if(!idx||!idx.length)return `<p class="muted-line">${esc(title)}：記録なし（収録範囲内）</p>`;const passed=idx.filter(i=>rec.bills[i].status==='成立').length;return `<details class="rec-group"${open?' open':''}><summary>${esc(title)} <b>${idx.length}件</b>（うち成立 ${passed}件）</summary><ul class="rec-list">${billItems(rec,idx)}</ul></details>`;}
 function voteGroup(rec,s,ch,title,open){const idx=[...s].map((c,i)=>c===ch?i:-1).filter(i=>i>=0).reverse();if(!idx.length)return `<p class="muted-line">${esc(title)}：0回</p>`;return `<details class="rec-group"${open?' open':''}><summary>${esc(title)} <b>${idx.length}回</b></summary><ul class="rec-list">${idx.map(i=>{const v=rec.votes[i];return `<li><a href="${esc(v.url)}" target="_blank" rel="noopener noreferrer">${esc(v.date)}　${esc(v.title)} ↗</a><small>全体：賛成 ${v.yes}・反対 ${v.no}</small></li>`;}).join('')}</ul></details>`;}
+// ---- number cards for the member dialog: big number first, a few words under it ----
+const stat=(label,val,unit,sub)=>`<div class="stat"><span class="stat-label">${label}</span><b class="stat-num">${val}${unit?`<small>${unit}</small>`:''}</b>${sub?`<span class="stat-sub">${sub}</span>`:''}</div>`;
 async function openMember(id){
   const m=DB.members.find(x=>x.id===id);if(!m)return;
   openDialog(`<h2 class="dialog-title" id="dialog-title">${esc(m.name)}</h2><p class="dialog-sub">記録を読み込み中…</p>`);
   let rec;try{rec=await getRecords();}catch(e){$('#dialog-body').innerHTML=`<h2 class="dialog-title" id="dialog-title">${esc(m.name)}</h2><div class="empty"><strong>記録を読み込めませんでした</strong><p>時間をおいて再度開いてください。（${esc(e)}）</p></div>`;return;}
   if(!$('#detail').open)return;
-  const r=rec.members[id]||{},b=r.b||{},meta=DB.meta.records||{},t=r.t||{};
-  const k=t.kankeiDantai,rep=t.shushiR6;
-  const photo=r.p?`<p class="photo-credit">写真：<a href="${esc(r.p.filePage)}" target="_blank" rel="noopener noreferrer">Wikimedia Commons ↗</a> / ${esc(r.p.artist)} / ${esc(r.p.license)}</p>`:'';
-  const votes=m.house==='参議院'?(r.v?`<p>だれがどう投票したか記録が残る投票 ${m.votes.n}回のうち、<b>賛成 ${m.votes.yes}・反対 ${m.votes.no}・投票なし ${m.votes.none}</b>。</p><details class="more"><summary>投票した法案の一覧</summary><p class="muted-line">押しボタン式投票 ${meta.individualVotes}回のうち、在職中に記録がある ${m.votes.n}回。</p>${voteGroup(rec,r.v,'0','反対した採決',true)}${voteGroup(rec,r.v,'-','投票なし（欠席・棄権など。反対ではありません）',false)}${voteGroup(rec,r.v,'1','賛成した採決',false)}<p class="muted-line">第${(meta.voteSessions||[]).join('・')}回国会。起立採決 ${meta.standingVotes}回は個人の賛否が残らないため含めていません。</p></details>`:'<p>記録なし</p>'):'<p>衆議院の本会議は、だれが賛成したかが記録に残らないことが多いため、のせていません。</p><details class="more"><summary>くわしく</summary><p class="muted-line">衆議院の本会議は起立採決などで個人の賛否が記録に残らないことが多いため、この試作では個人の賛否を表示しません。会派の態度から個人の賛否を推定しません。</p></details>';
-  const orgs=k&&k.listed?`<p>総務省「現職国会議員の国会議員関係政治団体一覧」（${esc(k.asOf)}）に <b>${k.total}団体</b>（総務大臣届出 ${k.soumuFiled}・都道府県選管届出 ${k.prefFiled}）。</p><ul class="rec-list">${k.orgs.map(o=>`<li><span>${esc(o.name)}</span><small>${esc(kubunLabel(o.kubun))} ／ 届出先：${esc(o.filedWith)}</small></li>`).join('')}</ul><a class="source-link" href="${esc(k.url)}" target="_blank" rel="noopener noreferrer">関係政治団体一覧（総務省・PDF） ↗</a>`:'<p>総務省の関係政治団体一覧（令和8年3月31日時点の現職）に掲載がありません。それ以降に就任した場合や、届出がない場合があります（未確認）。</p>';
-  const reports=rep&&rep.reportCount?`<ul class="rec-list">${rep.reports.map(x=>`<li><a href="${esc(x.pdf)}" target="_blank" rel="noopener noreferrer">${esc(x.org)}（${esc(rep.year)}・${esc(x.publishedOn)}公表） ↗</a>${x.scannedImage?'<small>画像のPDF。金額はこのサイトでは読み取っていません</small>':''}</li>`).join('')}</ul>`:'<p class="muted-line">総務大臣届出分の令和6年分収支報告書：該当なし（都道府県選管届出分は対象外）</p>';
+  const r=rec.members[id]||{},b=r.b||{},meta=DB.meta.records||{},t=r.t||{},mb=m.bills;
+  const k=t.kankeiDantai,rep=t.shushiR6,sp=m.sp||{},homo=m.activityStatus==='homonym';
+  const photo=r.p?`<li>写真：<a href="${esc(r.p.filePage)}" target="_blank" rel="noopener noreferrer">Wikimedia Commons ↗</a>（${esc(r.p.artist)}・${esc(r.p.license)}）</li>`:'';
+  const qi=r.q||[],qs=meta.questionSessions||[];
+  const ownN=mb?mb.lead+(mb.co||0):null;
+  const facts=`<div class="stat-grid">${[
+    stat('質問・発言した会議',homo?'—':(sp.meet??0),homo?'':'回',homo?'同名の議員がいて数えられません':''),
+    stat(`出した${term('法案')}`,ownN??'—',ownN==null?'':'本',''),
+    stat('法律になった法案',mb?mb.passed:'—',mb?'本':'',''),
+    stat(`文書での質問`,qi.length,'回',term('質問主意書')),
+    ...(m.house==='参議院'&&r.v?[stat(`${term('本会議')}で反対`,m.votes.no,'回',`賛成${m.votes.yes}・投票なし${m.votes.none}`)]:[]),
+  ].join('')}</div>${m.house==='衆議院'?`<p class="sec-note">${term('衆議院')}の本会議は、だれが賛成したかが残りません。</p>`:''}`;
+  const dietNotes=homo?'':`<ul class="rec-list"><li>発言の回数は、全部で${m.speeches??0}回です（同じ会議で何回話しても、会議の数は1回）。</li>${sp.chair?`<li>${term('委員長')}として会議を進めた${sp.chair}回は、数えていません。</li>`:''}${sp.gov?`<li>大臣など（${term('政府側')}）としての答弁${sp.gov}回は、数えていません。</li>`:''}${mb&&m.house==='衆議院'?`<li>出した法案の内訳：中心になって${mb.lead}本・いっしょに${mb.co}本。賛成者として名前をのせた法案が${mb.sup}本あります。</li>`:mb?'<li>参議院は、いっしょに出した人の記録が公開されていません。</li>':''}</ul>`;
+  const voteList=m.house==='参議院'&&r.v?`<h4 class="mini-h">参議院の本会議での投票</h4>${voteGroup(rec,r.v,'0','反対した採決',true)}${voteGroup(rec,r.v,'-','投票なし（欠席・棄権など。反対ではありません）',false)}${voteGroup(rec,r.v,'1','賛成した採決',false)}<p class="muted-line">押しボタン式の投票${meta.individualVotes}回のうち、在職中の${m.votes.n}回です。起立での採決（${meta.standingVotes}回）は、個人の賛否が残りません。</p>`:'';
+  const billList=`<h4 class="mini-h">出した法案と、法律になったか</h4>${m.house==='参議院'?`${billGroup(rec,'中心になって出した法案',b.lead,true)}`:`${billGroup(rec,'中心になって出した法案',b.lead,true)}${billGroup(rec,'いっしょに出した法案',b.co,false)}${billGroup(rec,'賛成者として名前をのせた法案',b.sup,false)}`}<p class="muted-line">第${esc((meta.billSessions||[])[0])}〜${esc((meta.billSessions||[])[1])}回国会の、議員が出した法案です。「未成立」は、否決されたという意味ではありません。</p>`;
+  const qList=qi.length?`<h4 class="mini-h">文書での質問（新しい順・最大20件）</h4><ul class="rec-list">${qi.map(i=>rec.questions[i]).sort((a,b)=>(+b.session-+a.session)||(b.number-a.number)).slice(0,20).map(q=>`<li><a href="${esc(q.url)}" target="_blank" rel="noopener noreferrer">第${esc(q.session)}回 ${esc(q.house)} 第${q.number}号　${esc(q.title)} ↗</a></li>`).join('')}</ul><p class="muted-line">第${esc(qs[0]||'')}〜${esc(qs.slice(-1)[0]||'')}回国会。いっしょに出した場合は、最初の提出者だけに数えています。</p>`:'';
+  const orgs=k&&k.listed?`<p>総務省の名簿（${esc(k.asOf)}）に <b>${k.total}団体</b>がのっています。</p><ul class="rec-list">${k.orgs.map(o=>`<li><span>${esc(o.name)}</span><small>${esc(kubunLabel(o.kubun))} ／ 届出先：${esc(o.filedWith)}</small></li>`).join('')}</ul><a class="source-link" href="${esc(k.url)}" target="_blank" rel="noopener noreferrer">関係政治団体一覧（総務省・PDF） ↗</a>`:'<p>総務省の関係政治団体の名簿（令和8年3月31日時点）に、のっていません。その後に当選した場合や、届出がない場合があります。</p>';
+  const reports=rep&&rep.reportCount?`<ul class="rec-list">${rep.reports.map(x=>`<li><a href="${esc(x.pdf)}" target="_blank" rel="noopener noreferrer">${esc(x.org)}（${esc(rep.year)}・${esc(x.publishedOn)}公表） ↗</a>${x.scannedImage?'<small>画像のPDFです。金額は、このサイトでは読み取っていません</small>':''}</li>`).join('')}</ul>`:'<p class="muted-line">総務大臣に出した令和6年分の報告書は、ありません（都道府県に出した分は対象外）。</p>';
   const notOnline=(meta.transparencyNotOnline||[]).map(x=>`<li>${esc(x.title)}：${esc(x.status)}</li>`).join('');
   const pp=partyPledges(m);
-  const pledges=pp.length?pp.map(p=>`<div class="pledge-mini"><b>${esc(p.party)}</b>${p.status==='ok'?`<span>${esc(p.election)}・${p.pledges.length}件（うち具体的 ${p.pledges.filter(x=>x.verifiable).length}件）</span>`:`<span>${esc(p.note||'党の公約なし')}</span>`}</div>`).join('')+`<button class="card-button" data-action="pledges">政党ページで公約の原文を見る ↗</button>`:'<p>所属会派に対応する党の公約がありません（院内会派・無所属など）。</p>';
-  $('#dialog-body').innerHTML=`<div class="member-head">${avatar(m,true)}<div><h2 class="dialog-title" id="dialog-title">${esc(m.name)}${roleTag(m)}</h2><p class="dialog-sub">${esc(m.kana)} ／ ${term(m.house)} · ${term('会派','グループ')}：${esc(m.kaihaName)} ／ ${seatHtml(m)}</p>${photo}</div></div>
+  const pledges=pp.length?pp.map(p=>`<div class="pledge-mini"><b>${esc(p.party)}</b>${p.status==='ok'?`<span>${esc(p.election)}・${p.pledges.length}件（うち具体的 ${p.pledges.filter(x=>x.verifiable).length}件）</span>`:`<span>${esc(p.note||'党の公約なし')}</span>`}</div>`).join('')+`<button class="card-button" data-action="pledges">政党の約束の原文を見る ↗</button>`:'<p>所属する政党の約束は、のっていません（無所属など）。</p>';
+  const partyName=(m.parties&&m.parties[0])||m.kaihaName;
+  const govBadge=(m.gov&&!m.gov.former?`<span class="mh-badge">いまは${esc(m.gov.posts[0])}</span>`:m.role?`<span class="mh-badge">${esc(m.role.label)}</span>`:'')+(partialTerm(m)?'<span class="mh-badge plain">2026年2月に初当選</span>':'');
+  $('#dialog-body').innerHTML=`<div class="member-head">${avatar(m,true)}<div><h2 class="dialog-title" id="dialog-title">${esc(m.name)}</h2><p class="mh-kana">${esc(m.kana)}</p><p class="mh-line">${esc(partyName)}</p><p class="mh-line">${seatHtml(m)}・${term(m.house)}</p>${govBadge?`<p class="mh-badges">${govBadge}</p>`:''}</div></div>
   ${scoreDetail(m)}
-  <section class="dialog-section"><h3>国会で何を話した？</h3><div id="speech-detail"><p class="muted-line">読み込み中…</p></div></section>
-  <section class="dialog-section" id="xr-section"><h3>Xでの反応（参考）</h3><div id="xr-detail"><p class="muted-line">読み込み中…</p></div></section>
-  ${m.gov?`<p class="member-note">首相官邸の名簿：${esc(m.gov.posts.join('・'))}（${esc(m.gov.group)}）</p>`:''}
-  <section class="dialog-section" id="bills-detail"><h3>どんな${term("法案")}を出した？</h3><p>${!m.bills?'まだ調べられていません。':m.house==='参議院'?`中心になって出した法案 <b>${m.bills.lead}本</b>。参議院は、いっしょに出した人の記録が公開されていません。`:`中心になって出した法案 <b>${m.bills.lead}本</b>・いっしょに出した法案 <b>${m.bills.co}本</b>・賛成者として名前をのせた法案 <b>${m.bills.sup}本</b>。`}</p>
-  <details class="more"><summary>法案の一覧と、法律になったか</summary>${m.house==='参議院'?`${billGroup(rec,'筆頭発議した法案',b.lead,true)}<p class="muted-line">参議院の議案ページには筆頭発議者しか載らないため、共同発議者として加わった法案は未収録です。</p>`:`${billGroup(rec,'筆頭提出者として出した法案',b.lead,true)}${billGroup(rec,'共同提出者として加わった法案',b.co,false)}${billGroup(rec,'賛成者として名を連ねた法案',b.sup,false)}`}<p class="muted-line">第${esc((meta.billSessions||[])[0])}〜${esc((meta.billSessions||[])[1])}回国会の議員提出法案・決議案等。「未成立」は成立・否決のどちらの記録もない状態で、否決ではありません。</p></details></section>
-  <section class="dialog-section"><h3>${term('本会議')}でどう投票した？</h3>${votes}</section>
-  <section class="dialog-section" id="questions-detail"><h3>文書で政府に質問した？（${term('質問主意書')}）</h3>${(()=>{const qi=(r.q||[]);if(!qi.length)return `<p>文書での質問は、ありません。</p><details class="more"><summary>くわしく</summary><p class="muted-line">第${esc((meta.questionSessions||[])[0]||'')}〜${esc((meta.questionSessions||[]).slice(-1)[0]||'')}回国会に、この議員が提出者（筆頭）の質問主意書はありません。</p>`;return `<p>文書で政府に<b>${qi.length}回</b>質問しました。</p><details class="more"><summary>質問の一覧</summary><p class="muted-line">第${esc((meta.questionSessions||[])[0]||'')}〜${esc((meta.questionSessions||[]).slice(-1)[0]||'')}回国会：${qi.length}件（新しい順・最大20件）</p><ul class="rec-list">${qi.map(i=>rec.questions[i]).sort((a,b)=>(+b.session-+a.session)||(b.number-a.number)).slice(0,20).map(q=>`<li><a href="${esc(q.url)}" target="_blank" rel="noopener noreferrer">第${esc(q.session)}回 ${esc(q.house)} 第${q.number}号　${esc(q.title)} ↗</a></li>`).join('')}</ul><a class="source-link" href="${esc(rec.questions[qi[0]].list)}" target="_blank" rel="noopener noreferrer">${esc(rec.questions[qi[0]].house)}の質問主意書一覧 ↗</a>`;})()}<p class="muted-line">質問主意書は、議員が内閣に文書で質問する制度です。委員会での質問の機会が少ない議員の活動も表れます。件数は点数に入れていません。共同提出の場合は筆頭の提出者だけに数えています。</p></details></section>
-  <section class="dialog-section"><h3>お金の報告は？</h3>${moneyShort(m)}<details class="more"><summary>お金の報告と、議員にかかる税金のくわしい内訳</summary>${moneyMember(m)}${orgs}<h4 class="mini-h">収支報告書（${rep?esc(rep.year):'令和6年分'}・総務大臣届出分）</h4>${reports}${notOnline?`<h4 class="mini-h">まだ確かめられない資料</h4><ul>${notOnline}</ul>`:''}</details></section>
-  <section class="dialog-section" id="pp-section"><h3>選挙で何を約束した？（${term('選挙公報')}）</h3><div id="pp-detail"><p class="muted-line">読み込み中…</p></div></section>
-  <section class="dialog-section"><h3>所属する政党の約束（お金のルール・${term('公約')}）</h3><p>政党としての約束です。この人個人の約束ではありません。</p><details class="more"><summary>政党の約束を見る</summary>${pledges}</details></section>
-  <section class="dialog-section"><h3>出典と注意</h3><div class="member-links"><a href="${m.profileUrl}" target="_blank" rel="noopener noreferrer">公式プロフィール ↗</a>${m.activityStatus==='homonym'?'':`<a href="${esc(kokkaiUrl(m))}" target="_blank" rel="noopener noreferrer">国会の記録（会議録） ↗</a>`}</div><details class="more"><summary>データの集め方と注意</summary><ul>${(meta.notes||[]).map(n=>`<li>${esc(n)}</li>`).join('')}</ul></details><p class="muted-line">確認日：${esc(DB.meta.fetchedAt)}。赤札・白紙は、対象にする法案を決めて公開してから付けます。</p></section>`;
-  getPP().then(all=>{const el=$('#pp-detail');if(el&&$('#detail').open)el.innerHTML=ppSection(m,all[m.id]);}).catch(()=>{const el=$('#pp-detail');if(el)el.innerHTML='<p class="muted-line">個人の公約を読み込めませんでした。</p>';});
-  getXR().then(all=>{const el=$('#xr-detail');if(el&&$('#detail').open)el.innerHTML=xrSection(m,all[m.id]);}).catch(()=>{const el=$('#xr-detail');if(el)el.innerHTML='<p class="muted-line">X での反応を読み込めませんでした。</p>';});
+  <section class="dialog-section" id="pp-section"><h3>選挙で、何を約束した？</h3><div id="pp-detail"><p class="muted-line">読み込み中…</p></div></section>
+  <section class="dialog-section" id="diet-section"><h3>国会で、何をした？</h3><p class="sec-note">${esc(periodLabel())}の記録です。</p>${facts}
+   <div id="speech-detail"><p class="muted-line">読み込み中…</p></div>
+   <details class="more" id="bills-detail"><summary>数え方と、法案・投票・質問の一覧</summary>${dietNotes}${billList}${voteList}<div id="questions-detail">${qList}</div></details></section>
+  <section class="dialog-section"><h3>お金は？</h3><div class="stat-grid">${(()=>{const c=DB.meta.records?.publicCost,tr=m.transp||{};return (c&&m.house==='衆議院'?stat('この議席にかかる税金（年）',`約${Math.round(c.perSeatYen/1e4).toLocaleString()}`,'万円','予算を議席の数で割った平均'):stat('この議席にかかる税金','衆議院と同じ制度','',''))+stat(`お金の報告をする団体`,tr.listed?tr.orgs:'—',tr.listed?'団体':'',term('関係政治団体'));})()}</div><details class="more"><summary>お金の報告と、議員にかかる税金のくわしい内訳</summary>${moneyMember(m)}<h4 class="mini-h">お金の報告をする団体（${term('関係政治団体')}）</h4>${orgs}<h4 class="mini-h">${term('収支報告書','お金の報告書')}（${rep?esc(rep.year):'令和6年分'}）</h4>${reports}${notOnline?`<h4 class="mini-h">まだ確かめられない資料</h4><ul>${notOnline}</ul>`:''}</details></section>
+  <details class="more more-end"><summary>もっと見る（Xでの反応・政党の約束・出典）</summary>
+   <section class="dialog-section" id="xr-section"><h3>Xでの反応（参考）</h3><div id="xr-detail"><p class="muted-line">読み込み中…</p></div></section>
+   <section class="dialog-section"><h3>所属する政党の約束</h3><p>政党としての約束です。この人個人の約束ではありません。</p>${pledges}</section>
+   <section class="dialog-section"><h3>出典と注意</h3><ul class="src-list"><li><a href="${m.profileUrl}" target="_blank" rel="noopener noreferrer">公式プロフィール ↗</a></li>${homo?'':`<li><a href="${esc(kokkaiUrl(m))}" target="_blank" rel="noopener noreferrer">国会の記録（会議録） ↗</a></li>`}${photo}</ul>
+   ${m.gov?`<p class="muted-line">首相官邸の名簿：${esc(m.gov.posts.join('・'))}（${esc(m.gov.group)}）</p>`:''}
+   <h4 class="mini-h">データの集め方と注意</h4><ul>${(meta.notes||[]).map(n=>`<li>${esc(n)}</li>`).join('')}</ul><p class="muted-line">確認日：${esc(DB.meta.fetchedAt)}。赤札・白紙は、対象の法案を決めて公開してから付けます。</p></section></details>`;
+  getPP().then(all=>{const el=$('#pp-detail');if(el&&$('#detail').open)el.innerHTML=ppSection(m,all[m.id]);}).catch(()=>{const el=$('#pp-detail');if(el)el.innerHTML='<p class="muted-line">選挙の約束を読み込めませんでした。</p>';});
+  getXR().then(all=>{const el=$('#xr-detail');if(el&&$('#detail').open)el.innerHTML=xrSection(m,all[m.id]);}).catch(()=>{const el=$('#xr-detail');if(el)el.innerHTML='<p class="muted-line">Xでの反応を読み込めませんでした。</p>';});
   getSpeeches().then(all=>{const el=$('#speech-detail');if(el&&$('#detail').open)el.innerHTML=speechSection(m,all[m.id]);}).catch(()=>{const el=$('#speech-detail');if(el)el.innerHTML=speechSection(m,null);});
 }
-
 function openDialog(html){$('#dialog-body').innerHTML=html;if(!$('#detail').open)$('#detail').showModal();$('#detail').scrollTop=0;}
 function openPerson(id){const p=PEOPLE.find(p=>p.id===id);if(!p)return;openDialog(`<h2 class="dialog-title" id="dialog-title">${p.name}</h2><p class="dialog-sub">${p.party} / ${p.role}<br>記録日 ${p.date} · 対象制度：政党交付金</p><div class="dialog-grid"><div><span class="eyebrow">制度への立場</span><h3 style="margin-top:10px">${p.stance}</h3><p>${p.reason}</p></div><div><span class="eyebrow">透明化・監査への立場</span><h3 style="margin-top:10px">${p.transparency}</h3><p>${p.transparencyDetail}</p></div></div><section class="dialog-section"><h3>確認できた経過</h3><ol class="timeline">${p.timeline.map(([d,t])=>`<li><small>${d}</small>${t}</li>`).join('')}</ol></section><section class="dialog-section"><h3>採決での賛否</h3><p>${p.vote}</p></section><section class="dialog-section"><h3>実際の結果</h3><p>${p.result}</p><p style="margin-top:8px">経済効果・GDPへの寄与・費用対効果：未測定。数値は付けていません。</p></section><section class="dialog-section"><h3>出典を確認する</h3>${p.sources.map(source).join('')}<p style="margin-top:12px;color:var(--muted)">確認日：2026.11.02。2022年の質疑は議員本人の掲載資料を参照しています。現在の立場やすべての活動を網羅するものではありません。</p></section><section class="dialog-section"><h3>地域の扱い</h3><p>${p.regionNote}</p>${p.region?source('profile'):''}</section>`);}
 function openIssue(){openDialog(`<h2 class="dialog-title" id="dialog-title">政党交付金</h2><p class="dialog-sub">制度を続けるか。使い道をどう確かめるか。</p><div class="dialog-grid"><div><span class="eyebrow">制度を支える考え方</span><h3 style="margin-top:8px">政治活動を社会全体で支える</h3><p>政党が活動するための経費を公的に支えるという考え方。金子氏の答弁では、民主主義における制度の意義が説明されています。</p></div><div><span class="eyebrow">制度に対する問題提起</span><h3 style="margin-top:8px">税金の使途を十分に検証できるか</h3><p>塩川氏の質疑では監査の範囲や権限が問われました。井上氏は制度を廃止する法案を発議しています。</p></div></div><section class="dialog-section"><h3>混同しない、2つの軸</h3><p>制度を支持していても、公開・監査の強化を支持する場合があります。制度の存廃と、透明化に関する個別提案への賛否を分けて確認します。</p></section><section class="dialog-section"><h3>対象の廃止法案はどうなった？</h3><p>第216回国会・参法第2号は審査未了。成立には至っていません。「誰かが反対票を投じて否決した」とは異なります。</p>${source('bill')}</section><section class="dialog-section"><h3>資料</h3>${source('law')}${source('debate')}${source('inoue')}</section><section class="dialog-section"><button class="card-button" data-action="issue-people">3人の記録を比較する ↗</button></section>`);}
