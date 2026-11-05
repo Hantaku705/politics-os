@@ -643,3 +643,16 @@ details.more-end{margin-top:30px}
 .pp-dots.legend{margin-right:8px}
 .pp-howto{display:flex;align-items:center;flex-wrap:wrap;gap:4px}
 @media(max-width:650px){.stat-grid{grid-template-columns:repeat(2,1fr)}.stat-num{font-size:23px}}
+/* ② 進捗率: stage badge per pledge */
+.stage{display:inline-block;font-size:13px;font-weight:800;border-radius:999px;padding:1px 10px;line-height:1.7;white-space:nowrap}
+.stage.st0{background:var(--subtle);color:var(--muted);border:1px solid var(--line)}
+.stage.st1{background:var(--ok-soft);color:var(--ok);border:1px solid #b8dcc8}
+.stage.st2{background:var(--ink);color:#fff;border:1px solid var(--ink)}
+.pp-stage{display:flex;flex-wrap:wrap;align-items:baseline;gap:4px 8px;margin-top:6px}
+.pp-why{font-size:14px;line-height:1.7}
+.pp-ev{display:flex;flex-direction:column;gap:2px;flex-basis:100%;font-size:13px}
+.pp-ev a{color:var(--muted);text-decoration:underline;text-decoration-color:var(--line-strong);overflow-wrap:anywhere}
+.pp-howto .stage{margin-right:2px}
+.stage.stna{background:var(--surface);color:var(--faint);border:1px dashed var(--line-strong)}
+.pp-why.muted{color:var(--muted);font-size:13px}
+.rk-warn{font-size:13px;background:var(--wip-soft);color:var(--wip);border-radius:var(--radius-sm);padding:8px 12px;margin:6px 0}

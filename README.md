@@ -133,3 +133,7 @@ pipeline/deploy.sh           # 本番
 - 政党タブ：いまの議席（会派別・与野党・過半数ライン）と、政党のお金（政党本部の収支 令和4〜6年分。`pipeline/fetch_party_finance.py`、出典は総務省「政治資金収支報告書の要旨」）
 - 「ルールと計算」タブ（`#rules`）：原則・除外条件・赤札の基準・データ一覧・変更の記録
 - AI・研究向け：`llms.txt` と `catalog.json`（全データの項目説明・出典・検算）。`/data/*` は CORS 許可
+
+## ② 進捗率（2026-11-05）
+- 公約ごとに、当選後に本人が国会で動いたか（質問・意見、関係する法案・質問主意書）と、本人が出した法案が成立したかを判定。`pipeline/score_progress.py` → `pipeline/build_progress.py`（build_records.py の後）。出力は members.json の `pp.pg` と `data/pledges_progress.json`
+- 進捗率＝動いた公約の数÷公約の数（公約5こ未満は順位なし）。「効いた」（施行後の数字の変化）は未判定。内閣提出の法律は数えない

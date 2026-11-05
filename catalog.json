@@ -15,7 +15,7 @@
     "寄附者の個人名は扱わない",
     "利用者の政治的意見は保存・送信しない"
   ],
-  "updated": "2026-11-04",
+  "updated": "2026-11-05",
   "datasets": [
     {
       "path": "data/members.json",
@@ -40,7 +40,11 @@
         "pp": "本人の選挙公報の公約 n=公約数 a=実績の記述数 ck=4チェック(t何を a どうする dl いつまでに ms どこまで)の件数 spec=公約の具体性の点数(0-100、公約3未満は null)。n が null のときは why に理由",
         "activityStatus": "ok | homonym（同姓同名で件数を確定できない）"
       },
-      "sources": ["https://www.shugiin.go.jp/internet/itdb_annai.nsf/html/statics/syu/1giin.htm", "https://www.sangiin.go.jp/japanese/joho1/kousei/giin/current/giin.htm", "https://kokkai.ndl.go.jp/api.html"]
+      "sources": [
+        "https://www.shugiin.go.jp/internet/itdb_annai.nsf/html/statics/syu/1giin.htm",
+        "https://www.sangiin.go.jp/japanese/joho1/kousei/giin/current/giin.htm",
+        "https://kokkai.ndl.go.jp/api.html"
+      ]
     },
     {
       "path": "data/meta.json",
@@ -55,20 +59,29 @@
         "members{id}": "議員ごとの法案（筆頭/共同/賛成者）・投票・政治団体",
         "questions[]": "質問主意書"
       },
-      "sources": ["https://www.shugiin.go.jp/internet/itdb_gian.nsf/html/gian/menu.htm", "https://www.sangiin.go.jp/japanese/joho1/kousei/gian/gian.htm", "https://www.sangiin.go.jp/japanese/touhyoulist/touhyoulist.html", "https://www.soumu.go.jp/senkyo/seiji_s/seijishikin/"]
+      "sources": [
+        "https://www.shugiin.go.jp/internet/itdb_gian.nsf/html/gian/menu.htm",
+        "https://www.sangiin.go.jp/japanese/joho1/kousei/gian/gian.htm",
+        "https://www.sangiin.go.jp/japanese/touhyoulist/touhyoulist.html",
+        "https://www.soumu.go.jp/senkyo/seiji_s/seijishikin/"
+      ]
     },
     {
       "path": "data/speeches.json",
       "shape": "object keyed by member id",
       "description": "発言のメタデータ（本文なし）：件数、月別の会議回数(monthlyMeet)・政府側(monthlyGov)、会期別(bySession)、主な会議、質問と答弁のやり取り(ex)、最近の発言リンク",
-      "sources": ["https://kokkai.ndl.go.jp/api.html"]
+      "sources": [
+        "https://kokkai.ndl.go.jp/api.html"
+      ]
     },
     {
       "path": "data/pledges_personal.json",
       "shape": "object keyed by member id",
       "description": "いまの議席を得た選挙の、本人の選挙公報から抜き出した公約（AIで抽出。原文50字以内）。items[].q=原文 k=公約|実績 と4チェック。url+page で公報PDFの該当ページ",
       "quality": "抜き取り検算 11人・128件中125件一致。4チェックは無作為50件中47件一致",
-      "sources": ["各都道府県選挙管理委員会の選挙公報（url を参照）"]
+      "sources": [
+        "各都道府県選挙管理委員会の選挙公報（url を参照）"
+      ]
     },
     {
       "path": "data/pledges.json",
@@ -83,7 +96,19 @@
         "failed": "合計が合わず除外したもの"
       },
       "quality": "報告書内の合計式と、総務省『政治資金収支報告の概要』の千円単位の値の両方で全件一致",
-      "sources": ["https://www.soumu.go.jp/senkyo/seiji_s/naruhodo03.html"]
+      "sources": [
+        "https://www.soumu.go.jp/senkyo/seiji_s/naruhodo03.html"
+      ]
+    },
+    {
+      "path": "data/pledges_progress.json",
+      "shape": "object keyed by member id",
+      "description": "② 進捗率：本人の選挙公報の約束ごとの判定。[items の番号, 段階(-1=判定できない 0=言った 1=動いた 2=通った), 理由, 根拠[{t:S発言|B法案|Q質問主意書, url, ...}]]。members.json の pp.pg に件数（n=判定した約束, act=動いた, done=通った, na=判定できない）",
+      "quality": "AIで2回判定。人の抜き取り25件中23件が正しい（動いた18/20、通った5/5）",
+      "sources": [
+        "https://kokkai.ndl.go.jp/api.html",
+        "衆参の議案情報・質問主意書（records.json）"
+      ]
     }
   ]
 }

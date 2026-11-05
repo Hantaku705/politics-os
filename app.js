@@ -67,6 +67,8 @@ const passVal=m=>m.bills?m.bills.passed:null;
 function rankInfo(ms,get){const v=ms.map(get).filter(x=>x!=null),cnt=new Map();for(const x of v)cnt.set(x,(cnt.get(x)||0)+1);const max=v.length?Math.max(...v):0;return m=>{const x=get(m);return x==null?null:{rank:1+v.filter(y=>y>x).length,tie:cnt.get(x),n:v.length,max};};}
 const qVal=m=>m.q==null?null:m.q;
 const specVal=m=>m.pp&&m.pp.spec!=null?m.pp.spec:null;  // 公約の具体性 0-100 (pipeline/build_records.py)
+const PROG_MIN=5;  // ② 進捗率: members with fewer pledges are shown as counts, without a rank
+const progVal=m=>{const g=m.pp&&m.pp.pg;return g&&g.n>=PROG_MIN?Math.round(g.act/g.n*100):null;};  // share of pledges with a related action (pipeline/score_progress.py)
 const bandKey=m=>m.band||'参議院（当選回数の帯なし）';
 const longGov=m=>(m.govMonths||0)>=6;
 const presidingOnly=m=>!!(m.sp&&m.sp.presiding>0&&m.sp.meet===0);
@@ -76,14 +78,14 @@ const peerKey=m=>m.side==='不明'?null:`${m.house}｜${m.side}${m.band?`｜${m.
 function dataLine(){const r=DB.meta?.records||{};return `データ入手日 ${esc(DB.meta?.fetchedAt||'')}／発言 ${esc(periodLabel())}／法律案 第${esc(r.billSessions?.[0]||'')}〜${esc(r.billSessions?.[1]||'')}回／質問主意書 第${esc((r.questionSessions||[])[0]||'')}〜${esc((r.questionSessions||[]).slice(-1)[0]||'')}回`;}
 function computeScores(ms){
   const sc=scorer(ms.map(meetVal));
-  for(const m of ms)m.score={action:sc(meetVal(m)),spec:specVal(m)};
-  const RI={action:rankInfo(ms,m=>m.score.action),spec:rankInfo(ms,specVal),meet:rankInfo(ms,meetVal),rest:rankInfo(ms,restVal),lead:rankInfo(ms,leadVal),passed:rankInfo(ms,passVal)};
+  for(const m of ms)m.score={action:sc(meetVal(m)),spec:specVal(m),prog:progVal(m)};
+  const RI={action:rankInfo(ms,m=>m.score.action),spec:rankInfo(ms,specVal),prog:rankInfo(ms,progVal),meet:rankInfo(ms,meetVal),rest:rankInfo(ms,restVal),lead:rankInfo(ms,leadVal),passed:rankInfo(ms,passVal)};
   RI.q=rankInfo(ms,qVal);
-  for(const m of ms){m.rk={};for(const k in RI)m.rk[k]=RI[k](m);const a=m.rk.action;Object.assign(m.score,{actionRank:a?.rank,actionTie:a?.tie,actionN:a?.n});const s2=m.rk.spec;Object.assign(m.score,{specRank:s2?.rank,specTie:s2?.tie,specN:s2?.n});}
+  for(const m of ms){m.rk={};for(const k in RI)m.rk[k]=RI[k](m);const a=m.rk.action;Object.assign(m.score,{actionRank:a?.rank,actionTie:a?.tie,actionN:a?.n});const s2=m.rk.spec;Object.assign(m.score,{specRank:s2?.rank,specTie:s2?.tie,specN:s2?.n});const p2=m.rk.prog;Object.assign(m.score,{progRank:p2?.rank,progTie:p2?.tie,progN:p2?.n});}
   // peer groups (same house x ruling/opposition x term band), excluding long-serving government members
   const groups=new Map();for(const m of ms){const k=peerKey(m);if(!k||outOfCmp(m))continue;if(!groups.has(k))groups.set(k,[]);groups.get(k).push(m);}
-  for(const [k,g] of groups){const PI={action:rankInfo(g,x=>x.score.action),spec:rankInfo(g,specVal),meet:rankInfo(g,meetVal),rest:rankInfo(g,restVal),lead:rankInfo(g,leadVal),passed:rankInfo(g,passVal),q:rankInfo(g,qVal)};
-    const med={spec:median(g.map(specVal).filter(v=>v!=null)),meet:median(g.map(meetVal).filter(v=>v!=null)),rest:median(g.map(restVal).filter(v=>v!=null)),lead:median(g.map(leadVal).filter(v=>v!=null)),passed:median(g.map(passVal).filter(v=>v!=null)),q:median(g.map(qVal).filter(v=>v!=null))};
+  for(const [k,g] of groups){const PI={action:rankInfo(g,x=>x.score.action),spec:rankInfo(g,specVal),prog:rankInfo(g,progVal),meet:rankInfo(g,meetVal),rest:rankInfo(g,restVal),lead:rankInfo(g,leadVal),passed:rankInfo(g,passVal),q:rankInfo(g,qVal)};
+    const med={spec:median(g.map(specVal).filter(v=>v!=null)),prog:median(g.map(progVal).filter(v=>v!=null)),meet:median(g.map(meetVal).filter(v=>v!=null)),rest:median(g.map(restVal).filter(v=>v!=null)),lead:median(g.map(leadVal).filter(v=>v!=null)),passed:median(g.map(passVal).filter(v=>v!=null)),q:median(g.map(qVal).filter(v=>v!=null))};
     for(const m of g){m.peer={key:k,n:g.length,med,rk:{}};for(const x in PI)m.peer.rk[x]=PI[x](m);}}
 }
 const rankText=(rank,n,tie,zero)=>zero?`${n}人中 ${tie}人が0（順位なし）`:`${n}人中${rank}位${tie>1?`（同率${tie}人）`:''}`;
@@ -115,9 +117,10 @@ function activityNote(m){
 const SPEC_CK=[['t','何を'],['a','どうする'],['dl','いつまでに'],['ms','どこまで']];
 function specNaText(m){const x=m.pp;if(!x)return 'まだ調べられていません';if(x.n==null){const w=x.why||'';return /比例/.test(w)?'比例代表で当選。本人の選挙公報がありません':/公開が終了/.test(w)?'選挙公報の公開が終わっています':/取得できず/.test(w)?'選挙公報を取得できませんでした':'選挙公報から読み取れませんでした';}if(x.n<3)return `公約が${x.n}こで、3こ未満のため点数なし`;return 'まだ判定していません';}
 const PROGRESS_NA='約束が国会でどこまで進んだかを、いま調べています';
+function progNaText(m){const g=m.pp&&m.pp.pg;if(g)return g.n?`判定できる公約が${g.n}こ（5こ未満は順位なし）`:'判定できる公約がありません';const x=m.pp;if(!x||x.n==null)return specNaText(m);return 'まだ判定していません';}
 function scorePanel(m){const sc=m.score||{};return `<div class="score-panel"><div class="score-panel-head"><span class="eyebrow">3つの物差し（足し合わせません）</span><button type="button" class="score-how" data-action="score-method">点数の決め方</button></div>
   <div class="score-line"><span>① 公約の具体性</span>${scoreBar(sc.spec,sc.specRank,sc.specN,specNaText(m),sc.specTie)}</div>
-  <div class="score-line"><span>② 進捗率</span>${scoreBar(null,0,0,'準備中。'+PROGRESS_NA)}</div>
+  <div class="score-line"><span>② 進捗率</span>${sc.prog!=null?scoreBar(sc.prog,sc.progRank,sc.progN,'',sc.progTie).replace(/<b>(\d+)点<\/b>/,'<b>$1%</b>'):scoreBar(null,0,0,progNaText(m))}</div>
   <div class="score-line"><span>③ 努力</span>${scoreBar(sc.action,sc.actionRank,sc.actionN,actionNa(m),sc.actionTie)}</div>
   <div class="score-line ref"><span>参考：法律になった数</span>${countBar(passVal(m),m.rk?.passed,'件','法案の記録が未取得')}</div></div>`;}
 function openScoreMethod(){if(!DB.meta)return;const r=DB.meta.records||{};openDialog(`<h2 class="dialog-title" id="dialog-title">点数の決め方</h2><p class="dialog-sub">3つの物差しで見ます。3つは足し合わせず、合計点は出しません。</p>
@@ -140,7 +143,18 @@ function openScoreMethod(){if(!DB.meta)return;const r=DB.meta.records||{};openDi
 <li>公約が5こ未満の人は、順位に入れません</li>
 <li>公約と逆の投票をした場合は「逆行」として別に数えます</li>
 <li>${term('与党')}か${term('野党')}かを横に表示します（野党は法案が通りにくいため）</li>
-<li><b>いまの状況：準備中です。</b>公約と国会での動きを結びつける作業をしています。</li></ul></section>
+<li><b>いまの判定：「動いた」と「通った」まで。</b>「効いた」はまだ判定していません。</li></ul>
+<details class="more"><summary>くわしく（どう判定したか）</summary><ul>
+<li>対象は、本人の選挙公報の「これからやる」約束です。数えるのは、当選した日より後の動きだけです（衆議院は2026年2月、参議院は2025年7月か2022年7月の選挙から）。</li>
+<li>動いた：本人が国会で、その約束の中身について質問・意見を述べた。または、関係する法案や質問主意書を出した。</li>
+<li>通った：本人が出した法案（衆法・参法）が成立し、その約束の中身を直接実現した。内閣が出した法律は数えません。</li>
+<li>探し方：AIが約束ごとに検索語を作り、国会会議録検索でその議員の発言を探します。本人の法案・質問主意書と合わせて、AIが「同じ対象について同じ方向のことを言っているか」で判定します。言葉がたまたま出てくるだけのものは数えません。</li>
+<li>大臣など（政府側）としての答弁と、議長としての発言は数えません。同じ名前の議員がいる人は、発言を探していません。</li>
+<li>当選してからの期間が人によって違うため（衆議院は約9か月、参議院は1年余りか約4年）、同じ院・同じ選挙で選ばれた人どうしで比べてください。</li>
+<li>何をするかが書いていない約束（「災害に強い国土づくり」など）は、進んだかを確かめられないため「判定できない」とし、割合の分母に入れません（あいまいさは①公約の具体性で見ています）。分野の名前だけの約束（「医療福祉」など）も、その分野のどんな発言でも当たってしまうため「動いた」にしません。</li>
+<li>判定の理由と根拠（会議録・法案・質問主意書へのリンク）を、約束ごとに表示しています。</li>
+<li>AIの判定は2回行い、2回目はより慎重な設定で1件ずつ確かめ直しました（「動いた」587件のうち106件を「言った」に戻しました）。</li>
+<li>人が25件を抜き取って確かめたところ、23件が正しい判定でした（動いた20件中18件、通った5件中5件）。食い違いは、話題が少しずれた発言を「動いた」としたものです。気になる約束は、根拠のリンク先で確かめてください。</li></ul></details></section>
 <section class="dialog-section"><h3>③ 努力（0〜100点）</h3><ul>
 <li>何を見るか：国会でどれだけ動いているか</li>
 <li>元データ：${esc(periodLabel())}に発言した会議の回数
@@ -157,6 +171,7 @@ function openScoreMethod(){if(!DB.meta)return;const r=DB.meta.records||{};openDi
 const RK_METRICS={
   action:{label:'③ 努力の点数（発言のあった会議の回数）',unit:'点',get:m=>m.score.action,agg:'mean'},
   spec:{label:'① 公約の具体性の点数（4つのチェック）',unit:'点',get:m=>m.score.spec,agg:'mean'},
+  prog:{label:'② 進捗率（当選後に国会で動いた公約の割合）',unit:'%',get:m=>m.score.prog,agg:'mean'},
   meet:{label:'発言のあった会議の回数',unit:'回',get:meetVal,agg:'median'},
   rest:{label:'発言回数（政府側・議長・委員長としての発言を除く）',unit:'回',get:restVal,agg:'median'},
   lead:{label:'筆頭で出した法律案',unit:'件',get:leadVal,agg:'mean'},
@@ -185,7 +200,7 @@ function renderRankings(){
   <div class="controls"><select id="rk-metric" aria-label="指標">${Object.entries(RK_METRICS).map(([k,x])=>`<option value="${k}">${x.label}</option>`).join('')}</select>
   <select id="rk-order" aria-label="並び順"><option value="desc">多い順（高い順）</option><option value="asc">少ない順（低い順）</option></select>
   ${u==='person'?multiSelect('ms-rk-house','院',HOUSES.map(h=>({value:h,label:h})),R.rk.houses)+multiSelect('ms-rk-kaiha','会派',kaihaOptions(),R.rk.kaiha)+multiSelect('ms-rk-side','与野党',['与党','野党','不明'].map(x=>({value:x,label:x})),R.rk.side)+multiSelect('ms-rk-band','当選回数',['当選1回','当選2〜3回','当選4〜6回','当選7回以上','参議院（当選回数の帯なし）'].map(x=>({value:x,label:x})),R.rk.band)+`<label class="rk-check"><input type="checkbox" id="rk-longgov" ${R.rk.longGov?'checked':''}> 政府側の在任が長い議員と議長・副議長（${DB.members.filter(outOfCmp).length}人）も含める</label>`:''}</div>
-  <p class="rk-dataline">${dataLine()}</p>
+  <p class="rk-dataline">${dataLine()}</p>${R.rk.metric==='prog'?'<p class="rk-warn">②は当選してからの期間が人によって違います（衆議院は2026年2月から、参議院は2025年7月か2022年7月から）。同じ院・同じ選挙で選ばれた人どうしで比べてください。</p>':''}
   <div id="rk-table" aria-live="polite"></div>
   ${u==='person'?`<p class="muted-line rk-note">役職のタグは、会議録で確認できた直近の政府側の肩書です（集計期間内）。政府側（大臣・副大臣・政務官など）としての発言がある月が12か月中6か月以上の議員は「政府側の在任が長い」として、初期状態では順位から外しています（在任期間そのものは会議録から取れないため、発言がある月で判定）。議長・副議長としての発言だけの議員も、慣例で質問しない立場のため同じく外しています。与党＝${esc((DB.meta.records?.coalition?.ruling||[]).map(k=>k.replace('|',' ')).join('・'))}（${esc(DB.meta.records?.coalition?.asOf||'')}確認、<a href="${esc(DB.meta.records?.coalition?.sources?.[0]?.url||'#')}" target="_blank" rel="noopener noreferrer">出典</a>）。</p>`:''}
   <div class="group-note">${u==='person'?(R.rk.metric==='spec'?'公約の具体性＝公約1こごとの4つのチェックの平均÷4×100。公約が3こ以上ある議員だけです。':'努力の点数は「現職のうち、この議員より値が小さい人の割合」×100。')+'<button type="button" class="score-how" data-action="score-method">点数の決め方</button>':u==='party'?'会派は国会内の単位で、院ごとに分けています。点数・法案は所属議員の平均、発言件数は中央値。所属5人未満の会派は値がぶれやすいため順位を付けず、参考として下に表示します。':'県の議員団＝その県の小選挙区・選挙区の議員＋衆議院比例ブロックの議員（ブロックを構成するすべての県に含めます）。参議院の全国比例は全国1区のため県には含めません。点数・法案は平均、発言件数は中央値。県の経済状況や県民の評価とは関係ありません。<a class="source-link" href="https://laws.e-gov.go.jp/law/325AC1000000100" target="_blank" rel="noopener noreferrer">比例ブロックの区域：公職選挙法 別表第二（e-Gov） ↗</a>'}</div>`;
@@ -304,14 +319,22 @@ function ppLine(m){const x=m.pp;if(!x)return `<strong>個人の公約 未収録<
   if(x.n==null)return `<strong>個人の公約 なし<small>${esc(x.why)}<br>${esc(pledgeSummary(m))}</small></strong>`;
   return `<strong>選挙公報の公約 ${x.n}件<small>具体的 ${x.v}件・期限や数値あり ${x.d}件${x.a?`・ほかに実績の記述 ${x.a}件`:''}（${esc(x.el)}の本人の欄）</small></strong>`;}
 const PP_CRIT={1:'政治資金：公開',2:'政治資金：領収書',3:'政治資金：監査',4:'政治資金：罰則・返還'};
-function ppSection(m,d){
+let PG=null;
+function getPG(){if(!PG)PG=fetch('data/pledges_progress.json').then(r=>{if(!r.ok)throw new Error(r.status);return r.json();}).catch(e=>{PG=null;throw e;});return PG;}
+const STAGE=[['言った','st0'],['動いた','st1'],['通った','st2']];
+function evLink(e){const t=e.t==='S'?`${e.date} ${e.meeting}`:e.t==='B'?`法案：${e.title}（${e.status}）`:`質問主意書：${e.title}`;return `<a href="${esc(e.url)}" target="_blank" rel="noopener noreferrer">${esc(t)} ↗</a>`;}
+function ppSection(m,d,pg){
   if(!d)return `<p>${m.pp?.n==null?esc(specNaText(m))+'。':'本人の約束は、まだ調べられていません。'}</p>`;
   const has=x=>SPEC_CK.filter(([k])=>x[k]).map(([,l])=>l);
   const DOT={t:'何',a:'動',dl:'期',ms:'数'};
   const dots=x=>'t' in x?`<span class="pp-dots" role="img" aria-label="書いてあること：${has(x).join('・')||'なし'}">${SPEC_CK.map(([k,l])=>`<i class="${x[k]?'on':''}" title="${l}">${DOT[k]}</i>`).join('')}</span>`:'';
-  const li=x=>`<li><q>${esc(x.q)}</q><p class="pp-meta">${dots(x)}${x.area?`<span class="pp-area">${esc(x.area)}</span>`:''}${x.c?`<span class="pp-area">${esc(PP_CRIT[x.c])}</span>`:''}</p></li>`;
+  const prog=pg?new Map(pg.map(r=>[r[0],r])):null;
+  const stOf=x=>{const r=prog&&prog.get(d.items.indexOf(x));return r?r[1]:null;};
+  const badge=x=>{const st=stOf(x);return st==null||st>0?'':st<0?'<span class="stage stna">判定できない</span>':`<span class="stage st0">言った</span>`;};
+  const stage=x=>{const r=prog&&prog.get(d.items.indexOf(x));if(!r||r[1]<1)return '';const [,st,why,ev]=r;return `<div class="pp-stage"><span class="stage ${STAGE[st][1]}">${STAGE[st][0]}</span>${st?`<span class="pp-why">${esc(why)}</span>`:''}${ev&&ev.length?`<span class="pp-ev">${ev.filter((e,i,a)=>a.findIndex(f=>(f.date||f.title)===(e.date||e.title)&&f.meeting===e.meeting)===i).slice(0,2).map(evLink).join('')}</span>`:''}</div>`;};
+  const li=x=>`<li><q>${esc(x.q)}</q>${stage(x)}<p class="pp-meta">${badge(x)}${dots(x)}${x.area?`<span class="pp-area">${esc(x.area)}</span>`:''}${x.c?`<span class="pp-area">${esc(PP_CRIT[x.c])}</span>`:''}</p></li>`;
   const pl=d.items.filter(x=>x.k!=='実績'),ac=d.items.filter(x=>x.k==='実績');
-  return `<p class="pp-howto"><span class="pp-dots legend"><i class="on">何</i><i class="on">動</i><i class="on">期</i><i class="on">数</i></span>何を・どう動く・期限・数字。色が多いほど、確かめやすい約束です。</p>
+  return `<p class="pp-howto"><span class="pp-dots legend"><i class="on">何</i><i class="on">動</i><i class="on">期</i><i class="on">数</i></span>何を・どう動く・期限・数字。色が多いほど、確かめやすい約束です。</p>${pg?`<p class="pp-howto"><span class="stage st0">言った</span><span class="stage st1">動いた</span><span class="stage st2">通った</span>当選後に、国会で動いたか。何をするかが書いていない約束は「判定できない」です。</p>`:''}
   ${pl.length?`<ol class="pp-items">${pl.map(li).join('')}</ol>`:'<p>これからやる約束は、書いてありませんでした（実績の記述だけです）。</p>'}
   ${ac.length?`<details class="more"><summary>実績として書いたこと（${ac.length}件）</summary><ol class="pp-items">${ac.map(li).join('')}</ol><p class="muted-line">本人の主張です。このサイトでは事実を確かめていません。</p></details>`:''}
   <details class="more"><summary>読むときの注意（AIで読み取っています）</summary><ul>
@@ -371,6 +394,7 @@ function partyMoney(){
 
 // ---- ルールと計算 (rules tab): what we measure, how, what we exclude, data & changes. Same rules for every party ----
 const CHANGELOG=[
+  ['2026-11-05','②進捗率を公開。選挙公報の約束ごとに、当選後に国会で動いたか・本人の法案が成立したかを、根拠のリンクつきで表示。議員の詳細画面を、数字中心の読みやすい形に作り直し。'],
   ['2026-11-04','政党タブに「いまの議席」と「政党のお金（本部の収支 令和4〜6年分）」を追加。「ルールと計算」タブ、AI・研究向けのデータ説明を追加。'],
   ['2026-11-04','点数を「3つの物差し」（①公約の具体性・②進捗率・③努力）に変更。合計点は出しません。'],
   ['2026-11-04','本人の選挙公報から公約を読み取り、議員ごとに表示（抜き取り検算 11人・128件中125件一致）。'],
@@ -385,6 +409,7 @@ const DATASETS=[
   ['speeches.json','議員ごとの国会での発言の記録（日付・会議・リンク。本文は入れていません）','国会会議録検索システム'],
   ['pledges_personal.json','本人の選挙公報から抜き出した公約と、4つのチェック','各都道府県の選挙管理委員会が公開した選挙公報'],
   ['pledges.json','各党の公約のうち、政治資金・透明性の項目','各党の公式の選挙公約'],
+  ['pledges_progress.json','選挙公報の約束ごとの進み具合（言った・動いた・通った）と根拠','国会会議録検索システム、衆参の議案情報・質問主意書'],
   ['party_finance.json','政党本部の収入と支出の内訳（令和4〜6年分）','総務省「政治資金収支報告書の要旨」（官報）'],
 ];
 function renderRules(){
@@ -526,7 +551,8 @@ function tiles(m,noRef){
   const sp=m.sp||{},b=m.bills,t=m.transp,x=m.pp,sc=m.score||{};
   const ax=(cls,no,label,val,unit,sub,bar)=>`<div class="axis-tile${cls?' '+cls:''}"><span class="ax-label"><i>${no}</i>${label}</span><b class="ax-num">${val}<small>${unit}</small></b><span class="ax-bar${bar==null?' na':''}">${bar==null?'':`<i style="width:${Math.max(bar,1)}%"></i>`}</span><span class="ax-sub">${sub}</span></div>`;
   const spec=sc.spec!=null?ax('','①','公約の具体性',sc.spec,'点',`${sc.specN}人中${sc.specRank}位・公約${x.n}こ`,sc.spec):ax('na','①','公約の具体性','—','',x&&x.n!=null&&x.n<3?`公約が${x.n}こ（3こ未満は点数なし）`:x&&x.n==null?ppShort(m):'まだ調べられていません',null);
-  const prog=ax('na','②','進捗率','準備中','',PROGRESS_NA,null);
+  const g=m.pp&&m.pp.pg;
+  const prog=sc.prog!=null?ax('','②','進捗率',sc.prog,'%',`公約${g.n}こ中 ${g.act}こで動いた・${sc.progN}人中${sc.progRank}位`,sc.prog):g&&g.n?ax('na','②','進捗率',`${g.act}/${g.n}`,'',`動いた公約の数・判定できる公約が5こ未満は順位なし`,null):g?ax('na','②','進捗率','—','','判定できる公約がありません（何をするかが書いていない）',null):ax('na','②','進捗率','—','',x&&x.n==null?ppShort(m):'まだ判定していません',null);
   const eff=m.activityStatus==='homonym'?ax('na','③','努力','—','','同じ名前の議員がいて数えられません',null):sc.action==null?ax('na','③','努力','—','','まだ調べられていません',null):ax('','③','努力',sc.action,'点',sc.action===0?'この1年、国会で話した記録がありません':`話した会議 ${sp.meet}回・${sc.actionN}人中${sc.actionRank}位`,sc.action);
   const ref=`<ul class="ref-strip" aria-label="参考の記録（点数に入れません）"><li><span>法律になった数</span><b>${b?b.passed+'本':'—'}</b></li><li><span>文書での質問（${term('質問主意書')}）</span><b>${m.q??0}回</b></li><li><span>お金の報告をする団体</span><b>${t&&t.listed?t.orgs+'団体':'—'}</b></li></ul>`;
   return `<div class="axis-tiles">${spec}${prog}${eff}</div>${noRef?'':ref}`;
@@ -550,6 +576,7 @@ function scoreDetail(m){
   <section class="dialog-section"><h3>点数の内訳</h3>
   <div class="table-wrap score-table"><table><thead><tr><th>もとの数字</th><th>この議員</th><th>点数</th><th>全議員での順位</th><th>同じ立場での順位${pr?`<small>${esc(pr.key)}・${pr.n}人</small>`:''}</th><th>比べる目安</th></tr></thead><tbody>
   ${(()=>{const x=m.pp,ck=x&&x.ck,avg=ck&&x.n?Math.round((ck.t+ck.a+ck.dl+ck.ms)/x.n*10)/10:null;return row('公約の4つのチェックの平均（具体性の点数のもと）',avg,'点',sc.spec,m.rk?.spec,`全議員の中央値 ${medOf(DB.members,specVal)??'—'}点（具体性）`,'spec','#pp-section');})()}
+  ${(()=>{const g=m.pp&&m.pp.pg;return row('当選後に国会で動いた公約の割合（進捗率）',g?Math.round(g.act/g.n*100):null,'%',null,m.rk?.prog,`全議員の中央値 ${medOf(DB.members,progVal)??'—'}%（公約5こ以上の人）`,'prog','#pp-section');})()}
   ${row('発言のあった会議の回数（努力の点数のもと）',homo?null:sp.meet,'回',sc.action,m.rk?.meet,`全議員の中央値 ${medOf(DB.members,meetVal)}回 ／ 同じ会派の中央値 ${medOf(same,meetVal)}回`,'meet',homo?null:kk)}
   ${row('発言回数（政府側・議長・委員長を除く）',homo?null:sp.rest,'回',null,m.rk?.rest,`全議員の中央値 ${medOf(DB.members,restVal)}回 ／ 同じ会派の中央値 ${medOf(same,restVal)}回`,'rest',homo?null:kk)}
   ${row('政府側（大臣など）としての発言',homo?null:sp.gov,'回',null,null,'点数には入れません',null,homo?null:kk)}
@@ -561,7 +588,7 @@ function scoreDetail(m){
   </tbody></table></div>
   <ul class="calc-lines">
    <li><b>① 公約の具体性 ${sc.spec==null?'未評価':sc.spec+'点'}</b> ＝ 公約1こごとの4つのチェック（何を・どうする・いつまでに・どこまで）の平均 ÷ 4 × 100${m.pp?.ck?`。何を ${m.pp.ck.t}こ・どうする ${m.pp.ck.a}こ・いつまでに ${m.pp.ck.dl}こ・どこまで ${m.pp.ck.ms}こ（公約${m.pp.n}こ中）`:''}${sc.spec==null?`。${esc(specNaText(m))}`:''}</li>
-   <li><b>② 進捗率 準備中</b> ＝ 公約と国会での動き（質問・法案・成立）を結びつけてから計算します</li>
+   <li><b>② 進捗率 ${sc.prog!=null?sc.prog+'%':'順位なし'}</b> ＝ 当選後に国会で動いた公約の数 ÷ 公約の数${m.pp?.pg?`。公約${m.pp.pg.n}こ中、動いた ${m.pp.pg.act}こ・法律になった ${m.pp.pg.done}こ`:''}${m.pp?.pg?.na?`。何をするかが書いていない公約${m.pp.pg.na}こは、判定できないため数えません`:''}${m.pp?.pg&&m.pp.pg.n<5?'。判定できる公約が5こ未満のため順位に入れません':''}</li>
    <li><b>③ 努力 ${sc.action==null?'未評価':sc.action+'点'}</b> ＝ 発言のあった会議の回数の点数（現職のうち、回数がこの議員より少ない人の割合×100）${sc.action==null?'。同姓同名で発言を確定できないため未評価':''}</li>
    <li><b>参考：法律になった数 ${b.passed??'—'}件</b> ＝ 提出に加わった法律案（筆頭 ${b.lead??'—'}件・共同 ${m.house==='参議院'?'未公開':(b.co??0)+'件'}）のうち成立した件数（筆頭で成立 ${b.leadPassed??0}件・共同で成立 ${m.house==='参議院'?'—':(b.coPassed??0)+'件'}）</li>
    ${b.chair||b.other?`<li>点数・件数に入れていないもの：${b.chair?`委員長として提出した委員会の法案 ${b.chair}件`:''}${b.chair&&b.other?'、':''}${b.other?`決議・規則など ${b.other}件`:''}</li>`:''}
@@ -757,7 +784,7 @@ async function openMember(id){
    <section class="dialog-section"><h3>出典と注意</h3><ul class="src-list"><li><a href="${m.profileUrl}" target="_blank" rel="noopener noreferrer">公式プロフィール ↗</a></li>${homo?'':`<li><a href="${esc(kokkaiUrl(m))}" target="_blank" rel="noopener noreferrer">国会の記録（会議録） ↗</a></li>`}${photo}</ul>
    ${m.gov?`<p class="muted-line">首相官邸の名簿：${esc(m.gov.posts.join('・'))}（${esc(m.gov.group)}）</p>`:''}
    <h4 class="mini-h">データの集め方と注意</h4><ul>${(meta.notes||[]).map(n=>`<li>${esc(n)}</li>`).join('')}</ul><p class="muted-line">確認日：${esc(DB.meta.fetchedAt)}。赤札・白紙は、対象の法案を決めて公開してから付けます。</p></section></details>`;
-  getPP().then(all=>{const el=$('#pp-detail');if(el&&$('#detail').open)el.innerHTML=ppSection(m,all[m.id]);}).catch(()=>{const el=$('#pp-detail');if(el)el.innerHTML='<p class="muted-line">選挙の約束を読み込めませんでした。</p>';});
+  Promise.all([getPP(),getPG().catch(()=>({}))]).then(([all,pg])=>{const el=$('#pp-detail');if(el&&$('#detail').open)el.innerHTML=ppSection(m,all[m.id],pg[m.id]);}).catch(()=>{const el=$('#pp-detail');if(el)el.innerHTML='<p class="muted-line">選挙の約束を読み込めませんでした。</p>';});
   getXR().then(all=>{const el=$('#xr-detail');if(el&&$('#detail').open)el.innerHTML=xrSection(m,all[m.id]);}).catch(()=>{const el=$('#xr-detail');if(el)el.innerHTML='<p class="muted-line">Xでの反応を読み込めませんでした。</p>';});
   getSpeeches().then(all=>{const el=$('#speech-detail');if(el&&$('#detail').open)el.innerHTML=speechSection(m,all[m.id]);}).catch(()=>{const el=$('#speech-detail');if(el)el.innerHTML=speechSection(m,null);});
 }

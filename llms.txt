@@ -17,6 +17,7 @@
 - [speeches.json](https://politics-os.vercel.app/data/speeches.json): 発言のメタデータ（本文なし）
 - [pledges_personal.json](https://politics-os.vercel.app/data/pledges_personal.json): 本人の選挙公報の公約
 - [pledges.json](https://politics-os.vercel.app/data/pledges.json): 各党の公約（政治資金・透明性の項目）
+- [pledges_progress.json](https://politics-os.vercel.app/data/pledges_progress.json): 約束ごとの進捗（言った/動いた/通った）と根拠
 - [party_finance.json](https://politics-os.vercel.app/data/party_finance.json): 政党本部の収支（令和4〜6年分）
 
 ## ルール

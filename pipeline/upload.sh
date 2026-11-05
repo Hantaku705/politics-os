@@ -23,12 +23,12 @@ fi
 if ls "$WORK"/speeches*.jsonl >/dev/null 2>&1; then cat "$WORK"/speeches*.jsonl > "$WORK/.speeches_merged" && cp1 "$WORK/.speeches_merged" "$BUCKET/v1/snapshots/$DATE/speeches.jsonl" && rm "$WORK/.speeches_merged"; fi
 cat "$WORK"/activity*.jsonl > "$WORK/.activity_merged" && cp1 "$WORK/.activity_merged" "$BUCKET/v1/snapshots/$DATE/activity.jsonl" && rm "$WORK/.activity_merged"
 for f in roster.json bills_shu.json bills_shu_old.json san_bills.json san_votes_all.json transparency.json \
-         party_pledges.json photos.json zero_check.json last_speech.json meetings.jsonl questions.json cabinet.json x_reactions.jsonl pledges_personal_raw.jsonl pledges_spec.jsonl; do
+         party_pledges.json photos.json zero_check.json last_speech.json meetings.jsonl questions.json cabinet.json x_reactions.jsonl pledges_personal_raw.jsonl pledges_spec.jsonl progress.jsonl; do
   if [ -f "$WORK/$f" ]; then cp1 "$WORK/$f" "$BUCKET/v1/snapshots/$DATE/$f"; fi
 done
 
 # built site data (snapshot + latest = what pipeline/deploy.sh serves)
-for f in members.json meta.json records.json pledges.json japan-map.json speeches.json x_reactions.json pledges_personal.json party_finance.json; do
+for f in members.json meta.json records.json pledges.json japan-map.json speeches.json x_reactions.json pledges_personal.json party_finance.json pledges_progress.json; do
   [ -f "$WORK/data/$f" ] || continue
   cp1 "$WORK/data/$f" "$BUCKET/v1/snapshots/$DATE/$f"
   cp1 "$WORK/data/$f" "$BUCKET/v1/$f"

@@ -10,7 +10,7 @@ const BUCKET = 'politics-os-data-2026';
 const PREFIX = 'v1/';
 const OUT = 'dist';
 const CODE = ['index.html', 'app.js', 'styles.css', 'robots.txt', 'llms.txt', 'catalog.json'];
-const DATA = ['members.json', 'meta.json', 'records.json', 'pledges.json', 'japan-map.json', 'speeches.json', 'x_reactions.json', 'pledges_personal.json', 'party_finance.json'];
+const DATA = ['members.json', 'meta.json', 'records.json', 'pledges.json', 'japan-map.json', 'speeches.json', 'x_reactions.json', 'pledges_personal.json', 'party_finance.json', 'pledges_progress.json'];
 const DIRS = { 'photos/': 500, 'fonts/': 4 }; // prefix -> minimum expected object count (guards against partial builds)
 
 const b64url = (b) => Buffer.from(b).toString('base64').replace(/=+$/, '').replace(/\+/g, '-').replace(/\//g, '_');
